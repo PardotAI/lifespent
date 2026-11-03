@@ -13,6 +13,8 @@ SRC = (ROOT / "SYLLABUS.md").read_text(encoding="utf-8")
 
 SITE_TITLE = "Biblical Apologetics"
 SITE_TAG = "A 12-Week Self-Study"
+import hashlib
+CSS_VER = hashlib.md5((ROOT / "assets" / "site.css").read_bytes()).hexdigest()[:8]  # cache-bust on change
 SITE_URL = "https://pardotai.github.io/lifespent/"  # change to https://lifespent.org/ when the domain moves
 BS_CSS = ('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" '
           'integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">')
@@ -162,7 +164,7 @@ def page(title, body, depth=0, active="", path=""):
 {FONTS}
 {BS_CSS}
 {ICONS}
-<link rel="stylesheet" href="{up}assets/site.css">
+<link rel="stylesheet" href="{up}assets/site.css?v={CSS_VER}">
 <link rel="icon" type="image/svg+xml" href="{up}assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{SITE_TITLE}">
