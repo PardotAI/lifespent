@@ -41,7 +41,7 @@ def part_of(n):
 # ---------- inline markdown ----------
 def inline(text):
     t = html.escape(text, quote=False)
-    t = re.sub(r"&lt;(https?://[^&\s]+)&gt;", lambda m: link(m.group(1)), t)
+    t = re.sub(r"&lt;(https?://\S+?)&gt;", lambda m: link(m.group(1)), t)
     t = re.sub(r"(?<![\"'>=])(https?://[^\s<)]+[^\s<).,;])", lambda m: link(m.group(1)), t)
     t = re.sub(r"`([^`]+)`", r"<code>\1</code>", t)
     t = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", t)
