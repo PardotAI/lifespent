@@ -13,6 +13,7 @@ SRC = (ROOT / "SYLLABUS.md").read_text(encoding="utf-8")
 
 SITE_TITLE = "Biblical Apologetics"
 SITE_TAG = "A 12-Week Self-Study"
+SITE_URL = "https://pardotai.github.io/lifespent/"  # change to https://lifespent.org/ when the domain moves
 BS_CSS = ('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" '
           'integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">')
 BS_JS = ('<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" '
@@ -143,7 +144,7 @@ for m in re.finditer(r"^## Unit (\d+): (.+?)\n(.*?)(?=^## |^---|\Z)", SRC, re.S 
 
 
 # ---------- layout ----------
-def page(title, body, depth=0, active=""):
+def page(title, body, depth=0, active="", path=""):
     up = "../" * depth
     nav = [("index.html#units", "Units", "units"), ("method.html", "Method", "method"),
            ("resources.html", "Resources", "resources")]
@@ -161,6 +162,16 @@ def page(title, body, depth=0, active=""):
 {BS_CSS}
 {ICONS}
 <link rel="stylesheet" href="{up}assets/site.css">
+<link rel="icon" type="image/svg+xml" href="{up}assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{SITE_TITLE}">
+<meta property="og:title" content="{html.escape(title)} · {SITE_TITLE}">
+<meta property="og:description" content="Learn how Scripture defends itself. {SITE_TAG}.">
+<meta property="og:url" content="{SITE_URL}{path}">
+<meta property="og:image" content="{SITE_URL}assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <a class="visually-hidden-focusable" href="#main">Skip to content</a>
@@ -304,7 +315,7 @@ def build_index():
   </div>
 </section>
 """
-    return page("Home", body, active="home")
+    return page("Home", body, active="home", path="")
 
 
 def build_unit(u):
@@ -367,7 +378,7 @@ def build_unit(u):
     </article>
   </div>
 </div>"""
-    return page(f"Unit {n}: {u['title']}", body, depth=1, active="units")
+    return page(f"Unit {n}: {u['title']}", body, depth=1, active="units", path=f"units/unit-{n:02d}.html")
 
 
 def md_list(raw):
@@ -394,7 +405,7 @@ def simple_page(kicker, title, lead, inner, active):
 <header class="u-hero"><div class="container-xl"><p class="kicker mb-2">{kicker}</p><h1 class="u-h1">{title}</h1>
 <p class="hero-sub mt-3 mb-0">{lead}</p></div></header>
 <div class="container-xl"><div class="row"><div class="col-lg-9 u-article">{inner}</div></div></div>"""
-    return page(re.sub("<[^>]+>", "", title), body, active=active)
+    return page(re.sub("<[^>]+>", "", title), body, active=active, path=f"{active}.html")
 
 
 def build_resources():
