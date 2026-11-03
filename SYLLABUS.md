@@ -39,7 +39,7 @@ To understand how Scripture defends itself, how God, Jesus and the apostles argu
 ## Unit 1: The Mandate and the Posture
 - **Read:** 1 Pet 3:8–17; Jude 3–4; Phil 1:7, 12–18; Acts 22:1; 25:16; 2 Tim 2:24–25; Col 4:6
 - **Words:** *apologia* (defense), *elpis* (hope), *prautēs* (gentleness), *phobos* (fear/reverence)
-- **Supplement:** DTS *The Table*, "Helping Your Church Explore Faith Questions" (Mikel Del Rosario): <https://voice.dts.edu/tablepodcast/apologetics-in-the-church/>
+- **Supplement:** DTS *The Table*, "Helping Your Church Explore Faith Questions" (Mikel Del Rosario) — [Listen to the episode](https://voice.dts.edu/tablepodcast/apologetics-in-the-church/)
 - **Questions:** What was an *apologia* in a first-century courtroom? Why does Peter put "set apart Christ as Lord" *before* "give a defense"? Who is being defended: the believer, the gospel, or God?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** "Apologetics is first an act of worship, then an act of argument."
@@ -63,7 +63,7 @@ To understand how Scripture defends itself, how God, Jesus and the apostles argu
 ## Unit 4: God's Case Against Idols (Idolatry and Worldview Critique)
 - **Read:** Isa 40–48 (focus on 41:21–29; 44:6–20; 46:8–11); 1 Kgs 18:16–40; Ps 115; Jer 10:1–16
 - **Words:** *ʾĕlîl* (worthless idol), *ʿēd* (witness), *rîb* (lawsuit)
-- **Supplement:** John Frame, "Presuppositional Apologetics" (2012): <https://frame-poythress.org/presuppositional-apologetics/>
+- **Supplement:** John Frame, "Presuppositional Apologetics" (2012) — [Read the article](https://frame-poythress.org/presuppositional-apologetics/)
 - **Questions:** What tests does God set for the idols in Isa 41? How does Isa 44 use reductio ad absurdum? What made Carmel a fair test?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** Isaiah's courtroom as a model for apologetics today.
@@ -79,7 +79,7 @@ To understand how Scripture defends itself, how God, Jesus and the apostles argu
 ## Unit 6: Eyewitness Testimony and Textual Reliability
 - **Read:** Luke 1:1–4; John 19:35; 20:30–31; 21:24; 1 John 1:1–4; 2 Pet 1:16–21; Deut 19:15
 - **Words:** *martys* / *martyria* (witness), *autoptēs* (eyewitness), *asphaleia* (certainty), *mythos*
-- **Supplement:** DTS *The Table*, "Reliability of the New Testament" (Darrell Bock with Dan Wallace): <https://voice.dts.edu/tablepodcast/reliability-new-testament/>. Alternative: selected lessons from DTS's free course *Can You Trust the Bible?* <https://courses.dts.edu/courses/can-you-trust-the-bible>
+- **Supplement:** DTS *The Table*, "Reliability of the New Testament" (Darrell Bock with Dan Wallace) — [Listen to the episode](https://voice.dts.edu/tablepodcast/reliability-new-testament/). Alternative: selected lessons from DTS's free course [*Can You Trust the Bible?*](https://courses.dts.edu/courses/can-you-trust-the-bible)
 - **Questions:** What does Luke claim about his method? Why does John state his purpose so explicitly? How does Peter set eyewitness testimony against "cleverly devised myths"? What does manuscript evidence establish about the *wording* we have, and how is that a separate question from whether the *witnesses* are trustworthy?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** Does the New Testament present itself as myth, history, or testimony? Defend your answer from the text.
@@ -87,7 +87,7 @@ To understand how Scripture defends itself, how God, Jesus and the apostles argu
 ## Unit 7: The Resurrection
 - **Read:** 1 Cor 15 (all); Matt 28; John 20–21; Acts 2:22–36; 17:30–31
 - **Words:** *egeirō* / *anastasis*, *ōphthē* ("He appeared"), *paradidōmi* (deliver, as tradition), *aparchē* (firstfruits)
-- **Supplement:** DTS *The Table*, "Investigating the Resurrection of Jesus" (Darrell Bock): <https://voice.dts.edu/tablepodcast/investigating-resurrection-jesus/>
+- **Supplement:** DTS *The Table*, "Investigating the Resurrection of Jesus" (Darrell Bock) — [Listen to the episode](https://voice.dts.edu/tablepodcast/investigating-resurrection-jesus/)
 - **Questions:** Outline Paul's argument in 15:1–11 and 15:12–19. Why does he list living witnesses? What is at stake "if Christ has not been raised"?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** 1 Cor 15:12–19 as a logical argument. Lay out the premises and the conclusion.
@@ -95,7 +95,7 @@ To understand how Scripture defends itself, how God, Jesus and the apostles argu
 ## Unit 8: Evil, Suffering, the Cross, and Hope
 - **Read:** Job 1–2, 38–42; Habakkuk (all); Ps 73; Rom 8:18–39; Gen 50:20
 - **Words:** *tām* (blameless), *ʾĕmûnāh* (faithfulness, Hab 2:4), *dikaioō*
-- **Supplement:** DTS BE547, Unit 4, Video 7: "The Undeserved Suffering of Job" (Larry Waters). Player: <https://media.dts.edu/player/?course=BE547&unit=4&video=7>. Transcript: <https://media.dts.edu/player/print-transcript.aspx?course=BE547&language=en-US&unit=4&video=7>. Optional: Unit 8, Video 1, "Intro to the Problem of Evil and Suffering" (Doug Blount), same URLs with `unit=8&video=1`; DTS Voice, "Why Does God Allow Suffering?" <https://voice.dts.edu/article/why-does-god-allow-suffering-dallas-theological-seminary/>
+- **Supplement:** DTS BE547, Unit 4, Video 7: "The Undeserved Suffering of Job" (Larry Waters) — [Watch lecture](https://media.dts.edu/player/?course=BE547&unit=4&video=7) · [Read transcript](https://media.dts.edu/player/print-transcript.aspx?course=BE547&language=en-US&unit=4&video=7). Optional: Unit 8, Video 1, "Intro to the Problem of Evil and Suffering" (Doug Blount) — [Watch lecture](https://media.dts.edu/player/?course=BE547&unit=8&video=1) · [Read transcript](https://media.dts.edu/player/print-transcript.aspx?course=BE547&language=en-US&unit=8&video=1); DTS Voice, ["Why Does God Allow Suffering?"](https://voice.dts.edu/article/why-does-god-allow-suffering-dallas-theological-seminary/)
 - **Questions:** Why does God never tell Job about chapters 1–2? What changes in Habakkuk between 1:2 and 3:17–19? Now that Unit 7 has established the cross and the empty tomb, how do they reshape the question (Rom 8:18–39)?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** "God answers Job with Himself, not with an explanation." Is that enough?
@@ -111,7 +111,7 @@ To understand how Scripture defends itself, how God, Jesus and the apostles argu
 ## Unit 10: Acts as an Apologetics Handbook
 - **Read:** Acts 2:14–41; 7; 13:13–48; 17:1–4, 16–34; 19:8–10
 - **Words:** *dialegomai* (reason), *peithō* (persuade), *paratithēmi* (set before/demonstrate), *spermologos*
-- **Supplement:** Constable's *Notes on Acts* (DTS, free), the sections on Acts 13 and 17: <https://soniclight.com/tcon/notes/html/acts/acts.htm>. Optional: Bahnsen's analysis of Acts 17 in *Always Ready*
+- **Supplement:** Constable's *Notes on Acts* (DTS, free), the sections on Acts 13 and 17 — [Read the notes](https://soniclight.com/tcon/notes/html/acts/acts.htm). Optional: Bahnsen's analysis of Acts 17 in *Always Ready*
 - **Questions:** Compare Paul's starting points in the synagogue (Acts 13) and the Areopagus (Acts 17). What stays the same? Why does he quote Aratus? Where does the Areopagus speech end, and why?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** Contextualization without compromise: what Acts 17 permits and what it forbids.

@@ -41,8 +41,10 @@ def part_of(n):
 # ---------- inline markdown ----------
 def inline(text):
     t = html.escape(text, quote=False)
+    t = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)",
+               lambda m: f'<a href="{m.group(2)}" target="_blank" rel="noopener">{m.group(1)} <i class="bi bi-box-arrow-up-right small"></i></a>', t)
     t = re.sub(r"&lt;(https?://\S+?)&gt;", lambda m: link(m.group(1)), t)
-    t = re.sub(r"(?<![\"'>=])(https?://[^\s<)]+[^\s<).,;])", lambda m: link(m.group(1)), t)
+    t = re.sub(r"(?<![\"'>=(])(https?://[^\s<)]+[^\s<).,;])", lambda m: link(m.group(1)), t)
     t = re.sub(r"`([^`]+)`", r"<code>\1</code>", t)
     t = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", t)
     t = re.sub(r"(?<![\w*])\*([^*]+)\*(?![\w*])", r"<em>\1</em>", t)
@@ -176,7 +178,7 @@ def page(title, body, depth=0, active=""):
 <footer class="site-footer">
   <div class="container d-md-flex justify-content-between align-items-center">
     <div><span class="brand-serif">{SITE_TITLE}</span> · {SITE_TAG}</div>
-    <div class="small">“Always be ready to give a defense… with gentleness and respect.” — 1 Pet 3:15–16</div>
+    <div class="small">“Always be ready to give a defense… with gentleness and respect.” — 1 Pet 3:15 (ESV)</div>
   </div>
 </footer>
 {BS_JS}
@@ -239,7 +241,7 @@ def build_index():
         </div>
       </div>
       <div class="col-lg-4 d-none d-lg-block">
-        <blockquote class="hero-quote">“…but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect.”<cite>1 Peter 3:15–16</cite></blockquote>
+        <blockquote class="hero-quote">“…but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect.”<cite>1 Peter 3:15 (ESV)</cite></blockquote>
       </div>
     </div>
   </div>
