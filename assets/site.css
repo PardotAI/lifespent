@@ -167,3 +167,7 @@ a.passage:hover { background: var(--yellow); border-color: var(--yellow-deep); c
   .toc-row { margin: 0; padding: 1rem .25rem; }
 }
 html, body { overflow-x: clip; }
+a.go { display: inline-flex; align-items: center; gap: .3rem; font-weight: 600; white-space: nowrap; padding: .15rem .6rem; margin: .1rem 0; border-radius: .4rem; background: #eaf2fe; text-decoration: none; }
+a.go:hover { background: var(--blue); color: #fff; }
+.pager { gap: 2rem; }
+.pager-link { font-size: 1.15rem; line-height: 1.3; }

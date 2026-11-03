@@ -47,7 +47,7 @@ To understand how Scripture defends itself, how God, Jesus and the apostles argu
 ## Unit 2: How We Know (Biblical Epistemology)
 - **Read:** Prov 1:1–7; 9:10; Col 2:1–10; 1 Cor 1:18–2:16; John 17:17
 - **Words:** *yirʾat YHWH* (fear of the LORD), *daʿat* (knowledge), *sophia*, *gnōsis*, *alētheia*
-- **Supplement:** Poythress, *Logic*, opening chapters on God as the source of logic. Optional: Calvin, *Institutes* 1.1–1.2
+- **Supplement:** Poythress, *Logic*, opening chapters on God as the source of logic — [Read the free PDF](https://frame-poythress.org/wp-content/uploads/2013/07/BLogicFinal.pdf). Optional: Calvin, *Institutes* 1.1–1.2 — [Read on CCEL](https://www.ccel.org/ccel/calvin/institutes.html)
 - **Questions:** In what sense is the fear of the LORD the *beginning* of knowledge? Where are "all the treasures of wisdom" hidden (Col 2:3)? Is Paul anti-intellectual in 1 Cor 1–2?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** Is it circular to ground reason in God's revelation? Is every worldview's ultimate authority self-attesting?
@@ -55,7 +55,7 @@ To understand how Scripture defends itself, how God, Jesus and the apostles argu
 ## Unit 3: What Everyone Knows (Natural Revelation)
 - **Read:** Ps 19; Rom 1:18–2:16; Acts 14:8–18; Eccl 3:11
 - **Words:** *phaneros* (evident), *katechō* (suppress), *syneidēsis* (conscience), *anapologētos* (without excuse)
-- **Supplement:** Calvin, *Institutes* 1.3–1.5 (*sensus divinitatis*)
+- **Supplement:** Calvin, *Institutes* 1.3–1.5 (*sensus divinitatis*) — [Read on CCEL](https://www.ccel.org/ccel/calvin/institutes.html)
 - **Questions:** What exactly is "clearly seen" (Rom 1:20)? What does suppression look like in practice? How does Paul adapt this in Lystra?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** "There are no true atheists": what Rom 1 does and does not claim.
@@ -71,7 +71,7 @@ To understand how Scripture defends itself, how God, Jesus and the apostles argu
 ## Unit 5: Prophecy and Fulfillment
 - **Read:** Deut 18:15–22; Isa 52:13–53:12; Ps 22; Mic 5:2; Dan 9:24–27; Luke 24:13–49; Acts 8:26–40
 - **Words:** *nābîʾ* (prophet), *plēroō* (fulfill), *dei* ("it is necessary")
-- **Supplement:** NET notes on Isa 53 and Ps 22
+- **Supplement:** NET notes on Isa 53 and Ps 22 — [Read NET notes: Isa 53](https://netbible.org/bible/Isaiah+53) · [Read NET notes: Ps 22](https://netbible.org/bible/Psalms+22)
 - **Questions:** What is the Deut 18 test? What does Luke actually tell us about how Jesus "opened the Scriptures" (Luke 24:27, 44–47), and what does he leave unsaid? How do direct prediction, typology, and promise–fulfillment differ? Why did Philip start with Isa 53?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** First trace the OT texts the NT *explicitly* applies to Jesus (Luke 24:44–47; Acts 8:32–35; Matt 2:5–6). Sort each one as direct prediction, typology, or broader promise–fulfillment. Then propose what Jesus may have covered on the Emmaus road, and label that part clearly as inference.
@@ -103,7 +103,7 @@ To understand how Scripture defends itself, how God, Jesus and the apostles argu
 ## Unit 9: Jesus' Argumentative Methods
 - **Read:** Matt 12:22–37; 21:23–27; 22:15–46; John 5:31–47; 8:12–59; 10:22–39
 - **Words:** *peirazō* (test/tempt), *elenchō* (convict/expose), *hypokritēs*
-- **Supplement:** Poythress, *Logic*, sections on reductio arguments and dilemmas
+- **Supplement:** Poythress, *Logic*, sections on reductio arguments and dilemmas — [Read the free PDF](https://frame-poythress.org/wp-content/uploads/2013/07/BLogicFinal.pdf)
 - **Questions:** How does Jesus answer a question with a question (Matt 21:24–25)? In Matt 22:15–22, how does Jesus recognize the trap, reject its framing, and introduce a higher allegiance? What are the "four witnesses" of John 5?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** Name three argumentative moves Jesus used, with how and when you might use each one.
@@ -119,7 +119,7 @@ To understand how Scripture defends itself, how God, Jesus and the apostles argu
 ## Unit 11: Paul's Defenses
 - **Read:** Acts 22–26
 - **Words:** *apologeomai*, *mainomai* ("you are mad," 26:24), *sōphrosynē* (sober truth)
-- **Supplement:** Review Unit 1 notes
+- **Supplement:** Review your Unit 1 notes — [Revisit Unit 1](unit-01.html)
 - **Questions:** How does Paul's defense change across Jerusalem, Felix, Festus and Agrippa? What role does his personal testimony play? Why does he appeal to Agrippa's belief in the prophets?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** The place of personal testimony in Biblical apologetics.
@@ -127,7 +127,7 @@ To understand how Scripture defends itself, how God, Jesus and the apostles argu
 ## Unit 12: Synthesis and Posture
 - **Read:** 2 Tim 2:14–26; Col 4:2–6; 2 Cor 10:1–6; Eph 6:10–20; 1 Cor 13; Matt 5:43–48
 - **Words:** *aichmalōtizō* (take captive), *ochyrōma* (stronghold), *epieikeia* (gentleness, 2 Cor 10:1), *ēpios* (gentle, 2 Tim 2:24), *halas* (salt)
-- **Supplement:** Reread 1 Pet 3:15–16
+- **Supplement:** Reread 1 Pet 3:15–16 — [Read 1 Pet 3:15–16 (NET)](https://www.biblegateway.com/passage/?search=1+Pet+3:15-16&version=NET)
 - **Questions:** What weapons does Paul *refuse* to use? What is the goal in 2 Tim 2:25–26? Can you win an argument and lose a person?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Final paper (5–7 pages; replaces this unit's regular 1–2 page paper):** "A Biblical Theology of Apologetics." Synthesize all 12 units: the mandate, the method, the content and the posture.

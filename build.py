@@ -42,7 +42,8 @@ def part_of(n):
 def inline(text):
     t = html.escape(text, quote=False)
     t = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)",
-               lambda m: f'<a href="{m.group(2)}" target="_blank" rel="noopener">{m.group(1)} <i class="bi bi-box-arrow-up-right small"></i></a>', t)
+               lambda m: f'<a class="go" href="{m.group(2)}" target="_blank" rel="noopener">{m.group(1)} <i class="bi bi-box-arrow-up-right small"></i></a>', t)
+    t = re.sub(r"\[([^\]]+)\]\(([\w./-]+\.html)\)", r'<a class="go" href="\2">\1 <i class="bi bi-arrow-right small"></i></a>', t)
     t = re.sub(r"&lt;(https?://\S+?)&gt;", lambda m: link(m.group(1)), t)
     t = re.sub(r"(?<![\"'>=(])(https?://[^\s<)]+[^\s<).,;])", lambda m: link(m.group(1)), t)
     t = re.sub(r"`([^`]+)`", r"<code>\1</code>", t)
@@ -219,6 +220,11 @@ def method_steps():
     return steps
 
 
+def short_title(t):
+    """Drop a parenthetical subtitle for compact labels, e.g. pager links."""
+    return re.sub(r"\s*\(.*\)$", "", t)
+
+
 def short_read(u, n=90):
     r = u["f"].get("Read", ("", None))[0]
     return r if len(r) <= n else r[:n].rsplit(";", 1)[0] + "; …"
@@ -350,8 +356,8 @@ def build_unit(u):
     toc = "".join(f'<a href="#{sid}">{lab}</a>' for sid, lab, _ in secs)
     content = "".join(f'<section class="u-sec" id="{sid}"><h2 class="u-h2">{lab}</h2>{body}</section>' for sid, lab, body in secs)
     pager = '<nav class="pager" aria-label="Unit navigation">'
-    pager += (f'<a class="pager-link" href="unit-{prev_u["n"]:02d}.html"><span>← Previous</span>Unit {prev_u["n"]}: {html.escape(prev_u["title"])}</a>' if prev_u else '<span></span>')
-    pager += (f'<a class="pager-link text-end" href="unit-{next_u["n"]:02d}.html"><span>Next →</span>Unit {next_u["n"]}: {html.escape(next_u["title"])}</a>' if next_u else '<a class="pager-link text-end" href="../index.html#units"><span>Done →</span>All units</a>')
+    pager += (f'<a class="pager-link" href="unit-{prev_u["n"]:02d}.html"><span>← Unit {prev_u["n"]}</span>{html.escape(short_title(prev_u["title"]))}</a>' if prev_u else '<span></span>')
+    pager += (f'<a class="pager-link text-end" href="unit-{next_u["n"]:02d}.html"><span>Unit {next_u["n"]} →</span>{html.escape(short_title(next_u["title"]))}</a>' if next_u else '<a class="pager-link text-end" href="../index.html#units"><span>Done →</span>All units</a>')
     pager += "</nav>"
     pct = n / len(units) * 100
 
