@@ -19,7 +19,8 @@ BS_JS = ('<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/boot
          'integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>')
 ICONS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">'
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-         '<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">')
+         '<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">')
+# Inter Tight is a free stand-in for Basecamp's Graphik (commercial).
 
 PARTS = [
     ("Foundations", "How we know, and what everyone already knows", range(1, 5)),
@@ -27,8 +28,6 @@ PARTS = [
     ("The Methods", "How Jesus and the apostles argued", range(9, 12)),
     ("Synthesis", "Bringing it together", range(12, 13)),
 ]
-UNIT_ICONS = {1: "megaphone", 2: "lightbulb", 3: "stars", 4: "bank", 5: "hourglass-split", 6: "eye",
-              7: "sunrise", 8: "heart-pulse", 9: "chat-quote", 10: "signpost-split", 11: "shield-check", 12: "compass"}
 
 
 def part_of(n):
@@ -146,8 +145,8 @@ for m in re.finditer(r"^## Unit (\d+): (.+?)\n(.*?)(?=^## |^---|\Z)", SRC, re.S 
 # ---------- layout ----------
 def page(title, body, depth=0, active=""):
     up = "../" * depth
-    nav = [("index.html", "Home", "home"), ("index.html#units", "Units", "units"),
-           ("method.html", "Method", "method"), ("resources.html", "Resources", "resources")]
+    nav = [("index.html#units", "Units", "units"), ("method.html", "Method", "method"),
+           ("resources.html", "Resources", "resources")]
     links = "".join(
         f'<li class="nav-item"><a class="nav-link{" active" if key == active else ""}" href="{up}{href}">{label}</a></li>'
         for href, label, key in nav)
@@ -165,43 +164,34 @@ def page(title, body, depth=0, active=""):
 </head>
 <body>
 <a class="visually-hidden-focusable" href="#main">Skip to content</a>
-<nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="{up}index.html"><i class="bi bi-book-half me-2"></i>{SITE_TITLE}</a>
+<nav class="navbar navbar-expand-md site-nav">
+  <div class="container-xl">
+    <a class="navbar-brand" href="{up}index.html"><span class="brand-mark">BA</span>{SITE_TITLE}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="nav"><ul class="navbar-nav ms-auto">{links}</ul></div>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto align-items-md-center">{links}
+        <li class="nav-item ms-md-3"><a class="btn btn-ink" href="{up}units/unit-01.html">Start Unit 1</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 <main id="main">
 {body}
 </main>
 <footer class="site-footer">
-  <div class="container d-md-flex justify-content-between align-items-center">
-    <div><span class="brand-serif">{SITE_TITLE}</span> · {SITE_TAG}</div>
-    <div class="small">“Always be ready to give a defense… with gentleness and respect.” — 1 Pet 3:15 (ESV)</div>
+  <div class="container-xl">
+    <p class="footer-verse">“Always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect.”</p>
+    <p class="footer-ref">1 Peter 3:15 (ESV)</p>
+    <div class="footer-meta">
+      <span><strong>{SITE_TITLE}</strong> — {SITE_TAG}</span>
+      <span><a href="{up}index.html#units">Units</a> · <a href="{up}method.html">Method</a> · <a href="{up}resources.html">Resources</a></span>
+    </div>
   </div>
 </footer>
 {BS_JS}
 </body>
 </html>
 """
-
-
-def unit_card(u, up=""):
-    _, part = part_of(u["n"])
-    read = u["f"].get("Read", ("", None))[0]
-    return f"""<div class="col-md-6 col-lg-4">
-  <a class="card unit-card h-100" href="{up}units/unit-{u['n']:02d}.html">
-    <div class="card-body">
-      <div class="d-flex align-items-center mb-3">
-        <span class="unit-num">{u['n']}</span>
-        <i class="bi bi-{UNIT_ICONS.get(u['n'], 'book')} unit-icon ms-auto"></i>
-      </div>
-      <h3 class="h5 card-title">{html.escape(u['title'])}</h3>
-      <p class="card-text small text-body-secondary mb-0">{inline(read[:110] + ('…' if len(read) > 110 else ''))}</p>
-    </div>
-  </a>
-</div>"""
 
 
 def method_steps():
@@ -211,81 +201,104 @@ def method_steps():
         safeguard = ""
         if ">" in txt:
             txt, sg = txt.split(">", 1)
-            safeguard = f'<div class="callout callout-amber mt-2 small">{inline(sg.strip())}</div>'
-        steps.append((m.group(1), m.group(2).strip().rstrip(":"), inline(txt.strip()) + safeguard))
+            safeguard = f'<p class="note mt-2 mb-0">{inline(sg.strip())}</p>'
+        steps.append((m.group(1), m.group(2).strip().rstrip(":"), inline(txt.strip()), safeguard))
     return steps
 
 
-STEP_ICONS = ["book", "translate", "journal-text", "question-circle", "pencil-square", "heart"]
+def short_read(u, n=90):
+    r = u["f"].get("Read", ("", None))[0]
+    return r if len(r) <= n else r[:n].rsplit(";", 1)[0] + "; …"
 
 
 def build_index():
-    cards = []
+    parts_html = []
     for i, (pname, pdesc, rng) in enumerate(PARTS, 1):
-        cs = "".join(unit_card(u) for u in units if u["n"] in rng)
-        cards.append(f"""<div class="part-head"><span class="part-label">Part {i}</span><h3 class="h4 mb-0">{pname}</h3>
-<p class="text-body-secondary mb-0">{pdesc}</p></div><div class="row g-4 mb-5">{cs}</div>""")
-    steps = "".join(f"""<div class="col-sm-6 col-lg-4"><div class="step h-100"><i class="bi bi-{STEP_ICONS[int(n)-1]}"></i>
-<div><div class="step-title">{n}. {t}</div><div class="small">{d}</div></div></div></div>""" for n, t, d in method_steps())
+        rows = "".join(f"""
+      <a class="toc-row" href="units/unit-{u['n']:02d}.html">
+        <span class="toc-num">{u['n']:02d}</span>
+        <span class="toc-body"><span class="toc-title">{html.escape(u['title'])}</span>
+        <span class="toc-read">{html.escape(short_read(u))}</span></span>
+        <i class="bi bi-arrow-right toc-arrow"></i>
+      </a>""" for u in units if u["n"] in rng)
+        parts_html.append(f"""
+    <div class="part">
+      <div class="part-side"><span class="part-kicker">Part {i}</span><h3 class="part-name">{pname}</h3><p class="part-desc">{pdesc}</p></div>
+      <div class="part-rows">{rows}</div>
+    </div>""")
+
+    steps = "".join(f"""
+      <div class="col-sm-6 col-lg-4"><div class="rhythm">
+        <span class="rhythm-num">{n}</span><h3 class="rhythm-title">{t}</h3><p class="mb-0">{d}</p>{sg}
+      </div></div>""" for n, t, d, sg in method_steps())
+
+    preview = "".join(
+        f'<li><span class="pv-check{" done" if u["n"] == 1 else ""}"></span><span class="pv-n">{u["n"]}</span>{html.escape(u["title"])}</li>'
+        for u in units[:6])
+
     body = f"""
-<header class="hero">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-8">
-        <p class="eyebrow">{SITE_TAG}</p>
-        <h1 class="display-4 hero-title">{SITE_TITLE}</h1>
-        <p class="lead hero-lead">How Scripture defends itself — and how God, Jesus and the apostles argued for the truth.</p>
-        <div class="d-flex flex-wrap gap-2 mt-4">
-          <a class="btn btn-gold btn-lg" href="units/unit-01.html">Begin Unit 1 <i class="bi bi-arrow-right"></i></a>
-          <a class="btn btn-outline-light btn-lg" href="#units">View all units</a>
+<section class="hero">
+  <div class="container-xl">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 order-lg-2">
+        <p class="kicker">{SITE_TAG}</p>
+        <h1 class="hero-h1">Learn how Scripture <mark>defends itself.</mark></h1>
+        <p class="hero-sub">How God, Jesus, and the apostles argued for the truth — studied from the text, one week at a time.</p>
+        <ul class="hero-links">
+          <li><a href="#units">12 units</a> — from the mandate of 1 Peter 3:15 to Paul before Agrippa</li>
+          <li><a href="method.html">One weekly rhythm</a> — read, word study, supplement, questions, paper, reflection</li>
+          <li><a href="resources.html">Free resources</a> — NET Bible, STEP, Dallas Seminary lectures, and more</li>
+        </ul>
+        <div class="d-flex flex-wrap gap-3 align-items-center mt-4">
+          <a class="btn btn-blue btn-lg" href="units/unit-01.html">Start Unit 1 <i class="bi bi-arrow-right"></i></a>
+          <span class="small text-muted-ink">Self-paced · about one unit per week</span>
         </div>
       </div>
-      <div class="col-lg-4 d-none d-lg-block">
-        <blockquote class="hero-quote">“…but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect.”<cite>1 Peter 3:15 (ESV)</cite></blockquote>
+      <div class="col-lg-6 order-lg-1">
+        <div class="window">
+          <div class="window-bar"><span></span><span></span><span></span><div class="window-url">Biblical Apologetics · Syllabus</div></div>
+          <div class="window-body">
+            <div class="d-flex justify-content-between align-items-baseline mb-3">
+              <h2 class="window-h">Your 12 weeks</h2><span class="window-pill">Week 1</span></div>
+            <ul class="pv-list">{preview}<li class="pv-more">+ 6 more units</li></ul>
+            <div class="window-quote">“…always being prepared to make a defense…”<span>1 Pet 3:15</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</header>
-
-<section class="stats-bar">
-  <div class="container"><div class="row text-center g-3">
-    <div class="col-6 col-md-3"><div class="stat-num">12</div><div class="stat-label">Units</div></div>
-    <div class="col-6 col-md-3"><div class="stat-num">~1</div><div class="stat-label">Unit per week</div></div>
-    <div class="col-6 col-md-3"><div class="stat-num">6</div><div class="stat-label">Steps per unit</div></div>
-    <div class="col-6 col-md-3"><div class="stat-num">Free</div><div class="stat-label">Core resources</div></div>
-  </div></div>
 </section>
 
-<section class="py-5">
-  <div class="container">
-    <div class="row g-5">
+<section class="band">
+  <div class="container-xl">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5"><h2 class="h2-big">Scripture is the final authority.</h2></div>
       <div class="col-lg-7">
-        <h2 class="section-title">Purpose</h2>
-        <p class="fs-5">{inline(purpose)}</p>
-      </div>
-      <div class="col-lg-5">
-        <div class="callout callout-navy">
-          <h2 class="h5"><i class="bi bi-clock me-2"></i>Pace &amp; workload</h2>
-          <p class="mb-0">Self-paced, about one unit per week. Expect {inline(workload)}.</p>
-        </div>
+        <p class="lead-ink">{inline(purpose)}</p>
+        <p class="note mb-0"><strong>Workload:</strong> expect {inline(workload)}.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-5 bg-parchment">
-  <div class="container">
-    <h2 class="section-title">The weekly rhythm</h2>
-    <p class="text-body-secondary mb-4">Every unit follows the same six steps. <a href="method.html">Read the full method →</a></p>
-    <div class="row g-3">{steps}</div>
+<section class="section">
+  <div class="container-xl">
+    <p class="kicker">Every week</p>
+    <h2 class="h2-big mb-5">Six steps. <mark>Same rhythm</mark> every unit.</h2>
+    <div class="row g-4">{steps}
+    </div>
   </div>
 </section>
 
-<section class="py-5" id="units">
-  <div class="container">
-    <h2 class="section-title mb-4">Units</h2>
-    {''.join(cards)}
-    <div class="callout callout-amber"><h3 class="h5"><i class="bi bi-award me-2"></i>Capstone (optional)</h3><p class="mb-0">{inline(capstone)}</p></div>
+<section class="section section-alt" id="units">
+  <div class="container-xl">
+    <p class="kicker">The course</p>
+    <h2 class="h2-big mb-5">Twelve units in four parts.</h2>
+    {''.join(parts_html)}
+    <div class="capstone">
+      <span class="part-kicker">Optional capstone</span>
+      <p class="mb-0">{inline(capstone)}</p>
+    </div>
   </div>
 </section>
 """
@@ -297,63 +310,57 @@ def build_unit(u):
     pnum, pname = part_of(n)
     prev_u = next((x for x in units if x["n"] == n - 1), None)
     next_u = next((x for x in units if x["n"] == n + 1), None)
-    side = "".join(
-        f'<a class="list-group-item list-group-item-action{" active" if x["n"] == n else ""}" href="unit-{x["n"]:02d}.html">'
-        f'<span class="side-num">{x["n"]}</span>{html.escape(x["title"])}</a>' for x in units)
 
-    def block(icon, title, inner, cls=""):
-        return f'<section class="unit-block {cls}"><h2 class="block-title"><i class="bi bi-{icon}"></i>{title}</h2>{inner}</section>'
-
-    blocks = []
+    secs = []  # (id, label, html)
     if "Read" in f:
-        blocks.append(block("book", "Read", f'<p class="small text-body-secondary">Read each passage in context — the whole chapter, not just the verses. Links open the NET Bible.</p><div class="passages">{passages(f["Read"][0])}</div>'))
+        secs.append(("read", "Read", f'<p class="note">Read each passage in context: the whole chapter, not just the verses. Links open the NET Bible.</p><div class="passages">{passages(f["Read"][0])}</div>'))
     if "Words" in f:
-        blocks.append(block("translate", "Word study", f'<div class="words">{words(f["Words"][0])}</div>'
-                            '<p class="small text-body-secondary mt-3 mb-0"><i class="bi bi-exclamation-triangle me-1"></i>Context, not a word\'s possible range, determines its meaning. Use <a href="https://www.stepbible.org" target="_blank" rel="noopener">STEP Bible</a> and the NET notes.</p>'))
+        secs.append(("words", "Word study", f'<div class="words">{words(f["Words"][0])}</div><p class="note mt-3 mb-0">Context, not a word\'s possible range, decides its meaning. Use <a href="https://www.stepbible.org" target="_blank" rel="noopener">STEP Bible</a> and the NET notes.</p>'))
     if "Supplement" in f:
-        blocks.append(block("journal-text", "Supplement", f'<p class="mb-0">{inline(f["Supplement"][0])}</p>'))
+        secs.append(("supplement", "Supplement", f'<p class="mb-0">{inline(f["Supplement"][0])}</p>'))
     if "Questions" in f:
-        blocks.append(block("question-circle", "Questions", questions(f["Questions"][0])))
+        secs.append(("questions", "Questions", questions(f["Questions"][0])))
+    assign = []
     if "Posture" in f:
-        blocks.append(f'<div class="callout callout-navy mb-4"><h2 class="h6 text-uppercase mb-1"><i class="bi bi-person-heart me-2"></i>Posture</h2><p class="mb-0">{inline(f["Posture"][0])}</p></div>')
+        assign.append(("Posture", "Ask of every text", inline(f["Posture"][0]), "tile-blue"))
     for key in ("Paper", "Final paper"):
         if key in f:
             text, note = f[key]
-            label = "Final paper" if key == "Final paper" else "Paper · 1–2 pages"
-            if note:
-                label = f"Final paper · {html.escape(note)}"
-            blocks.append(f'<div class="callout callout-amber mb-4"><h2 class="h6 text-uppercase mb-1"><i class="bi bi-pencil-square me-2"></i>{label}</h2><p class="mb-0">{inline(text)}</p></div>')
-    blocks.append('<div class="callout callout-plain mb-4"><h2 class="h6 text-uppercase mb-1"><i class="bi bi-heart me-2"></i>Reflection · 1 page</h2><p class="mb-0">What did this show me about God?</p></div>')
-    blocks.append(block("collection-play", "Audio &amp; video", '<p class="text-body-secondary mb-0"><i class="bi bi-hourglass me-1"></i>Podcast and video overviews for this unit are in production.</p>', "media-block"))
+            sub = f"Final paper · {html.escape(note)}" if note else ("Final paper" if key == "Final paper" else "1–2 pages")
+            assign.append(("Paper", sub, inline(text), "tile-yellow"))
+    assign.append(("Reflection", "1 page", "What did this show me about God?", "tile-plain"))
+    tiles = "".join(f'<div class="tile {cls}"><div class="tile-head"><span class="tile-label">{lab}</span><span class="tile-sub">{sub}</span></div><p class="mb-0">{txt}</p></div>'
+                    for lab, sub, txt, cls in assign)
+    secs.append(("write", "Write", f'<div class="tiles">{tiles}</div>'))
+    secs.append(("media", "Audio &amp; video", '<div class="media-soon"><i class="bi bi-headphones"></i><div><strong>Podcast and video overviews</strong><br><span class="note">In production for this unit.</span></div></div>'))
 
-    pager = '<nav class="unit-pager d-flex justify-content-between mt-5" aria-label="Unit navigation">'
-    pager += (f'<a class="btn btn-outline-navy" href="unit-{prev_u["n"]:02d}.html"><i class="bi bi-arrow-left"></i> Unit {prev_u["n"]}</a>' if prev_u else "<span></span>")
-    pager += (f'<a class="btn btn-navy" href="unit-{next_u["n"]:02d}.html">Unit {next_u["n"]} <i class="bi bi-arrow-right"></i></a>' if next_u else '<a class="btn btn-navy" href="../index.html#units">All units</a>')
+    toc = "".join(f'<a href="#{sid}">{lab}</a>' for sid, lab, _ in secs)
+    content = "".join(f'<section class="u-sec" id="{sid}"><h2 class="u-h2">{lab}</h2>{body}</section>' for sid, lab, body in secs)
+    pager = '<nav class="pager" aria-label="Unit navigation">'
+    pager += (f'<a class="pager-link" href="unit-{prev_u["n"]:02d}.html"><span>← Previous</span>Unit {prev_u["n"]}: {html.escape(prev_u["title"])}</a>' if prev_u else '<span></span>')
+    pager += (f'<a class="pager-link text-end" href="unit-{next_u["n"]:02d}.html"><span>Next →</span>Unit {next_u["n"]}: {html.escape(next_u["title"])}</a>' if next_u else '<a class="pager-link text-end" href="../index.html#units"><span>Done →</span>All units</a>')
     pager += "</nav>"
+    pct = n / len(units) * 100
 
     body = f"""
-<header class="unit-hero">
-  <div class="container">
-    <nav aria-label="breadcrumb"><ol class="breadcrumb breadcrumb-light mb-2">
-      <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<header class="u-hero">
+  <div class="container-xl">
+    <nav aria-label="breadcrumb"><ol class="breadcrumb mb-3">
+      <li class="breadcrumb-item"><a href="../index.html#units">Units</a></li>
       <li class="breadcrumb-item"><a href="../index.html#units">Part {pnum}: {pname}</a></li>
       <li class="breadcrumb-item active" aria-current="page">Unit {n}</li></ol></nav>
-    <p class="eyebrow mb-1">Unit {n} of {len(units)}</p>
-    <h1 class="display-6 hero-title mb-0"><i class="bi bi-{UNIT_ICONS.get(n, 'book')} me-2"></i>{html.escape(u['title'])}</h1>
-    <div class="progress unit-progress mt-3" role="progressbar" aria-label="Course progress" aria-valuenow="{n}" aria-valuemin="0" aria-valuemax="{len(units)}">
-      <div class="progress-bar" style="width:{n / len(units) * 100:.0f}%"></div></div>
+    <p class="kicker mb-2">Unit {n} of {len(units)}</p>
+    <h1 class="u-h1">{html.escape(u['title'])}</h1>
+    <div class="u-progress" role="progressbar" aria-label="Course progress" aria-valuenow="{n}" aria-valuemin="0" aria-valuemax="{len(units)}"><span style="width:{pct:.0f}%"></span></div>
   </div>
 </header>
-<div class="container py-5">
+<div class="container-xl">
   <div class="row g-5">
-    <aside class="col-lg-3 order-lg-2">
-      <div class="sticky-lg-top side-wrap">
-        <h2 class="h6 text-uppercase text-body-secondary">All units</h2>
-        <div class="list-group list-group-flush side-list">{side}</div>
-      </div>
+    <aside class="col-lg-3 d-none d-lg-block">
+      <div class="u-toc"><p class="part-kicker">On this page</p>{toc}</div>
     </aside>
-    <article class="col-lg-9 order-lg-1">
-      {''.join(blocks)}
+    <article class="col-lg-8 u-article">
+      {content}
       {pager}
     </article>
   </div>
@@ -375,33 +382,29 @@ def md_list(raw):
                 nested = False
             elif out:
                 out.append("</li>")
-            out.append(f'<li class="mb-2">{inline(line[2:])}')
+            out.append(f'<li>{inline(line[2:])}')
     out.append("</ul></li>" if nested else "</li>")
-    return '<ul class="resource-list">' + "".join(out) + "</ul>"
+    return '<ul class="res-list">' + "".join(out) + "</ul>"
+
+
+def simple_page(kicker, title, lead, inner, active):
+    body = f"""
+<header class="u-hero"><div class="container-xl"><p class="kicker mb-2">{kicker}</p><h1 class="u-h1">{title}</h1>
+<p class="hero-sub mt-3 mb-0">{lead}</p></div></header>
+<div class="container-xl"><div class="row"><div class="col-lg-9 u-article">{inner}</div></div></div>"""
+    return page(re.sub("<[^>]+>", "", title), body, active=active)
 
 
 def build_resources():
-    body = f"""
-<header class="unit-hero"><div class="container"><p class="eyebrow mb-1">Library</p><h1 class="display-6 hero-title mb-0">Resources</h1></div></header>
-<div class="container py-5"><div class="row"><div class="col-lg-9">
-<p class="lead">Scripture is the final authority. Everything below serves the text.</p>
-{md_list(resources_raw)}
-</div></div></div>"""
-    return page("Resources", body, active="resources")
+    return simple_page("Library", "Resources", "Scripture is the final authority. Everything below serves the text.",
+                       md_list(resources_raw), "resources")
 
 
 def build_method():
-    steps = "".join(f"""<div class="step step-lg mb-3"><i class="bi bi-{STEP_ICONS[int(n)-1]}"></i>
-<div><h2 class="h5 mb-1">{n}. {t}</h2><div>{d}</div></div></div>""" for n, t, d in method_steps())
-    body = f"""
-<header class="unit-hero"><div class="container"><p class="eyebrow mb-1">How to study</p><h1 class="display-6 hero-title mb-0">Method</h1></div></header>
-<div class="container py-5"><div class="row"><div class="col-lg-9">
-<p class="lead">Every unit follows the same six steps. Expect {inline(workload)}.</p>
-{steps}
-<div class="callout callout-navy mt-4"><h2 class="h6 text-uppercase mb-1"><i class="bi bi-person-heart me-2"></i>The recurring question</h2>
-<p class="mb-0">Every unit asks: <em>How should these texts shape the apologist's tone and conduct?</em></p></div>
-</div></div></div>"""
-    return page("Method", body, active="method")
+    steps = "".join(f"""<div class="rhythm rhythm-row"><span class="rhythm-num">{n}</span><div><h2 class="rhythm-title">{t}</h2><p class="mb-0">{d}</p>{sg}</div></div>"""
+                    for n, t, d, sg in method_steps())
+    inner = steps + '<div class="tile tile-blue mt-4"><div class="tile-head"><span class="tile-label">The recurring question</span></div><p class="mb-0">Every unit asks: <em>How should these texts shape the apologist\'s tone and conduct?</em></p></div>'
+    return simple_page("How to study", "Method", f"Every unit follows the same six steps. Expect {inline(workload)}.", inner, "method")
 
 
 def main():
