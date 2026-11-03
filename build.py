@@ -202,7 +202,9 @@ def method_steps():
         if ">" in txt:
             txt, sg = txt.split(">", 1)
             safeguard = f'<p class="note mt-2 mb-0">{inline(sg.strip())}</p>'
-        steps.append((m.group(1), m.group(2).strip().rstrip(":"), inline(txt.strip()), safeguard))
+        txt = txt.strip()
+        txt = txt[:1].upper() + txt[1:]
+        steps.append((m.group(1), m.group(2).strip().rstrip(":"), inline(txt), safeguard))
     return steps
 
 
