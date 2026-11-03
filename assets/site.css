@@ -163,3 +163,7 @@ a.passage:hover { background: var(--yellow); border-color: var(--yellow-deep); c
   .site-nav, .site-footer, .u-toc, .pager, .media-soon { display: none !important; }
   .u-hero .container-xl { background: none; padding: 0; }
 }
+@media (max-width: 991.98px) {
+  .toc-row { margin: 0; padding: 1rem .25rem; }
+}
+html, body { overflow-x: clip; }

@@ -241,7 +241,7 @@ def build_index():
     body = f"""
 <section class="hero">
   <div class="container-xl">
-    <div class="row align-items-center g-5">
+    <div class="row align-items-center g-4 g-lg-5">
       <div class="col-lg-6 order-lg-2">
         <p class="kicker">{SITE_TAG}</p>
         <h1 class="hero-h1">Learn how Scripture <mark>defends itself.</mark></h1>
@@ -273,7 +273,7 @@ def build_index():
 
 <section class="band">
   <div class="container-xl">
-    <div class="row g-5 align-items-start">
+    <div class="row g-4 g-lg-5 align-items-start">
       <div class="col-lg-5"><h2 class="h2-big">Scripture is the final authority.</h2></div>
       <div class="col-lg-7">
         <p class="lead-ink">{inline(purpose)}</p>
