@@ -132,7 +132,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Supplement:** DTS *The Table*, "Investigating the Resurrection of Jesus" (Darrell Bock) — [Listen to the episode](https://voice.dts.edu/tablepodcast/investigating-resurrection-jesus/)
 - **Questions:** Outline Paul's argument in 15:1–11 and 15:12–19. Why does he list living witnesses? What is at stake "if Christ has not been raised"?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
-- **Paper:** 1 Cor 15:12–19 as a logical argument. Lay out the premises and the conclusion.
+- **Paper:** Lay out 1 Corinthians 15:12–19 as a conditional or reductio argument. Identify each premise, each consequence Paul draws, and what the argument assumes versus what it attempts to establish.
 
 ## Unit 8: Evil, Suffering, the Cross, and Hope
 - **Read:** Job 1–2, 38–42; Habakkuk (all); Ps 73; Rom 8:18–39; Gen 50:20
