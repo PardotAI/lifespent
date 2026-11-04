@@ -75,7 +75,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Supplement:** Calvin, *Institutes* 1.3–1.5 (*sensus divinitatis*) — [Read on CCEL](https://www.ccel.org/ccel/calvin/institutes.html)
 - **Questions:** What exactly is "clearly seen" (Rom 1:20)? What does suppression look like in practice? How does Paul adapt this in Lystra?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
-- **Paper:** "There are no true atheists": what Rom 1 does and does not claim.
+- **Paper:** What knowledge of God does Romans 1 attribute to every person?
 
 ## Unit 4: God's Case Against Idols (Idolatry and Worldview Critique)
 - **Read:** Isa 40–48 (focus on 41:21–29; 44:6–20; 46:8–11); 1 Kgs 18:16–40; Ps 115; Jer 10:1–16
