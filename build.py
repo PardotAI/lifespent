@@ -323,15 +323,16 @@ def page(title, body, depth=0, active="", path=""):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{html.escape(title)} · {SITE_TITLE}</title>
+<title>{html.escape(title)} · {SITE_TITLE} · LifeSpent</title>
 <meta name="description" content="{SITE_TITLE}: {SITE_TAG}. A Scripture-governed study of how God, Jesus and the apostles argued for the truth.">
 {FONTS}
 {BS_CSS}
 {ICONS}
 <link rel="stylesheet" href="{up}assets/site.css?v={CSS_VER}">
 <link rel="icon" type="image/svg+xml" href="{up}assets/favicon.svg">
+<link rel="apple-touch-icon" href="{up}assets/icon-512.png">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="{SITE_TITLE}">
+<meta property="og:site_name" content="LifeSpent">
 <meta property="og:title" content="{html.escape(title)} · {SITE_TITLE}">
 <meta property="og:description" content="Learn how Scripture defends itself. {SITE_TAG}.">
 <meta property="og:url" content="{SITE_URL}{path}">
@@ -344,7 +345,7 @@ def page(title, body, depth=0, active="", path=""):
 <a class="visually-hidden-focusable" href="#main">Skip to content</a>
 <nav class="navbar navbar-expand-md site-nav">
   <div class="container-xl">
-    <a class="navbar-brand" href="{up}index.html"><span class="brand-mark"><i class="bi bi-book-half"></i></span>{SITE_TITLE}</a>
+    <a class="navbar-brand" href="{up}index.html" aria-label="LifeSpent: {SITE_TITLE}"><span class="ls-wm">Life<span>Spent</span></span><span class="brand-course">{SITE_TITLE}</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto align-items-md-center">{links}
@@ -361,7 +362,7 @@ def page(title, body, depth=0, active="", path=""):
     <p class="footer-verse">“Always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect.”</p>
     <p class="footer-ref">1 Peter 3:15 (ESV)</p>
     <div class="footer-meta">
-      <span><strong>{SITE_TITLE}</strong> — {SITE_TAG}</span>
+      <span><span class="ls-wm ls-wm-sm">Life<span>Spent</span></span> <em>Spend and be spent.</em> 2 Cor 12:15 · {SITE_TITLE}</span>
       <span><a href="{up}index.html#units">Units</a> · <a href="{up}method.html">Method</a> · <a href="{up}resources.html">Resources</a></span>
     </div>
   </div>

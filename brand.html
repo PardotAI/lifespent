@@ -21,8 +21,12 @@
 .span i.end{background:transparent;position:relative}
 .span i.end::before{content:"";position:absolute;left:0;right:0;top:0;height:100%;background:var(--red)}
 .dark .span i.off{background:#3a454e}.dark .span i{background:#e5726f}
+.rule{width:100%;height:10px;background:var(--red);border-radius:1px}
+.dark .rule{background:#e5726f}
 .tag{font-family:"Inter Tight";font-weight:600;letter-spacing:.02em;color:var(--ink2);margin-top:.55em}
-.dark .tag{color:#c4cbd1}
+.dark .rule{width:100%;height:10px;background:var(--red);border-radius:1px}
+.dark .rule{background:#e5726f}
+.tag{color:#c4cbd1}
 .tag b{color:var(--red);font-weight:800}.dark .tag b{color:#e5726f}
 /* monogram */
 .mono{width:180px;height:180px;border-radius:40px;background:var(--red);display:grid;place-items:center;position:relative}
@@ -34,26 +38,26 @@
 .lines p{margin:0 0 14px}.lines small{display:block;font:500 15px/1.4 Inter;color:var(--ink3);letter-spacing:0;margin-top:2px}
 </style></head><body><div class="sheet">
 
-<p class="k">Primary lockup</p>
+<p class="k">Master brand</p>
 <div class="panel" id="primary"><div class="lock">
-  <span class="wm" style="font-size:150px">Life<span class="s">Spen</span><span class="t">t</span></span>
-  <div class="span" style="margin-top:40px"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="end"></i></div>
-  <div class="tag" style="font-size:30px">Impacting <b>eternity.</b></div>
+  <span class="wm" style="font-size:150px">Life<span class="s">Spent</span></span>
+  <div class="rule" style="margin-top:40px"></div>
+  <div class="tag" style="font-size:30px"><i>Spend and be spent.</i> <b>2 Cor 12:15</b></div>
 </div></div>
 
 <div class="grid">
   <div><p class="k">On dark</p><div class="panel dark" id="dark"><div class="lock">
     <span class="wm" style="font-size:84px">Life<span class="s">Spent</span></span>
-    <div class="span" style="margin-top:23px"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="rule" style="margin-top:23px;height:6px"></div>
     <div class="tag" style="font-size:18px">Spend and be spent. <b>2 Cor 12:15</b></div>
   </div></div></div>
   <div><p class="k">App icon / favicon</p><div class="panel" id="icons" style="gap:28px">
-    <div class="mono"><span>LS</span><div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div></div>
-    <div class="mono ink"><span>LS</span><div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    <div class="mono"><span>LS</span><div class="bar"><i></i></div></div>
+    <div class="mono ink"><span>LS</span><div class="bar"><i></i></div></div>
   </div></div>
 </div>
 
-<p class="k" style="margin-top:28px">Course lockup</p>
+<p class="k" style="margin-top:28px">Course lockup (segments = that course's units)</p>
 <div class="panel" id="course"><div class="lock">
   <span class="wm" style="font-size:96px">Life<span class="s">Spent</span></span>
   <div class="span" style="margin-top:26px"><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>

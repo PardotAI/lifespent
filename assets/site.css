@@ -181,3 +181,12 @@ a.go:hover { background: var(--accent); color: #fff; }
 .passage-group .chapters { display: inline-flex; flex-wrap: wrap; gap: .3rem; }
 .passage-group .chapters a { font-size: .82rem; font-weight: 600; padding: .1rem .45rem; border-radius: .25rem; background: #f8eceb; color: var(--accent); text-decoration: none; }
 .passage-group .chapters a:hover { background: var(--accent); color: #fff; }
+/* LifeSpent master brand */
+.ls-wm { font-family: var(--head); font-weight: 900; letter-spacing: -.04em; color: var(--ink); }
+.ls-wm > span { color: var(--accent); }
+.navbar-brand .ls-wm { font-size: 1.55rem; line-height: 1; padding-bottom: .3rem; border-bottom: 3px solid var(--accent); }
+.brand-course { font-family: var(--head); font-weight: 600; font-size: .95rem; letter-spacing: -.01em; color: var(--ink-2); padding-left: .8rem; margin-left: .2rem; border-left: 1px solid var(--line); }
+@media (max-width: 420px) { .brand-course { display: none; } }
+.site-footer .ls-wm { color: #fff; } .site-footer .ls-wm > span { color: #e5726f; }
+.ls-wm-sm { font-size: 1.1rem; margin-right: .4rem; }
+.site-footer em { color: #fff; }
