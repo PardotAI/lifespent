@@ -88,7 +88,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Supplement:** John Frame, "Presuppositional Apologetics" (2012) — [Read the article](https://frame-poythress.org/presuppositional-apologetics/)
 - **Questions:** What tests does God set for the idols in Isa 41? How does Isa 44 use reductio ad absurdum? What made Carmel a fair test?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
-- **Paper:** Isaiah's courtroom as a model for apologetics today.
+- **Paper:** Isaiah's courtroom as a model for apologetics today: which features should Christians imitate, and which depend on God's unique authority to predict and act?
 
 ## Unit 5: Prophecy and Fulfillment
 - **Read:** Deut 18:15–22; Isa 52:13–53:12; Ps 22; Mic 5:2; Dan 9:24–27; Luke 24:13–49; Acts 8:26–40
