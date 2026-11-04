@@ -69,13 +69,13 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Why these readings:**
   - **Ps 19.** Creation speaks in verses 1–6 and the law speaks in verses 7–14. One psalm shows you what nature reveals and what it can't.
   - **Rom 1:18–2:16.** The central text on what everyone knows about God and suppresses. Keep reading into chapter 2, because the argument about conscience finishes at 2:16.
-  - **Acts 14:8–18.** Paul at Lystra, talking to pagans who have no Bible. He argues from rain, harvests, and food. This is Romans 1 used in a real conversation.
+  - **Acts 14:8–18.** Paul at Lystra, talking to pagans who have no Bible. He argues from rain, harvests, and food. It shows natural revelation in an actual missionary encounter.
   - **Eccl 3:11.** God "has set eternity in the human heart." It explains why people keep asking questions they can't answer on their own.
 - **Words:** *phaneros* (evident), *katechō* (suppress), *syneidēsis* (conscience), *anapologētos* (without excuse)
 - **Supplement:** Calvin, *Institutes* 1.3–1.5 (*sensus divinitatis*) — [Read on CCEL](https://www.ccel.org/ccel/calvin/institutes.html)
 - **Questions:** What exactly is "clearly seen" (Rom 1:20)? What does suppression look like in practice? How does Paul adapt this in Lystra?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
-- **Paper:** What knowledge of God does Romans 1 attribute to every person?
+- **Paper:** What knowledge of God does Romans 1 attribute to every person? What does the passage not establish?
 
 ## Unit 4: God's Case Against Idols (Idolatry and Worldview Critique)
 - **Read:** Isa 40–48 (focus on 41:21–29; 44:6–20; 46:8–11); 1 Kgs 18:16–40; Ps 115; Jer 10:1–16
