@@ -104,7 +104,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Supplement:** NET notes on Isa 53 and Ps 22 — [Read NET notes: Isa 53](https://netbible.org/bible/Isaiah+53) · [Read NET notes: Ps 22](https://netbible.org/bible/Psalms+22)
 - **Questions:** What is the Deut 18 test? What does Luke actually tell us about how Jesus "opened the Scriptures" (Luke 24:27, 44–47), and what does he leave unsaid? How do direct prediction, typology, and promise–fulfillment differ? Why did Philip start with Isa 53?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
-- **Paper:** First trace the OT texts the NT *explicitly* applies to Jesus (Luke 24:44–47; Acts 8:32–35; Matt 2:5–6). Sort each one as direct prediction, typology, or broader promise–fulfillment. Then propose what Jesus may have covered on the Emmaus road, and label that part clearly as inference.
+- **Paper:** Trace the OT passages explicitly quoted or clearly invoked in Acts 8:32–35, Matthew 2:5–6, and the passion accounts' use of Psalm 22. Classify each use as direct prediction, typology, or broader promise–fulfillment, explaining overlap. Then use Luke 24:44–47 to propose what Jesus may have covered, labeling that portion as inference.
 
 ## Unit 6: Eyewitness Testimony and Textual Reliability
 - **Read:** Luke 1:1–4; John 19:35; 20:30–31; 21:24; 1 John 1:1–4; 2 Pet 1:16–21; Deut 19:15
