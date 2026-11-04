@@ -39,7 +39,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 ## Unit 1: The Mandate and the Posture
 - **Read:** 1 Pet 3:8–17; Jude 3–4; Phil 1:7, 12–18; Acts 22:1; 25:16; 2 Tim 2:24–25; Col 4:6
 - **Why these readings:**
-  - **1 Pet 3:8–17.** The anchor text for the whole course. Peter tells you to be ready with a defense, but he sets it inside a passage about suffering and a clear conscience. Read the full paragraph or you lose that frame.
+  - **1 Pet 3:8–17.** The anchor text for the whole course. Peter tells you to be ready with a defense, but he sets it inside a passage about suffering and a good conscience. Read the full paragraph or you lose that frame.
   - **Jude 3–4.** Jude planned to write about salvation and switched to "contend for the faith." The reason is in verse 4: people inside the church were bending the truth. Some defense is aimed at insiders, not skeptics.
   - **Phil 1:7, 12–18.** Paul uses *apologia* for his own defense of the gospel while in chains. His trial ends up spreading the message.
   - **Acts 22:1; 25:16.** *Apologia* in a courtroom: a formal answer to charges. You need the word's everyday meaning before Peter applies it to every believer.

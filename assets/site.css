@@ -197,3 +197,4 @@ a.go:hover { background: var(--accent); color: #fff; }
 .why-txt { color: var(--ink-2); }
 @media (max-width: 575.98px) { .why li { grid-template-columns: 1fr; gap: .2rem; } }
 .footer-ack { flex-basis: 100%; order: 3; font-size: .78rem; color: #8f99a1; }
+.net-notes { font-size: .88rem; color: var(--ink-3); margin: .9rem 0 0; } .net-notes span { font-weight: 600; color: var(--ink-2); }

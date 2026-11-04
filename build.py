@@ -143,6 +143,26 @@ def split_top(line):
     return parts + [cur.strip()] if cur.strip() else parts
 
 
+USFM_NAME = {"GEN": "Genesis", "DEU": "Deuteronomy", "1KI": "1 Kings", "JOB": "Job", "PSA": "Psalms", "PRO": "Proverbs",
+             "ECC": "Ecclesiastes", "ISA": "Isaiah", "JER": "Jeremiah", "DAN": "Daniel", "MIC": "Micah", "HAB": "Habakkuk",
+             "MAT": "Matthew", "LUK": "Luke", "JHN": "John", "ACT": "Acts", "ROM": "Romans", "1CO": "1 Corinthians",
+             "2CO": "2 Corinthians", "EPH": "Ephesians", "PHP": "Philippians", "COL": "Colossians", "2TI": "2 Timothy",
+             "1PE": "1 Peter", "2PE": "2 Peter", "1JN": "1 John", "JUD": "Jude"}
+
+
+def net_notes(line):
+    """One netbible.org link per chapter in a Read line (NET translator notes)."""
+    seen, out = set(), []
+    for u in re.findall(r'bible\.com/bible/107/([^"]+?)\.NET', passages(line)):
+        code, ch = u.split(".")[:2]
+        if (code, ch) in seen:
+            continue
+        seen.add((code, ch))
+        name = USFM_NAME[code]
+        out.append(f'<a href="https://netbible.org/bible/{name.replace(" ", "+")}+{ch}" target="_blank" rel="noopener">{name} {ch}</a>')
+    return '<p class="net-notes"><span>NET translator notes:</span> ' + " · ".join(out) + "</p>" if out else ""
+
+
 def passages(line):
     out, book = [], None
     for seg in split_top(line):
@@ -503,7 +523,7 @@ def build_unit(u):
 
     secs = []  # (id, label, html)
     if "Read" in f:
-        secs.append(("read", "Read", f'<p class="note">Read each passage in context: the whole chapter, not just the verses. Links open the NET Bible in the Bible app (bible.com).</p><div class="passages">{passages(f["Read"][0])}</div>' + why_list(u["why"])))
+        secs.append(("read", "Read", f'<p class="note">Read each passage in context: the whole chapter, not just the verses. Links open the NET Bible in the Bible app (bible.com).</p><div class="passages">{passages(f["Read"][0])}</div>' + net_notes(f["Read"][0]) + why_list(u["why"])))
     if "Words" in f:
         secs.append(("words", "Word study", f'<div class="words">{words(f["Words"][0])}</div><p class="note mt-3 mb-0">Say each word aloud and stress the <b class="say-b">bold</b> syllable. Greek follows the classroom (Erasmian) pronunciation most US seminaries teach; Hebrew follows standard academic pronunciation. Other accepted systems exist (e.g., modern Greek, reconstructed Koine), so you may hear these said differently. Context, not a word\'s possible range, decides its meaning. Use <a href="https://www.stepbible.org" target="_blank" rel="noopener">STEP Bible</a> and the NET notes.</p>'))
     if "Supplement" in f:
