@@ -22,7 +22,7 @@ BS_JS = ('<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/boot
          'integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>')
 ICONS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">'
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-         '<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">')
+         '<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=Noto+Serif:wght@400&family=Noto+Serif+Hebrew:wght@400&display=swap" rel="stylesheet">')
 # Inter Tight is a free stand-in for Basecamp's Graphik (commercial).
 
 PARTS = [
@@ -155,6 +155,64 @@ PRONOUNCE = {
 }
 
 
+SCRIPT = {
+    "apologia": "ἀπολογία",
+    "elpis": "ἐλπίς",
+    "prautēs": "πραΰτης",
+    "phobos": "φόβος",
+    "yirʾat YHWH": "יִרְאַת יְהוָה",
+    "daʿat": "דַּעַת",
+    "sophia": "σοφία",
+    "gnōsis": "γνῶσις",
+    "alētheia": "ἀλήθεια",
+    "phaneros": "φανερός",
+    "katechō": "κατέχω",
+    "syneidēsis": "συνείδησις",
+    "anapologētos": "ἀναπολόγητος",
+    "ʾĕlîl": "אֱלִיל",
+    "ʿēd": "עֵד",
+    "rîb": "רִיב",
+    "nābîʾ": "נָבִיא",
+    "plēroō": "πληρόω",
+    "dei": "δεῖ",
+    "martys": "μάρτυς",
+    "martyria": "μαρτυρία",
+    "autoptēs": "αὐτόπτης",
+    "asphaleia": "ἀσφάλεια",
+    "mythos": "μῦθος",
+    "egeirō": "ἐγείρω",
+    "anastasis": "ἀνάστασις",
+    "ōphthē": "ὤφθη",
+    "paradidōmi": "παραδίδωμι",
+    "aparchē": "ἀπαρχή",
+    "tām": "תָּם",
+    "ʾĕmûnāh": "אֱמוּנָה",
+    "dikaioō": "δικαιόω",
+    "peirazō": "πειράζω",
+    "elenchō": "ἐλέγχω",
+    "hypokritēs": "ὑποκριτής",
+    "dialegomai": "διαλέγομαι",
+    "peithō": "πείθω",
+    "paratithēmi": "παρατίθημι",
+    "spermologos": "σπερμολόγος",
+    "apologeomai": "ἀπολογέομαι",
+    "mainomai": "μαίνομαι",
+    "sōphrosynē": "σωφροσύνη",
+    "aichmalōtizō": "αἰχμαλωτίζω",
+    "ochyrōma": "ὀχύρωμα",
+    "epieikeia": "ἐπιείκεια",
+    "ēpios": "ἤπιος",
+    "halas": "ἅλας",
+}
+
+
+def script(term):
+    parts = [SCRIPT.get(t.strip()) for t in term.split(" / ")]
+    if not all(parts):
+        raise SystemExit(f"build.py: no original script for word-study term {term!r}; add it to SCRIPT")
+    return " / ".join(parts)
+
+
 def say(term):
     parts = [PRONOUNCE.get(t.strip()) for t in term.split(" / ")]
     if not all(parts):
@@ -169,7 +227,10 @@ def words(line):
         term = main + "".join(" / " + a for a in re.findall(r"\*([^*]+)\*", alt))
         g = html.escape(gloss.strip("()")) if gloss else ""
         pr = re.sub(r"\b([A-Z]{2,})\b", r"<b>\1</b>", html.escape(say(term)))
-        out.append(f'<span class="word"><span class="lemma">{html.escape(term)}</span>'
+        sc = script(term)
+        lang = "he" if re.search(r"[\u0590-\u05FF]", sc) else "grc"
+        out.append(f'<span class="word"><span class="orig" lang="{lang}"{' dir="rtl"' if lang == "he" else ""}>{html.escape(sc)}</span>'
+                   f'<span class="lemma">{html.escape(term)}</span>'
                    f'<span class="say" title="Pronunciation: stress the bold syllable">{pr}</span>'
                    + (f'<span class="gloss">{g}</span>' if g else "") + "</span>")
     return "".join(out) or inline(line)
@@ -389,7 +450,7 @@ def build_unit(u):
     if "Read" in f:
         secs.append(("read", "Read", f'<p class="note">Read each passage in context: the whole chapter, not just the verses. Links open the NET Bible in the Bible app (bible.com).</p><div class="passages">{passages(f["Read"][0])}</div>'))
     if "Words" in f:
-        secs.append(("words", "Word study", f'<div class="words">{words(f["Words"][0])}</div><p class="note mt-3 mb-0">Say each word aloud and stress the <b class="say-b">bold</b> syllable. Greek follows the classroom (Erasmian) pronunciation most US seminaries teach. Context, not a word\'s possible range, decides its meaning. Use <a href="https://www.stepbible.org" target="_blank" rel="noopener">STEP Bible</a> and the NET notes.</p>'))
+        secs.append(("words", "Word study", f'<div class="words">{words(f["Words"][0])}</div><p class="note mt-3 mb-0">Say each word aloud and stress the <b class="say-b">bold</b> syllable. Greek follows the classroom (Erasmian) pronunciation most US seminaries teach; Hebrew follows standard academic pronunciation. Other accepted systems exist (e.g., modern Greek, reconstructed Koine), so you may hear these said differently. Context, not a word\'s possible range, decides its meaning. Use <a href="https://www.stepbible.org" target="_blank" rel="noopener">STEP Bible</a> and the NET notes.</p>'))
     if "Supplement" in f:
         secs.append(("supplement", "Supplement", f'<p class="mb-0">{inline(f["Supplement"][0])}</p>'))
     if "Questions" in f:
