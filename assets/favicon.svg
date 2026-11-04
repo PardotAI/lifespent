@@ -1,1 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#f6cf45"/><text x="32" y="43" text-anchor="middle" font-family="Inter Tight,Inter,Arial,sans-serif" font-weight="900" font-size="28" letter-spacing="-1" fill="#1d2b33">BA</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#a3302f"/><path d="M14 20c6-2 12-1.5 17 2v24c-5-3.5-11-4-17-2zM50 20c-6-2-12-1.5-17 2v24c5-3.5 11-4 17-2z" fill="#fff"/></svg>

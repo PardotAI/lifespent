@@ -180,11 +180,11 @@ def page(title, body, depth=0, active="", path=""):
 <a class="visually-hidden-focusable" href="#main">Skip to content</a>
 <nav class="navbar navbar-expand-md site-nav">
   <div class="container-xl">
-    <a class="navbar-brand" href="{up}index.html"><span class="brand-mark">BA</span>{SITE_TITLE}</a>
+    <a class="navbar-brand" href="{up}index.html"><span class="brand-mark"><i class="bi bi-book-half"></i></span>{SITE_TITLE}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto align-items-md-center">{links}
-        <li class="nav-item ms-md-3"><a class="btn btn-ink" href="{up}units/unit-01.html">Start Unit 1</a></li>
+        <li class="nav-item ms-md-3"><a class="btn btn-accent btn-sm-nav" href="{up}units/unit-01.html">Begin</a></li>
       </ul>
     </div>
   </div>
@@ -243,8 +243,8 @@ def build_index():
         <i class="bi bi-arrow-right toc-arrow"></i>
       </a>""" for u in units if u["n"] in rng)
         parts_html.append(f"""
-    <div class="part">
-      <div class="part-side"><span class="part-kicker">Part {i}</span><h3 class="part-name">{pname}</h3><p class="part-desc">{pdesc}</p></div>
+    <div class="part p{i}">
+      <div class="part-side"><span class="part-kicker"><span class="dot p{i}"></span>Part {i}</span><h3 class="part-name">{pname}</h3><p class="part-desc">{pdesc}</p></div>
       <div class="part-rows">{rows}</div>
     </div>""")
 
@@ -253,37 +253,31 @@ def build_index():
         <span class="rhythm-num">{n}</span><h3 class="rhythm-title">{t}</h3><p class="mb-0">{d}</p>{sg}
       </div></div>""" for n, t, d, sg in method_steps())
 
-    preview = "".join(
-        f'<li><span class="pv-check{" done" if u["n"] == 1 else ""}"></span><span class="pv-n">{u["n"]}</span>{html.escape(u["title"])}</li>'
-        for u in units[:6])
+    tiles = "".join(
+        f'<a class="map-tile p{part_of(u["n"])[0]}" href="units/unit-{u["n"]:02d}.html"><span class="map-n">{u["n"]:02d}</span>'
+        f'<span class="map-t">{html.escape(short_title(u["title"]))}</span></a>' for u in units)
+    legend = "".join(f'<span class="legend-item"><span class="dot p{i}"></span>{p[0]}</span>' for i, p in enumerate(PARTS, 1))
 
     body = f"""
 <section class="hero">
   <div class="container-xl">
     <div class="row align-items-center g-4 g-lg-5">
-      <div class="col-lg-6 order-lg-2">
+      <div class="col-lg-6">
         <p class="kicker">{SITE_TAG}</p>
-        <h1 class="hero-h1">Learn how Scripture <mark>defends itself.</mark></h1>
+        <h1 class="hero-h1">Learn how Scripture <span class="accent">defends itself.</span></h1>
         <p class="hero-sub">How God, Jesus, and the apostles argued for the truth — studied from the text, one week at a time.</p>
-        <ul class="hero-links">
-          <li><a href="#units">12 units</a> — from the mandate of 1 Peter 3:15 to Paul before Agrippa</li>
-          <li><a href="method.html">One weekly rhythm</a> — read, word study, supplement, questions, paper, reflection</li>
-          <li><a href="resources.html">Free resources</a> — NET Bible, STEP, Dallas Seminary lectures, and more</li>
-        </ul>
         <div class="d-flex flex-wrap gap-3 align-items-center mt-4">
-          <a class="btn btn-blue btn-lg" href="units/unit-01.html">Start Unit 1 <i class="bi bi-arrow-right"></i></a>
-          <span class="small text-muted-ink">Self-paced · about one unit per week</span>
+          <a class="btn btn-accent btn-lg" href="units/unit-01.html">Begin Unit 1 <i class="bi bi-arrow-right"></i></a>
+          <a class="btn btn-quiet btn-lg" href="method.html">How it works</a>
         </div>
+        <ul class="meta-row">
+          <li><strong>12</strong> units</li><li><strong>4</strong> parts</li><li><strong>~1</strong> per week</li><li><strong>Free</strong> resources</li>
+        </ul>
       </div>
-      <div class="col-lg-6 order-lg-1">
-        <div class="window">
-          <div class="window-bar"><span></span><span></span><span></span><div class="window-url">Biblical Apologetics · Syllabus</div></div>
-          <div class="window-body">
-            <div class="d-flex justify-content-between align-items-baseline mb-3">
-              <h2 class="window-h">Your 12 weeks</h2><span class="window-pill">Week 1</span></div>
-            <ul class="pv-list">{preview}<li class="pv-more">+ 6 more units</li></ul>
-            <div class="window-quote">“…always being prepared to make a defense…”<span>1 Pet 3:15</span></div>
-          </div>
+      <div class="col-lg-6">
+        <div class="course-map" aria-label="Course map">
+          <div class="map-grid">{tiles}</div>
+          <div class="map-legend">{legend}</div>
         </div>
       </div>
     </div>
@@ -305,7 +299,7 @@ def build_index():
 <section class="section">
   <div class="container-xl">
     <p class="kicker">Every week</p>
-    <h2 class="h2-big mb-5">Six steps. <mark>Same rhythm</mark> every unit.</h2>
+    <h2 class="h2-big mb-5">Six steps. <span class="accent">Same rhythm</span> every unit.</h2>
     <div class="row g-4">{steps}
     </div>
   </div>
@@ -361,10 +355,10 @@ def build_unit(u):
     pager += (f'<a class="pager-link" href="unit-{prev_u["n"]:02d}.html"><span>← Unit {prev_u["n"]}</span>{html.escape(short_title(prev_u["title"]))}</a>' if prev_u else '<span></span>')
     pager += (f'<a class="pager-link text-end" href="unit-{next_u["n"]:02d}.html"><span>Unit {next_u["n"]} →</span>{html.escape(short_title(next_u["title"]))}</a>' if next_u else '<a class="pager-link text-end" href="../index.html#units"><span>Done →</span>All units</a>')
     pager += "</nav>"
-    pct = n / len(units) * 100
+    segs = "".join(f'<a href="unit-{x["n"]:02d}.html" class="seg p{part_of(x["n"])[0]}{" on" if x["n"] <= n else ""}{" cur" if x["n"] == n else ""}" title="Unit {x["n"]}: {html.escape(x["title"])}"></a>' for x in units)
 
     body = f"""
-<header class="u-hero">
+<header class="u-hero p{pnum}">
   <div class="container-xl">
     <nav aria-label="breadcrumb"><ol class="breadcrumb mb-3">
       <li class="breadcrumb-item"><a href="../index.html#units">Units</a></li>
@@ -372,7 +366,7 @@ def build_unit(u):
       <li class="breadcrumb-item active" aria-current="page">Unit {n}</li></ol></nav>
     <p class="kicker mb-2">Unit {n} of {len(units)}</p>
     <h1 class="u-h1">{html.escape(u['title'])}</h1>
-    <div class="u-progress" role="progressbar" aria-label="Course progress" aria-valuenow="{n}" aria-valuemin="0" aria-valuemax="{len(units)}"><span style="width:{pct:.0f}%"></span></div>
+    <div class="u-steps" role="progressbar" aria-label="Course progress" aria-valuenow="{n}" aria-valuemin="0" aria-valuemax="{len(units)}">{segs}</div>
   </div>
 </header>
 <div class="container-xl">
@@ -410,7 +404,7 @@ def md_list(raw):
 
 def simple_page(kicker, title, lead, inner, active):
     body = f"""
-<header class="u-hero"><div class="container-xl"><p class="kicker mb-2">{kicker}</p><h1 class="u-h1">{title}</h1>
+<header class="u-hero plain"><div class="container-xl"><p class="kicker mb-2">{kicker}</p><h1 class="u-h1">{title}</h1>
 <p class="hero-sub mt-3 mb-0">{lead}</p></div></header>
 <div class="container-xl"><div class="row"><div class="col-lg-9 u-article">{inner}</div></div></div>"""
     return page(re.sub("<[^>]+>", "", title), body, active=active, path=f"{active}.html")
