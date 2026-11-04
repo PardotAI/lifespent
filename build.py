@@ -136,6 +136,7 @@ method_raw = section("Method (every unit)")
 resources_raw = section("Free resources")
 capstone = section("Capstone (optional)")
 workload = re.search(r"\*\*Workload:\*\*\s*([^·]+)", header_line).group(1).strip()
+workload = re.sub(r"^expect\s+", "", workload, flags=re.I)  # templates supply the verb
 
 units = []
 for m in re.finditer(r"^## Unit (\d+): (.+?)\n(.*?)(?=^## |^---|\Z)", SRC, re.S | re.M):
