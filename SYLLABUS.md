@@ -118,7 +118,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Supplement:** DTS *The Table*, "Reliability of the New Testament" (Darrell Bock with Dan Wallace) — [Listen to the episode](https://voice.dts.edu/tablepodcast/reliability-new-testament/). Alternative: selected lessons from DTS's free course [*Can You Trust the Bible?*](https://courses.dts.edu/courses/can-you-trust-the-bible)
 - **Questions:** What does Luke claim about his method? Why does John state his purpose so explicitly? How does Peter set eyewitness testimony against "cleverly devised myths"? What does manuscript evidence establish about the *wording* we have, and how is that a separate question from whether the *witnesses* are trustworthy?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
-- **Paper:** Does the New Testament present itself as myth, history, or testimony? Defend your answer from the text.
+- **Paper:** How do these passages characterize the New Testament writings—as orderly account, eyewitness testimony, proclamation, or some combination? What do those claims establish, and what still must be tested?
 
 ## Unit 7: The Resurrection
 - **Read:** 1 Cor 15 (all); Matt 28; John 20–21; Acts 2:22–36; 17:30–31
