@@ -26,10 +26,10 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
 # Inter Tight is a free stand-in for Basecamp's Graphik (commercial).
 
 PARTS = [
-    ("Foundations", "How we know, and what everyone already knows", range(1, 5)),
-    ("The Evidence", "Prophecy, testimony, resurrection, and the cross", range(5, 9)),
-    ("The Methods", "How Jesus and the apostles argued", range(9, 12)),
-    ("Synthesis", "Bringing it together", range(12, 13)),
+    ("Foundations", "Why defend the faith at all, and how do we know anything?", range(1, 5)),
+    ("The Evidence", "What does the Bible offer as evidence, and how much weight does it carry?", range(5, 9)),
+    ("The Methods", "How did Jesus and the apostles actually argue?", range(9, 12)),
+    ("Synthesis", "What kind of apologist should all of this produce?", range(12, 13)),
 ]
 
 
@@ -266,7 +266,7 @@ def build_index():
       <div class="col-lg-6">
         <p class="kicker">{SITE_TAG}</p>
         <h1 class="hero-h1">Learn how Scripture <span class="accent">defends itself.</span></h1>
-        <p class="hero-sub">How God, Jesus, and the apostles argued for the truth — studied from the text, one week at a time.</p>
+        <p class="hero-sub">God makes arguments in Scripture. So do Jesus and the apostles. You will read those arguments in context, one unit a week, and work out what they ask of you.</p>
         <div class="d-flex flex-wrap gap-3 align-items-center mt-4">
           <a class="btn btn-accent btn-lg" href="units/unit-01.html">Begin Unit 1 <i class="bi bi-arrow-right"></i></a>
           <a class="btn btn-quiet btn-lg" href="method.html">How it works</a>
@@ -412,7 +412,7 @@ def simple_page(kicker, title, lead, inner, active):
 
 
 def build_resources():
-    return simple_page("Library", "Resources", "Scripture is the final authority. Everything below serves the text.",
+    return simple_page("Library", "Resources", "Scripture is the final authority. Everything on this page is here to serve the text, not to replace it.",
                        md_list(resources_raw), "resources")
 
 
@@ -420,7 +420,7 @@ def build_method():
     steps = "".join(f"""<div class="rhythm rhythm-row"><span class="rhythm-num">{n}</span><div><h2 class="rhythm-title">{t}</h2><p class="mb-0">{d}</p>{sg}</div></div>"""
                     for n, t, d, sg in method_steps())
     inner = steps + '<div class="tile tile-blue mt-4"><div class="tile-head"><span class="tile-label">The recurring question</span></div><p class="mb-0">Every unit asks: <em>How should these texts shape the apologist\'s tone and conduct?</em></p></div>'
-    return simple_page("How to study", "Method", f"Every unit follows the same six steps. Expect {inline(workload)}.", inner, "method")
+    return simple_page("How to study", "Method", f"Every unit uses the same six steps, so your effort goes into the text instead of the format. Expect {inline(workload)}.", inner, "method")
 
 
 def main():
