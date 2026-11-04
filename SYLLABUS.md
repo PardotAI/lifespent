@@ -175,7 +175,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Supplement:** Constable's *Notes on Acts* (DTS, free), the sections on Acts 13 and 17 — [Read the notes](https://soniclight.com/tcon/notes/html/acts/acts.htm). Optional: Bahnsen's analysis of Acts 17 in *Always Ready*
 - **Questions:** Compare Paul's starting points in the synagogue (Acts 13) and the Areopagus (Acts 17). What stays the same? Why does he quote Aratus? Where does the Areopagus speech end, and why?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
-- **Paper:** Contextualization without compromise: what Acts 17 permits and what it forbids.
+- **Paper:** Contextualization without compromise. In Acts 17:22–31, what does Paul adopt from his audience, what does he challenge, and what parts of his message remain nonnegotiable? Distinguish textual observation from broader rules you infer.
 
 ## Unit 11: Paul's Defenses
 - **Read:** Acts 22–26
