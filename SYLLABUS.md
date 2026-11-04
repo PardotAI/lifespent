@@ -99,7 +99,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
   - **Mic 5:2.** Bethlehem as the ruler's birthplace. Matthew quotes it (Matt 2:5–6), which makes it one of the explicit fulfillment texts for your paper.
   - **Dan 9:24–27.** A prophecy with a timeline. It's harder and more disputed than the others. It's here so you practice separating what the text says from what interpreters build on it.
   - **Luke 24:13–49.** On the Emmaus road Jesus explains himself from "Moses and all the Prophets." This is Jesus making the prophecy argument himself.
-  - **Acts 8:26–40.** Prophecy used in a real conversation. Philip starts with the official's question, stays in Isa 53, and gets to Jesus from there.
+  - **Acts 8:26–40.** Prophecy used in a real conversation. Philip starts with the official's question, begins from Isa 53, and tells him about Jesus (8:35).
 - **Words:** *nābîʾ* (prophet), *plēroō* (fulfill), *dei* ("it is necessary")
 - **Supplement:** NET notes on Isa 53 and Ps 22 — [Read NET notes: Isa 53](https://netbible.org/bible/Isaiah+53) · [Read NET notes: Ps 22](https://netbible.org/bible/Psalms+22)
 - **Questions:** What is the Deut 18 test? What does Luke actually tell us about how Jesus "opened the Scriptures" (Luke 24:27, 44–47), and what does he leave unsaid? How do direct prediction, typology, and promise–fulfillment differ? Why did Philip start with Isa 53?
