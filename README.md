@@ -4,5 +4,5 @@ Static course site (Bootstrap 5.3, no build tooling beyond Python 3).
 
 - Source of truth: `SYLLABUS.md`
 - Rebuild: `python3 build.py` → `index.html`, `method.html`, `resources.html`, `units/*.html`
-- Hosting: GitHub Pages from `main` (root). Planned custom domain: lifespent.org (add a `CNAME` file once DNS is ready).
+- Hosting: GitHub Pages from `main` (root). Custom domain: www.lifespent.org (CNAME file; apex redirects via Cloudflare).
 - OG image: `og.html` is the source; screenshot it at 1200×630 into `assets/og.png` after changes. `SITE_URL` in build.py sets absolute OG URLs.

@@ -15,7 +15,7 @@ SITE_TITLE = "Biblical Apologetics"
 SITE_TAG = "A 12-Week Self-Study"
 import hashlib
 CSS_VER = hashlib.md5((ROOT / "assets" / "site.css").read_bytes()).hexdigest()[:8]  # cache-bust on change
-SITE_URL = "https://pardotai.github.io/lifespent/"  # change to https://lifespent.org/ when the domain moves
+SITE_URL = "https://www.lifespent.org/"
 BS_CSS = ('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" '
           'integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">')
 BS_JS = ('<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" '
