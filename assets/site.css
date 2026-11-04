@@ -190,3 +190,9 @@ a.go:hover { background: var(--accent); color: #fff; }
 .site-footer .ls-wm { color: #fff; } .site-footer .ls-wm > span { color: #e5726f; }
 .ls-wm-sm { font-size: 1.1rem; margin-right: .4rem; }
 .site-footer em { color: #fff; }
+.why-h { font-size: 1.05rem; font-weight: 800; letter-spacing: -.01em; margin: 1.75rem 0 .5rem; }
+.why { list-style: none; padding: 0; margin: 0; }
+.why li { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; padding: .75rem 0; border-bottom: 1px solid var(--line); }
+.why-ref { font-family: var(--head); font-weight: 800; color: var(--accent); }
+.why-txt { color: var(--ink-2); }
+@media (max-width: 575.98px) { .why li { grid-template-columns: 1fr; gap: .2rem; } }

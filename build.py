@@ -307,7 +307,9 @@ for m in re.finditer(r"^## Unit (\d+): (.+?)\n(.*?)(?=^## |^---|\Z)", SRC, re.S 
     fields = {}
     for fm in re.finditer(r"^- \*\*([^:*]+?)(?: \(([^)]*)\))?:\*\*\s*(.+)$", body, re.M):
         fields[fm.group(1)] = (fm.group(3).strip(), fm.group(2))
-    units.append({"n": n, "title": title, "f": fields})
+    wm = re.search(r"^- \*\*Why these readings:\*\*\n((?:  - .*\n?)+)", body, re.M)
+    why = [re.match(r"  - \*\*(.+?)\.\*\* (.*)", l).groups() for l in wm.group(1).splitlines()] if wm else []
+    units.append({"n": n, "title": title, "f": fields, "why": why})
 
 
 # ---------- layout ----------
@@ -485,6 +487,13 @@ def build_index():
     return page("Home", body, active="home", path="")
 
 
+def why_list(items):
+    if not items:
+        return ""
+    rows = "".join(f'<li><span class="why-ref">{html.escape(r)}</span><span class="why-txt">{inline(t)}</span></li>' for r, t in items)
+    return f'<h3 class="why-h">Why these readings</h3><ul class="why">{rows}</ul>'
+
+
 def build_unit(u):
     n, f = u["n"], u["f"]
     pnum, pname = part_of(n)
@@ -493,7 +502,7 @@ def build_unit(u):
 
     secs = []  # (id, label, html)
     if "Read" in f:
-        secs.append(("read", "Read", f'<p class="note">Read each passage in context: the whole chapter, not just the verses. Links open the NET Bible in the Bible app (bible.com).</p><div class="passages">{passages(f["Read"][0])}</div>'))
+        secs.append(("read", "Read", f'<p class="note">Read each passage in context: the whole chapter, not just the verses. Links open the NET Bible in the Bible app (bible.com).</p><div class="passages">{passages(f["Read"][0])}</div>' + why_list(u["why"])))
     if "Words" in f:
         secs.append(("words", "Word study", f'<div class="words">{words(f["Words"][0])}</div><p class="note mt-3 mb-0">Say each word aloud and stress the <b class="say-b">bold</b> syllable. Greek follows the classroom (Erasmian) pronunciation most US seminaries teach; Hebrew follows standard academic pronunciation. Other accepted systems exist (e.g., modern Greek, reconstructed Koine), so you may hear these said differently. Context, not a word\'s possible range, decides its meaning. Use <a href="https://www.stepbible.org" target="_blank" rel="noopener">STEP Bible</a> and the NET notes.</p>'))
     if "Supplement" in f:
