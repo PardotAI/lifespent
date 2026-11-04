@@ -59,7 +59,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
   - **1 Cor 1:18–2:16.** The hardest reading this week. Paul seems to reject human wisdom, yet he argues carefully the whole way through. Working out how both are true is the main job of the unit.
   - **John 17:17.** "Your word is truth." Jesus says where final authority sits. The rest of the unit leans on this verse.
 - **Words:** *yirʾat YHWH* (fear of the LORD), *daʿat* (knowledge), *sophia*, *gnōsis*, *alētheia*
-- **Supplement:** Poythress, *Logic*, chs. 3 "What Do We Trust?" and 7–10 ("Logic Revealing God," "Logic as Personal," "Logic within Language," "Suppressing the Truth") — [Read the free PDF](https://frame-poythress.org/wp-content/uploads/2013/07/BLogicFinal.pdf). Optional: Calvin, *Institutes* 1.1–1.2 — [Read on CCEL](https://www.ccel.org/ccel/calvin/institutes.html)
+- **Supplement:** Poythress, *Logic*, Part I.B "God in Logic" (chs. 7–13), especially ch. 7 "Logic Revealing God" — [Read the free PDF](https://frame-poythress.org/wp-content/uploads/2013/07/BLogicFinal.pdf). Optional: Calvin, *Institutes* 1.1–1.2 — [Read on CCEL](https://www.ccel.org/ccel/calvin/institutes.html)
 - **Questions:** In what sense is the fear of the LORD the *beginning* of knowledge? Where are "all the treasures of wisdom" hidden (Col 2:3)? Is Paul anti-intellectual in 1 Cor 1–2?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** Is it circular to ground reason in God's revelation? Is every worldview's ultimate authority self-attesting?
