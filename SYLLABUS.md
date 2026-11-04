@@ -161,7 +161,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Supplement:** Poythress, *Logic*, sections on reductio arguments and dilemmas — [Read the free PDF](https://frame-poythress.org/wp-content/uploads/2013/07/BLogicFinal.pdf)
 - **Questions:** How does Jesus answer a question with a question (Matt 21:24–25)? In Matt 22:15–22, how does Jesus recognize the trap, reject its framing, and introduce a higher allegiance? What are the "four witnesses" of John 5?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
-- **Paper:** Name three argumentative moves Jesus used, with how and when you might use each one.
+- **Paper:** Choose three argumentative moves Jesus uses. For each, explain the problem He faced, how His response works, when a Christian might use a similar move, and where Jesus' unique knowledge or authority limits imitation.
 
 ## Unit 10: Acts as an Apologetics Handbook
 - **Read:** Acts 2:14–41; 7; 13:13–48; 17:1–4, 16–34; 19:8–10
