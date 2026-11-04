@@ -196,3 +196,4 @@ a.go:hover { background: var(--accent); color: #fff; }
 .why-ref { font-family: var(--head); font-weight: 800; color: var(--accent); }
 .why-txt { color: var(--ink-2); }
 @media (max-width: 575.98px) { .why li { grid-template-columns: 1fr; gap: .2rem; } }
+.footer-ack { flex-basis: 100%; order: 3; font-size: .78rem; color: #8f99a1; }

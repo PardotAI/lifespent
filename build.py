@@ -361,10 +361,11 @@ def page(title, body, depth=0, active="", path=""):
 </main>
 <footer class="site-footer">
   <div class="container-xl">
-    <p class="footer-verse">“Always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect.”</p>
-    <p class="footer-ref">1 Peter 3:15 (ESV)</p>
+    <p class="footer-verse">“…always be ready to give an answer to anyone who asks about the hope you possess. Yet do it with courtesy and respect…”</p>
+    <p class="footer-ref">1 Peter 3:15–16 (NET)</p>
     <div class="footer-meta">
       <span><span class="ls-wm ls-wm-sm">Life<span>Spent</span></span> <em>Spend and be spent.</em> 2 Cor 12:15 · {SITE_TITLE}</span>
+      <span class="footer-ack">Scripture quoted by permission. Quotations designated (NET) are from the NET Bible® copyright ©1996, 2019 by Biblical Studies Press, L.L.C. All rights reserved.</span>
       <span><a href="{up}index.html#units">Units</a> · <a href="{up}method.html">Method</a> · <a href="{up}resources.html">Resources</a></span>
     </div>
   </div>
