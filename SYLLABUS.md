@@ -158,7 +158,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
   - **John 8:12–59.** A long, sharp exchange that ends with "before Abraham was, I am." Jesus doesn't soften a claim to win the room.
   - **John 10:22–39.** Jesus argues from Ps 82 and from his works. A short example of reasoning from the other side's own Scripture.
 - **Words:** *peirazō* (test/tempt), *elenchō* (convict/expose), *hypokritēs*
-- **Supplement:** Poythress, *Logic*, sections on reductio arguments and dilemmas — [Read the free PDF](https://frame-poythress.org/wp-content/uploads/2013/07/BLogicFinal.pdf)
+- **Supplement:** Poythress, *Logic*, ch. 4 "Formal Logic" (pp. 45–50) and ch. 16 "Fallacies and God" (pp. 123–133) — [Read the free PDF](https://frame-poythress.org/wp-content/uploads/2013/07/BLogicFinal.pdf)
 - **Questions:** How does Jesus answer a question with a question (Matt 21:24–25)? In Matt 22:15–22, how does Jesus recognize the trap, reject its framing, and introduce a higher allegiance? What are the "four witnesses" of John 5?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** Choose three argumentative moves Jesus uses. For each, explain the problem He faced, how His response works, when a Christian might use a similar move, and where Jesus' unique knowledge or authority limits imitation.
