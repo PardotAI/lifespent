@@ -82,7 +82,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Why these readings:**
   - **Isa 40–48.** God puts the idols on trial and dares them to predict the future. It's the longest courtroom argument in Scripture; the three focus passages are where it's sharpest.
   - **1 Kgs 18:16–40.** Elijah on Carmel. A public test with rules both sides accept, and the false god fails. You'll ask what made it a fair test.
-  - **Ps 115.** Idols have mouths but can't speak, and "those who make them become like them." A short song that makes the same case as Isa 44.
+  - **Ps 115.** Isaiah shows how idols get made. Ps 115 adds what they do to the people who trust them: "those who make them become like them."
   - **Jer 10:1–16.** A craftsman cuts down a tree, decorates it, and nails it in place so it won't tip over. Jeremiah shows that exposing a false belief can be part of a defense.
 - **Words:** *ʾĕlîl* (worthless idol), *ʿēd* (witness), *rîb* (lawsuit)
 - **Supplement:** John Frame, "Presuppositional Apologetics" (2012) — [Read the article](https://frame-poythress.org/presuppositional-apologetics/)
@@ -99,7 +99,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
   - **Mic 5:2.** Bethlehem as the ruler's birthplace. Matthew quotes it (Matt 2:5–6), which makes it one of the explicit fulfillment texts for your paper.
   - **Dan 9:24–27.** A prophecy with a timeline. It's harder and more disputed than the others. It's here so you practice separating what the text says from what interpreters build on it.
   - **Luke 24:13–49.** On the Emmaus road Jesus explains himself from "Moses and all the Prophets." This is Jesus making the prophecy argument himself.
-  - **Acts 8:26–40.** Philip and the Ethiopian official reading Isa 53 together. A real question, a specific text, a clear answer.
+  - **Acts 8:26–40.** Prophecy used in a real conversation. Philip starts with the official's question, stays in Isa 53, and gets to Jesus from there.
 - **Words:** *nābîʾ* (prophet), *plēroō* (fulfill), *dei* ("it is necessary")
 - **Supplement:** NET notes on Isa 53 and Ps 22 — [Read NET notes: Isa 53](https://netbible.org/bible/Isaiah+53) · [Read NET notes: Ps 22](https://netbible.org/bible/Psalms+22)
 - **Questions:** What is the Deut 18 test? What does Luke actually tell us about how Jesus "opened the Scriptures" (Luke 24:27, 44–47), and what does he leave unsaid? How do direct prediction, typology, and promise–fulfillment differ? Why did Philip start with Isa 53?
@@ -138,7 +138,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Read:** Job 1–2, 38–42; Habakkuk (all); Ps 73; Rom 8:18–39; Gen 50:20
 - **Why these readings:**
   - **Job 1–2, 38–42.** The setup and the answer. You see the heavenly scene Job never sees. Then God speaks and never explains it. The syllabus skips the speeches in between because the frame is the point.
-  - **Habakkuk.** A prophet complains, gets an answer he doesn't like, complains again, and ends in worship. Three short chapters. Read it in one sitting.
+  - **Habakkuk.** Habakkuk goes from complaint to worship without his circumstances getting any better (3:17–19). That movement is what this unit is after.
   - **Ps 73.** Why do the wicked do so well? The turn comes at verse 17, in the sanctuary. It's the honest version of the question.
   - **Rom 8:18–39.** Paul weighs present suffering against future glory and says nothing can separate you from God's love. It comes after the resurrection unit on purpose: the answer depends on Easter.
   - **Gen 50:20.** "You meant evil against me, but God meant it for good." One event, two intentions. The clearest case in Scripture.
@@ -153,7 +153,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Why these readings:**
   - **Matt 12:22–37.** Accused of working by Satan's power, Jesus shows the charge undercuts itself: a divided kingdom can't stand. A clean reductio.
   - **Matt 21:23–27.** Asked about his authority, Jesus asks about John's baptism. His question exposes why they're asking.
-  - **Matt 22:15–46.** Four traps in one chapter: taxes, the resurrection, the greatest commandment, and then Jesus' own question about David's son. Watch him answer, then take the initiative.
+  - **Matt 22:15–46.** Four exchanges under pressure, four different moves: Jesus sidesteps a trap, corrects a bad assumption, names the central command, and then asks the question nobody can answer.
   - **John 5:31–47.** Jesus calls his witnesses: John the Baptist, his works, the Father, and the Scriptures. Unit 6's testimony argument, from Jesus himself.
   - **John 8:12–59.** A long, sharp exchange that ends with "before Abraham was, I am." Jesus doesn't soften a claim to win the room.
   - **John 10:22–39.** Jesus argues from Ps 82 and from his works. A short example of reasoning from the other side's own Scripture.
@@ -167,7 +167,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Read:** Acts 2:14–41; 7; 13:13–48; 17:1–4, 16–34; 19:8–10
 - **Why these readings:**
   - **Acts 2:14–41.** Peter to a Jewish crowd. He starts from Joel and the Psalms because his listeners already accept them.
-  - **Acts 7.** Stephen retells Israel's history to make his case. The longest speech in Acts, and it costs him his life.
+  - **Acts 7.** Stephen retells history his accusers already accept and shows a pattern in it: Israel kept rejecting God's messengers. Agreed facts become the argument.
   - **Acts 13:13–48.** Paul in a synagogue. Hold it next to Acts 17: same gospel, different starting point.
   - **Acts 17:1–4, 16–34.** Paul "reasoning from the Scriptures" in Thessalonica, then quoting Greek poets in Athens. The contrast between the two is the unit's main study.
   - **Acts 19:8–10.** Two years of daily discussion in a rented lecture hall. Apologetics as a long, steady practice.
