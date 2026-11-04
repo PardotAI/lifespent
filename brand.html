@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex">
+<title>LifeSpent — brand sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1c2329;--ink2:#48525b;--ink3:#7d868e;--red:#a3302f;--line:#e4e2dd;--stone:#f6f5f2}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,sans-serif;color:var(--ink);background:#fff}
+.sheet{width:1200px;margin:0 auto;padding:56px}
+.k{font:700 12px/1 "Inter Tight";letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin:0 0 18px}
+.panel{border:1px solid var(--line);border-radius:8px;padding:56px;margin-bottom:28px;display:flex;align-items:center;justify-content:center;min-height:260px}
+.dark{background:var(--ink);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}.grid .panel{margin:0}
+/* wordmark */
+.wm{font-family:"Inter Tight";font-weight:900;letter-spacing:-.055em;line-height:.9;color:var(--ink);display:inline-block;position:relative}
+.wm .s{color:var(--red)}
+.wm .t{color:var(--red)}
+.dark .wm{color:#fff}.dark .wm .s{color:#e5726f}.dark .wm .t{color:#e5726f}
+.lock{display:flex;flex-direction:column;align-items:flex-start}
+.span{display:flex;gap:5px;width:100%;margin-top:.22em}
+.span i{flex:1;height:.07em;min-height:6px;background:var(--red);border-radius:1px}
+.span i.off{background:#d9d5cd}
+.span i.end{background:transparent;position:relative}
+.span i.end::before{content:"";position:absolute;left:0;right:0;top:0;height:100%;background:var(--red)}
+.dark .span i.off{background:#3a454e}.dark .span i{background:#e5726f}
+.tag{font-family:"Inter Tight";font-weight:600;letter-spacing:.02em;color:var(--ink2);margin-top:.55em}
+.dark .tag{color:#c4cbd1}
+.tag b{color:var(--red);font-weight:800}.dark .tag b{color:#e5726f}
+/* monogram */
+.mono{width:180px;height:180px;border-radius:40px;background:var(--red);display:grid;place-items:center;position:relative}
+.mono span{font:900 104px/1 "Inter Tight";letter-spacing:-.08em;color:#fff;margin-left:-.06em}
+.mono .bar{position:absolute;left:34px;right:34px;bottom:30px;display:flex;gap:4px}
+.mono .bar i{flex:1;height:6px;background:#fff;border-radius:1px}.mono .bar i.off{background:rgba(255,255,255,.35)}
+.mono.ink{background:var(--ink)}
+.lines{font:800 30px/1.25 "Inter Tight";letter-spacing:-.025em}
+.lines p{margin:0 0 14px}.lines small{display:block;font:500 15px/1.4 Inter;color:var(--ink3);letter-spacing:0;margin-top:2px}
+</style></head><body><div class="sheet">
+
+<p class="k">Primary lockup</p>
+<div class="panel" id="primary"><div class="lock">
+  <span class="wm" style="font-size:150px">Life<span class="s">Spen</span><span class="t">t</span></span>
+  <div class="span"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="end"></i></div>
+  <div class="tag" style="font-size:30px">Impacting <b>eternity.</b></div>
+</div></div>
+
+<div class="grid">
+  <div><p class="k">On dark</p><div class="panel dark" id="dark"><div class="lock">
+    <span class="wm" style="font-size:84px">Life<span class="s">Spent</span></span>
+    <div class="span"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="tag" style="font-size:18px">Spend and be spent. <b>2 Cor 12:15</b></div>
+  </div></div></div>
+  <div><p class="k">App icon / favicon</p><div class="panel" id="icons" style="gap:28px">
+    <div class="mono"><span>LS</span><div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div></div>
+    <div class="mono ink"><span>LS</span><div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  </div></div>
+</div>
+
+<p class="k" style="margin-top:28px">Course lockup</p>
+<div class="panel" id="course"><div class="lock">
+  <span class="wm" style="font-size:96px">Life<span class="s">Spent</span></span>
+  <div class="span"><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
+  <div class="tag" style="font-size:22px">Biblical Apologetics · <b>a 12-week study</b></div>
+</div></div>
+
+</div></body></html>
