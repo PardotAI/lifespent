@@ -14,6 +14,7 @@ SRC = (ROOT / "SYLLABUS.md").read_text(encoding="utf-8")
 SITE_TITLE = "Biblical Apologetics"
 SITE_TAG = "A 12-Week Self-Study"
 import hashlib
+JS_VER = hashlib.md5((ROOT / "assets" / "progress.js").read_bytes()).hexdigest()[:8]
 CSS_VER = hashlib.md5((ROOT / "assets" / "site.css").read_bytes()).hexdigest()[:8]  # cache-bust on change
 SITE_URL = "https://www.lifespent.org/"
 BS_CSS = ('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" '
@@ -333,7 +334,7 @@ for m in re.finditer(r"^## Unit (\d+): (.+?)\n(.*?)(?=^## |^---|\Z)", SRC, re.S 
 
 
 # ---------- layout ----------
-def page(title, body, depth=0, active="", path=""):
+def page(title, body, depth=0, active="", path="", unit=0):
     up = "../" * depth
     nav = [("index.html#units", "Units", "units"), ("method.html", "Method", "method"),
            ("resources.html", "Resources", "resources")]
@@ -363,7 +364,7 @@ def page(title, body, depth=0, active="", path=""):
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-<body>
+<body data-root="{up}" data-unit="{unit or ''}">
 <a class="visually-hidden-focusable" href="#main">Skip to content</a>
 <nav class="navbar navbar-expand-md site-nav">
   <div class="container-xl">
@@ -371,7 +372,7 @@ def page(title, body, depth=0, active="", path=""):
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto align-items-md-center">{links}
-        <li class="nav-item ms-md-3"><a class="btn btn-accent btn-sm-nav" href="{up}units/unit-01.html">Begin</a></li>
+        <li class="nav-item ms-md-3"><a class="btn btn-accent btn-sm-nav" href="{up}units/unit-01.html" data-resume-btn data-label-resume="Resume" data-label-done="Review"><span data-label>Begin</span></a></li>
       </ul>
     </div>
   </div>
@@ -386,11 +387,12 @@ def page(title, body, depth=0, active="", path=""):
     <div class="footer-meta">
       <span><span class="ls-wm ls-wm-sm">Life<span>Spent</span></span> <em>Spend and be spent.</em> 2 Cor 12:15 · {SITE_TITLE}</span>
       <span class="footer-ack">Scripture quoted by permission. Quotations designated (NET) are from the NET Bible® copyright ©1996, 2019 by Biblical Studies Press, L.L.C. All rights reserved.</span>
-      <span><a href="{up}index.html#units">Units</a> · <a href="{up}method.html">Method</a> · <a href="{up}resources.html">Resources</a></span>
+      <span><a href="{up}index.html#units">Units</a> · <a href="{up}method.html">Method</a> · <a href="{up}resources.html">Resources</a> · <a href="#" data-reset-progress title="Your progress is saved only in this browser">Reset my progress</a></span>
     </div>
   </div>
 </footer>
 {BS_JS}
+<script src="{up}assets/progress.js?v={JS_VER}"></script>
 </body>
 </html>
 """
@@ -424,7 +426,7 @@ def build_index():
     parts_html = []
     for i, (pname, pdesc, rng) in enumerate(PARTS, 1):
         rows = "".join(f"""
-      <a class="toc-row" href="units/unit-{u['n']:02d}.html">
+      <a class="toc-row" href="units/unit-{u['n']:02d}.html" data-unit-link="{u['n']}">
         <span class="toc-num">{u['n']:02d}</span>
         <span class="toc-body"><span class="toc-title">{html.escape(u['title'])}</span>
         <span class="toc-read">{html.escape(short_read(u))}</span></span>
@@ -442,7 +444,7 @@ def build_index():
       </div></div>""" for n, t, d, sg in method_steps())
 
     tiles = "".join(
-        f'<a class="map-tile p{part_of(u["n"])[0]}" href="units/unit-{u["n"]:02d}.html"><span class="map-n">{u["n"]:02d}</span>'
+        f'<a class="map-tile p{part_of(u["n"])[0]}" href="units/unit-{u["n"]:02d}.html" data-unit-link="{u["n"]}"><span class="map-n">{u["n"]:02d}</span>'
         f'<span class="map-t">{html.escape(short_title(u["title"]))}</span></a>' for u in units)
     legend = "".join(f'<span class="legend-item"><span class="dot p{i}"></span>{p[0]}</span>' for i, p in enumerate(PARTS, 1))
 
@@ -455,11 +457,11 @@ def build_index():
         <h1 class="hero-h1">Learn how Scripture <span class="accent">defends itself.</span></h1>
         <p class="hero-sub">God makes arguments in Scripture. So do Jesus and the apostles. You will read those arguments in context, one unit a week, and work out what they ask of you.</p>
         <div class="d-flex flex-wrap gap-3 align-items-center mt-4">
-          <a class="btn btn-accent btn-lg" href="units/unit-01.html">Begin Unit 1 <i class="bi bi-arrow-right"></i></a>
+          <a class="btn btn-accent btn-lg" href="units/unit-01.html" data-resume-btn data-label-resume="Resume Unit {{n}}" data-label-done="Review the course"><span data-label>Begin Unit 1</span> <i class="bi bi-arrow-right"></i></a>
           <a class="btn btn-quiet btn-lg" href="method.html">How it works</a>
         </div>
         <ul class="meta-row">
-          <li><strong>12</strong> units</li><li><strong>4</strong> parts</li><li><strong>~1</strong> per week</li><li><strong>Free</strong> resources</li>
+          <li><strong>12</strong> units</li><li><strong>4</strong> parts</li><li><strong>~1</strong> per week</li><li><strong>Free</strong> resources</li><li data-progress-count hidden><strong>0/12</strong> completed</li>
         </ul>
       </div>
       <div class="col-lg-6">
@@ -546,11 +548,17 @@ def build_unit(u):
 
     toc = "".join(f'<a href="#{sid}">{lab}</a>' for sid, lab, _ in secs)
     content = "".join(f'<section class="u-sec" id="{sid}"><h2 class="u-h2">{lab}</h2>{body}</section>' for sid, lab, body in secs)
+    steps_ck = [("read", "Read the passages in context"), ("words", "Word study"), ("supplement", "Supplement"),
+                ("questions", "Answer the questions"), ("paper", "Write the paper"), ("reflection", "Write the reflection")]
+    tracker = ('<section class="tracker" aria-label="Your progress"><h2 class="u-h2">Your progress</h2>'
+               '<p class="note">Saved only in this browser.</p><ul class="track-list">'
+               + "".join(f'<li><label><input type="checkbox" data-step="{k}"> {v}</label></li>' for k, v in steps_ck)
+               + '</ul><button type="button" class="btn btn-quiet" data-complete-btn aria-pressed="false"><i class="bi bi-check2-circle"></i> <span data-label>Mark unit complete</span></button></section>')
     pager = '<nav class="pager" aria-label="Unit navigation">'
     pager += (f'<a class="pager-link" href="unit-{prev_u["n"]:02d}.html"><span>← Unit {prev_u["n"]}</span>{html.escape(short_title(prev_u["title"]))}</a>' if prev_u else '<span></span>')
     pager += (f'<a class="pager-link text-end" href="unit-{next_u["n"]:02d}.html"><span>Unit {next_u["n"]} →</span>{html.escape(short_title(next_u["title"]))}</a>' if next_u else '<a class="pager-link text-end" href="../index.html#units"><span>Done →</span>All units</a>')
     pager += "</nav>"
-    segs = "".join(f'<a href="unit-{x["n"]:02d}.html" class="seg p{part_of(x["n"])[0]}{" on" if x["n"] <= n else ""}{" cur" if x["n"] == n else ""}" title="Unit {x["n"]}: {html.escape(x["title"])}"></a>' for x in units)
+    segs = "".join(f'<a href="unit-{x["n"]:02d}.html" data-unit-link="{x["n"]}" class="seg p{part_of(x["n"])[0]}{" on" if x["n"] <= n else ""}{" cur" if x["n"] == n else ""}" title="Unit {x["n"]}: {html.escape(x["title"])}"></a>' for x in units)
 
     body = f"""
 <header class="u-hero p{pnum}">
@@ -571,11 +579,12 @@ def build_unit(u):
     </aside>
     <article class="col-lg-8 u-article">
       {content}
+      {tracker}
       {pager}
     </article>
   </div>
 </div>"""
-    return page(f"Unit {n}: {u['title']}", body, depth=1, active="units", path=f"units/unit-{n:02d}.html")
+    return page(f"Unit {n}: {u['title']}", body, depth=1, active="units", path=f"units/unit-{n:02d}.html", unit=n)
 
 
 def md_list(raw):
