@@ -74,22 +74,60 @@ USFM = {"Gen": "GEN", "Deut": "DEU", "1 Kgs": "1KI", "Job": "JOB", "Ps": "PSA", 
 ONE_CHAPTER = {"JUD"}
 
 
-def bible_url(book, ref):
-    """Map 'Rom' + '8:18–39' to a bible.com NET link. Multi-chapter spans open at their first chapter."""
+CHAPTERS = {"HAB": 3}                                  # whole-book readings
+LAST_VERSE = {("ISA", 52): 15, ("ROM", 1): 32, ("1CO", 1): 31}  # for spans that cross a chapter
+
+
+def _url(path):
+    return f"https://www.bible.com/bible/107/{path}.NET"
+
+
+def bible_links(book, ref):
+    """Turn 'Isa' + '52:13–53:12' into one bible.com NET link per chapter:
+    [('52:13–15', url), ('53:1–12', url)]. Verses in the same chapter stay one link."""
     code = USFM.get(book)
     if not code:
         raise SystemExit(f"build.py: no USFM code for book {book!r}; add it to USFM")
     ref = ref.replace("–", "-").replace(" ", "")
     if not ref:
-        path = f"{code}.1"
-    elif code in ONE_CHAPTER:
-        path = f"{code}.1.{ref}"
-    elif ":" in ref and not re.search(r"-\d+:", ref):
-        ch, vs = ref.split(":", 1)
-        path = f"{code}.{ch}.{vs}"
-    else:
-        path = f"{code}.{re.match(r'\d+', ref).group(0)}"
-    return f"https://www.bible.com/bible/107/{path}.NET"
+        n = CHAPTERS.get(code)
+        if not n:
+            raise SystemExit(f"build.py: whole-book reading {book!r} needs a CHAPTERS entry")
+        return [(f"ch. {c}", _url(f"{code}.{c}")) for c in range(1, n + 1)]
+    if code in ONE_CHAPTER:
+        return [(ref, _url(f"{code}.1.{ref}"))]
+    links, cur_ch, verses = [], None, []
+
+    def flush():
+        if cur_ch is not None and verses:
+            vs = ",".join(verses)
+            links.append((f"{cur_ch}:{vs}", _url(f"{code}.{cur_ch}.{vs}")))
+
+    for piece in ref.split(","):
+        m = re.fullmatch(r"(\d+):(\d+)-(\d+):(\d+)", piece)
+        if m:  # crosses chapters
+            flush(); verses = []
+            c1, v1, c2, v2 = map(int, m.groups())
+            last = LAST_VERSE.get((code, c1))
+            if not last:
+                raise SystemExit(f"build.py: need LAST_VERSE[({code!r}, {c1})] to split {book} {piece}")
+            links.append((f"{c1}:{v1}–{last}", _url(f"{code}.{c1}.{v1}-{last}")))
+            for c in range(c1 + 1, c2):
+                links.append((f"{c}", _url(f"{code}.{c}")))
+            links.append((f"{c2}:1–{v2}", _url(f"{code}.{c2}.1-{v2}")))
+            cur_ch = None
+        elif ":" in piece:
+            flush()
+            cur_ch, v = piece.split(":", 1)
+            verses = [v]
+        elif cur_ch is not None:
+            verses.append(piece)
+        else:  # chapter or chapter range
+            a, _, b = piece.partition("-")
+            for c in range(int(a), int(b or a) + 1):
+                links.append((f"{c}", _url(f"{code}.{c}")))
+    flush()
+    return [(lab.replace("-", "–"), u) for lab, u in links]
 
 
 def split_top(line):
@@ -126,8 +164,14 @@ def passages(line):
         if ref:
             bk = book or ref
             rest = ref[len(bk):].strip() if ref.startswith(bk) else ref
-            out.append(f'<a class="passage" href="{html.escape(bible_url(bk, rest))}" '
-                       f'target="_blank" rel="noopener"><i class="bi bi-book"></i> {label}</a>')
+            links = bible_links(bk, rest)
+            if len(links) == 1:
+                out.append(f'<a class="passage" href="{html.escape(links[0][1])}" '
+                           f'target="_blank" rel="noopener"><i class="bi bi-book"></i> {label}</a>')
+            else:
+                parts = "".join(f'<a href="{html.escape(u)}" target="_blank" rel="noopener">{html.escape(lab)}</a>' for lab, u in links)
+                out.append(f'<span class="passage passage-group"><span><i class="bi bi-book"></i> {label}</span>'
+                           f'<span class="chapters">{parts}</span></span>')
         else:
             out.append(f'<span class="passage passage-plain"><i class="bi bi-book"></i> {label}</span>')
     return "".join(out)

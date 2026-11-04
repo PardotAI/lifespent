@@ -177,3 +177,7 @@ a.go:hover { background: var(--accent); color: #fff; }
 .orig { font-family: "Noto Serif", "SBL BibLit", "Gentium Plus", "Times New Roman", serif; font-size: 1.35rem; line-height: 1.2; color: var(--ink); }
 .orig[lang="he"] { font-family: "Noto Serif Hebrew", "SBL BibLit", "Ezra SIL", serif; text-align: right; }
 .word .lemma { font-size: .95rem; font-weight: 700; color: var(--ink-2); }
+.passage-group { flex-wrap: wrap; gap: .5rem; }
+.passage-group .chapters { display: inline-flex; flex-wrap: wrap; gap: .3rem; }
+.passage-group .chapters a { font-size: .82rem; font-weight: 600; padding: .1rem .45rem; border-radius: .25rem; background: #f8eceb; color: var(--accent); text-decoration: none; }
+.passage-group .chapters a:hover { background: var(--accent); color: #fff; }
