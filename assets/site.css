@@ -170,3 +170,7 @@ a.go:hover { background: var(--accent); color: #fff; }
   .u-hero { background: none; border: 0; padding: 0; }
 }
 .u-hero.plain { --pc: var(--accent); --pt: var(--stone); }
+.say { font-size: .88rem; color: var(--ink-2); margin-top: .1rem; }
+.say b { color: var(--accent); font-weight: 700; }
+.say-key { font-size: .85rem; color: var(--ink-3); }
+.say-b { color: var(--accent); }

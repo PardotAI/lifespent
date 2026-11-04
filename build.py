@@ -66,6 +66,32 @@ BOOK_RE = re.compile(r"^((?:[1-3] )?[A-Z][a-z]+)\s+(\d.*)$")
 
 
 
+# bible.com (YouVersion) links, NET = version 107. USFM book codes.
+USFM = {"Gen": "GEN", "Deut": "DEU", "1 Kgs": "1KI", "Job": "JOB", "Ps": "PSA", "Prov": "PRO", "Eccl": "ECC",
+        "Isa": "ISA", "Jer": "JER", "Dan": "DAN", "Mic": "MIC", "Habakkuk": "HAB", "Matt": "MAT", "Luke": "LUK",
+        "John": "JHN", "Acts": "ACT", "Rom": "ROM", "1 Cor": "1CO", "2 Cor": "2CO", "Eph": "EPH", "Phil": "PHP",
+        "Col": "COL", "2 Tim": "2TI", "1 Pet": "1PE", "2 Pet": "2PE", "1 John": "1JN", "Jude": "JUD"}
+ONE_CHAPTER = {"JUD"}
+
+
+def bible_url(book, ref):
+    """Map 'Rom' + '8:18–39' to a bible.com NET link. Multi-chapter spans open at their first chapter."""
+    code = USFM.get(book)
+    if not code:
+        raise SystemExit(f"build.py: no USFM code for book {book!r}; add it to USFM")
+    ref = ref.replace("–", "-").replace(" ", "")
+    if not ref:
+        path = f"{code}.1"
+    elif code in ONE_CHAPTER:
+        path = f"{code}.1.{ref}"
+    elif ":" in ref and not re.search(r"-\d+:", ref):
+        ch, vs = ref.split(":", 1)
+        path = f"{code}.{ch}.{vs}"
+    else:
+        path = f"{code}.{re.match(r'\d+', ref).group(0)}"
+    return f"https://www.bible.com/bible/107/{path}.NET"
+
+
 def split_top(line):
     """Split on ';' but not inside parentheses."""
     parts, depth, cur = [], 0, ""
@@ -98,12 +124,42 @@ def passages(line):
             ref = f"{book} {seg}"
         label = html.escape(seg) + (f' <span class="passage-note">({html.escape(note)})</span>' if note else "")
         if ref:
-            q = re.sub(r",\s*", ",", ref).replace("–", "-").replace(" ", "+")
-            out.append(f'<a class="passage" href="https://www.biblegateway.com/passage/?search={q}&amp;version=NET" '
+            bk = book or ref
+            rest = ref[len(bk):].strip() if ref.startswith(bk) else ref
+            out.append(f'<a class="passage" href="{html.escape(bible_url(bk, rest))}" '
                        f'target="_blank" rel="noopener"><i class="bi bi-book"></i> {label}</a>')
         else:
             out.append(f'<span class="passage passage-plain"><i class="bi bi-book"></i> {label}</span>')
     return "".join(out)
+
+
+# Pronunciation guide. Stress the syllable in CAPS.
+# Greek: classroom (Erasmian) pronunciation, the system most US seminaries teach.
+# Hebrew: standard academic pronunciation.
+PRONOUNCE = {
+    "apologia": "ah-po-lo-GEE-ah", "elpis": "el-PEES", "prautēs": "prah-OO-tace", "phobos": "FOH-bos",
+    "yirʾat YHWH": "yir-AHT ah-doh-NAI (the divine name is traditionally read aloud as Adonai)",
+    "daʿat": "DAH-aht", "sophia": "so-FEE-ah", "gnōsis": "GNOH-sis", "alētheia": "ah-LAY-thay-ah",
+    "phaneros": "fah-neh-ROSS", "katechō": "kah-TEH-khoh", "syneidēsis": "soon-AY-day-sis",
+    "anapologētos": "ah-nah-po-LOG-ay-tos", "ʾĕlîl": "eh-LEEL", "ʿēd": "ADE", "rîb": "REEV",
+    "nābîʾ": "nah-VEE", "plēroō": "play-ROH-oh", "dei": "DAY", "martys": "MAR-toos",
+    "martyria": "mar-too-REE-ah", "autoptēs": "ow-TOP-tace", "asphaleia": "as-FAH-lay-ah",
+    "mythos": "MOO-thos", "egeirō": "eh-GAY-roh", "anastasis": "ah-NAH-stah-sis", "ōphthē": "OHF-thay",
+    "paradidōmi": "pah-rah-DEE-doh-mee", "aparchē": "ah-par-KHAY", "tām": "TAHM",
+    "ʾĕmûnāh": "eh-moo-NAH", "dikaioō": "dee-kye-OH-oh", "peirazō": "pay-RAHD-zoh",
+    "elenchō": "eh-LENG-khoh", "hypokritēs": "hoo-po-kree-TACE", "dialegomai": "dee-ah-LEG-oh-my",
+    "peithō": "PAY-thoh", "paratithēmi": "pah-rah-TEE-thay-mee", "spermologos": "sper-mo-LOG-os",
+    "apologeomai": "ah-po-lo-GEH-oh-my", "mainomai": "MY-no-my", "sōphrosynē": "soh-fro-SOO-nay",
+    "aichmalōtizō": "aikh-mah-loh-TEED-zoh", "ochyrōma": "oh-KHOO-roh-mah",
+    "epieikeia": "eh-pee-AY-kay-ah", "ēpios": "AY-pee-os", "halas": "HAH-las",
+}
+
+
+def say(term):
+    parts = [PRONOUNCE.get(t.strip()) for t in term.split(" / ")]
+    if not all(parts):
+        raise SystemExit(f"build.py: no pronunciation for word-study term {term!r}; add it to PRONOUNCE")
+    return " / ".join(parts)
 
 
 def words(line):
@@ -112,7 +168,9 @@ def words(line):
     for main, alt, gloss in items:
         term = main + "".join(" / " + a for a in re.findall(r"\*([^*]+)\*", alt))
         g = html.escape(gloss.strip("()")) if gloss else ""
+        pr = re.sub(r"\b([A-Z]{2,})\b", r"<b>\1</b>", html.escape(say(term)))
         out.append(f'<span class="word"><span class="lemma">{html.escape(term)}</span>'
+                   f'<span class="say" title="Pronunciation: stress the bold syllable">{pr}</span>'
                    + (f'<span class="gloss">{g}</span>' if g else "") + "</span>")
     return "".join(out) or inline(line)
 
@@ -329,9 +387,9 @@ def build_unit(u):
 
     secs = []  # (id, label, html)
     if "Read" in f:
-        secs.append(("read", "Read", f'<p class="note">Read each passage in context: the whole chapter, not just the verses. Links open the NET Bible.</p><div class="passages">{passages(f["Read"][0])}</div>'))
+        secs.append(("read", "Read", f'<p class="note">Read each passage in context: the whole chapter, not just the verses. Links open the NET Bible in the Bible app (bible.com).</p><div class="passages">{passages(f["Read"][0])}</div>'))
     if "Words" in f:
-        secs.append(("words", "Word study", f'<div class="words">{words(f["Words"][0])}</div><p class="note mt-3 mb-0">Context, not a word\'s possible range, decides its meaning. Use <a href="https://www.stepbible.org" target="_blank" rel="noopener">STEP Bible</a> and the NET notes.</p>'))
+        secs.append(("words", "Word study", f'<div class="words">{words(f["Words"][0])}</div><p class="note mt-3 mb-0">Say each word aloud and stress the <b class="say-b">bold</b> syllable. Greek follows the classroom (Erasmian) pronunciation most US seminaries teach. Context, not a word\'s possible range, decides its meaning. Use <a href="https://www.stepbible.org" target="_blank" rel="noopener">STEP Bible</a> and the NET notes.</p>'))
     if "Supplement" in f:
         secs.append(("supplement", "Supplement", f'<p class="mb-0">{inline(f["Supplement"][0])}</p>'))
     if "Questions" in f:

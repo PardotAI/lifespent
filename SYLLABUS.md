@@ -127,7 +127,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 ## Unit 12: Synthesis and Posture
 - **Read:** 2 Tim 2:14–26; Col 4:2–6; 2 Cor 10:1–6; Eph 6:10–20; 1 Cor 13; Matt 5:43–48
 - **Words:** *aichmalōtizō* (take captive), *ochyrōma* (stronghold), *epieikeia* (gentleness, 2 Cor 10:1), *ēpios* (gentle, 2 Tim 2:24), *halas* (salt)
-- **Supplement:** Reread 1 Pet 3:15–16 — [Read 1 Pet 3:15–16 (NET)](https://www.biblegateway.com/passage/?search=1+Pet+3:15-16&version=NET)
+- **Supplement:** Reread 1 Pet 3:15–16 — [Read 1 Pet 3:15–16 (NET)](https://www.bible.com/bible/107/1PE.3.15-16.NET)
 - **Questions:** What weapons does Paul *refuse* to use? What is the goal in 2 Tim 2:25–26? Can you win an argument and lose a person?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Final paper (5–7 pages; replaces this unit's regular 1–2 page paper):** "A Biblical Theology of Apologetics." Synthesize all 12 units: the mandate, the method, the content and the posture.
