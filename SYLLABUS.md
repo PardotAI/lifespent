@@ -80,9 +80,9 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 ## Unit 4: God's Case Against Idols (Idolatry and Worldview Critique)
 - **Read:** Isa 40–48 (focus on 41:21–29; 44:6–20; 46:8–11); 1 Kgs 18:16–40; Ps 115; Jer 10:1–16
 - **Why these readings:**
-  - **Isa 40–48.** God puts the idols on trial and dares them to predict the future. It's the longest courtroom argument in Scripture; the three focus passages are where it's sharpest.
-  - **1 Kgs 18:16–40.** Elijah on Carmel. A public test with rules both sides accept, and the false god fails. You'll ask what made it a fair test.
-  - **Ps 115.** Isaiah shows how idols get made. Ps 115 adds what they do to the people who trust them: "those who make them become like them."
+  - **Isa 40–48.** God puts the idols on trial and dares them to predict the future. It's the longest courtroom argument in Scripture.
+  - **1 Kgs 18:16–40.** Elijah on Carmel. A public test with rules that both sides accept, and the false god fails.
+  - **Ps 115.** Isaiah shows how idols get made and Ps 115 adds what they do to the people who trust them: "those who make them become like them."
   - **Jer 10:1–16.** A craftsman cuts down a tree, decorates it, and nails it in place so it won't tip over. Jeremiah shows that exposing a false belief can be part of a defense.
 - **Words:** *ʾĕlîl* (worthless idol), *ʿēd* (witness), *rîb* (lawsuit)
 - **Supplement:** John Frame, "Presuppositional Apologetics" (2012) — [Read the article](https://frame-poythress.org/presuppositional-apologetics/)
