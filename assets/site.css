@@ -167,6 +167,9 @@ a.go:hover { background: var(--accent); color: #fff; }
 .footer-ref { color: #e08b89; font-weight: 600; margin-bottom: 3rem; }
 .footer-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.15); font-size: .9rem; }
 .footer-meta strong { color: #fff; }
+.w3c-badge { display: inline-flex; align-items: center; gap: .4rem; margin-left: .35rem; padding: .2rem .6rem .2rem .35rem; border: 1px solid rgba(255,255,255,.35); border-radius: .35rem; font-size: .8rem; line-height: 1; text-decoration: none; vertical-align: middle; white-space: nowrap; }
+.w3c-badge b { font-weight: 800; letter-spacing: .02em; }
+.w3c-badge:hover { border-color: #fff; background: rgba(255,255,255,.08); }
 .site-footer a { color: #fff; }
 
 @media (max-width: 991.98px) {
