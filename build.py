@@ -526,20 +526,23 @@ MEDIA = {
 }
 
 
+def video_feature(n):
+    """Featured video at the top of the unit, BibleProject-style: our own poster image, click to play."""
+    v = MEDIA.get(n, {}).get("video")
+    if not v:
+        return ""
+    host, vid, length = v
+    return (f'<figure class="u-video" id="video"><div class="media-player" data-{host}="{vid}" data-title="Unit {n} video overview">'
+            f'<button type="button" class="media-play" aria-label="Play the Unit {n} video overview ({length})">'
+            f'<img src="../assets/media/unit-{n:02d}.jpg" alt="" width="1280" height="720" loading="eager">'
+            f'<span class="play-btn"><i class="bi bi-play-fill"></i></span><span class="dur">{length}</span></button></div>'
+            f'<figcaption class="note">Video overview · {length}. Start here, then work through the readings below.</figcaption></figure>')
+
+
 def media_section(n):
-    m = MEDIA.get(n, {})
-    parts = []
-    if "video" in m:
-        host, vid, length = m["video"]
-        parts.append(f'<div class="media-player" data-{host}="{vid}" data-title="Unit {n} video overview">'
-                     f'<button type="button" class="media-play" aria-label="Play the Unit {n} video overview">'
-                     f'<i class="bi bi-play-circle-fill"></i><span><strong>Video overview</strong>'
-                     f'<span class="note">{length} · Plays from Vimeo when you click</span></span></button></div>')
-    if "audio" not in m:
-        what = "Podcast overview" if parts else "Podcast and video overviews"
-        parts.append(f'<div class="media-soon"><i class="bi bi-headphones"></i><div><strong>{what}</strong><br>'
-                     f'<span class="note">In production for this unit.</span></div></div>')
-    return "".join(parts)
+    what = "Podcast overview" if MEDIA.get(n, {}).get("video") else "Podcast and video overviews"
+    return (f'<div class="media-soon"><i class="bi bi-headphones"></i><div><strong>{what}</strong><br>'
+            f'<span class="note">In production for this unit.</span></div></div>')
 
 
 def build_unit(u):
@@ -569,9 +572,9 @@ def build_unit(u):
     tiles = "".join(f'<div class="tile {cls}"><div class="tile-head"><span class="tile-label">{lab}</span><span class="tile-sub">{sub}</span></div><p class="mb-0">{txt}</p></div>'
                     for lab, sub, txt, cls in assign)
     secs.append(("write", "Write", f'<div class="tiles">{tiles}</div>'))
-    secs.append(("media", "Audio &amp; video", media_section(n)))
+    secs.append(("media", "Podcast" if MEDIA.get(n, {}).get("video") else "Audio &amp; video", media_section(n)))
 
-    toc = "".join(f'<a href="#{sid}">{lab}</a>' for sid, lab, _ in secs)
+    toc = ('<a href="#video">Video</a>' if MEDIA.get(n, {}).get("video") else "") + "".join(f'<a href="#{sid}">{lab}</a>' for sid, lab, _ in secs)
     content = "".join(f'<section class="u-sec" id="{sid}"><h2 class="u-h2">{lab}</h2>{body}</section>' for sid, lab, body in secs)
     steps_ck = [("read", "Read the passages in context"), ("words", "Word study"), ("supplement", "Supplement"),
                 ("questions", "Answer the questions"), ("paper", "Write the paper"), ("reflection", "Write the reflection")]
@@ -603,6 +606,7 @@ def build_unit(u):
       <div class="u-toc"><p class="part-kicker">On this page</p>{toc}</div>
     </aside>
     <article class="col-lg-8 u-article">
+      {video_feature(n)}
       {content}
       {tracker}
       {pager}
