@@ -164,3 +164,17 @@
   offerPickup(prevSection);
   trackSections();
 })();
+
+// Click-to-load media: the Vimeo player (and its requests) load only after the visitor clicks play.
+document.addEventListener("click", function (e) {
+  var btn = e.target.closest && e.target.closest(".media-play");
+  if (!btn) return;
+  var box = btn.parentElement, id = box.getAttribute("data-vimeo");
+  if (!id || !/^\d+$/.test(id)) return;
+  var f = document.createElement("iframe");
+  f.src = "https://player.vimeo.com/video/" + id + "?dnt=1&autoplay=1";
+  f.title = box.getAttribute("data-title") || "Video";
+  f.allow = "autoplay; fullscreen; picture-in-picture";
+  f.allowFullscreen = true;
+  box.replaceChildren(f);
+});

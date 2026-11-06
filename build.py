@@ -517,6 +517,28 @@ def why_list(items):
     return f'<h3 class="why-h">Why these readings</h3><ul class="why">{rows}</ul>'
 
 
+# Published media per unit. Players load only when clicked (nothing third-party loads before that).
+MEDIA = {
+    3: {"video": ("vimeo", "1244295652", "5:17")},
+}
+
+
+def media_section(n):
+    m = MEDIA.get(n, {})
+    parts = []
+    if "video" in m:
+        host, vid, length = m["video"]
+        parts.append(f'<div class="media-player" data-{host}="{vid}" data-title="Unit {n} video overview">'
+                     f'<button type="button" class="media-play" aria-label="Play the Unit {n} video overview">'
+                     f'<i class="bi bi-play-circle-fill"></i><span><strong>Video overview</strong>'
+                     f'<span class="note">{length} · Plays from Vimeo when you click</span></span></button></div>')
+    if "audio" not in m:
+        what = "Podcast overview" if parts else "Podcast and video overviews"
+        parts.append(f'<div class="media-soon"><i class="bi bi-headphones"></i><div><strong>{what}</strong><br>'
+                     f'<span class="note">In production for this unit.</span></div></div>')
+    return "".join(parts)
+
+
 def build_unit(u):
     n, f = u["n"], u["f"]
     pnum, pname = part_of(n)
@@ -544,7 +566,7 @@ def build_unit(u):
     tiles = "".join(f'<div class="tile {cls}"><div class="tile-head"><span class="tile-label">{lab}</span><span class="tile-sub">{sub}</span></div><p class="mb-0">{txt}</p></div>'
                     for lab, sub, txt, cls in assign)
     secs.append(("write", "Write", f'<div class="tiles">{tiles}</div>'))
-    secs.append(("media", "Audio &amp; video", '<div class="media-soon"><i class="bi bi-headphones"></i><div><strong>Podcast and video overviews</strong><br><span class="note">In production for this unit.</span></div></div>'))
+    secs.append(("media", "Audio &amp; video", media_section(n)))
 
     toc = "".join(f'<a href="#{sid}">{lab}</a>' for sid, lab, _ in secs)
     content = "".join(f'<section class="u-sec" id="{sid}"><h2 class="u-h2">{lab}</h2>{body}</section>' for sid, lab, body in secs)
