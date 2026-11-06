@@ -205,4 +205,4 @@ This course looks at how Scripture argues for itself by looking at how God, Jesu
 ---
 
 ## Capstone (optional)
-Write out a defense of the hope within you as if speaking to a skeptical colleague. Use only arguments the Bible itself models, and cite each one.
+Write out a defense of the hope within you as if speaking to a skeptical colleague. Use only arguments from the Bible, and use citations for each claim.
