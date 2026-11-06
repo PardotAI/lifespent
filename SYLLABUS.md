@@ -58,7 +58,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
   - **Col 2:1–10.** All the treasures of wisdom and knowledge are hidden in Christ, and Paul warns against philosophy built on human tradition.
   - **1 Cor 1:18–2:16.** This is the most challenging reading this week. Paul seems to reject human wisdom, yet he argues carefully the whole way through. Working out how both are true is the main point of the unit.
   - **John 17:17.** "Your word is truth." Jesus says where final authority sits. The rest of the unit leans on this verse.
-- **Words:** *yirʾat YHWH* (fear of the LORD), *daʿat* (knowledge), *sophia*, *gnōsis*, *alētheia*
+- **Words:** *yirʾat YHWH* (fear of the LORD), *daʿat* (knowledge), *sophia* (wisdom), *gnōsis* (knowledge), *alētheia* (truth)
 - **Supplement:** Poythress, *Logic*, chs. 3 "What Do We Trust?" and 7–10 ("Logic Revealing God," "Logic as Personal," "Logic within Language," "Suppressing the Truth") — [Read the free PDF](https://frame-poythress.org/wp-content/uploads/2013/07/BLogicFinal.pdf). Optional: Calvin, *Institutes* 1.1–1.2 — [Read on CCEL](https://www.ccel.org/ccel/calvin/institutes.html)
 - **Questions:** In what sense is the fear of the LORD the *beginning* of knowledge? Where are "all the treasures of wisdom" hidden (Col 2:3)? Is Paul anti-intellectual in 1 Cor 1–2?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
@@ -114,7 +114,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
   - **1 John 1:1–4.** "What we have heard, what we have seen with our eyes, and our hands have touched." Witness of the physical, checkable kind.
   - **2 Pet 1:16–21.** Peter says they didn't follow clever myths; they were eyewitnesses. Then he grounds prophecy in God rather than human will. Both halves matter here.
   - **Deut 19:15.** A matter stands on two or three witnesses. This is the legal standard the NT writers are working with.
-- **Words:** *martys* / *martyria* (witness), *autoptēs* (eyewitness), *asphaleia* (certainty), *mythos*
+- **Words:** *martys* / *martyria* (witness), *autoptēs* (eyewitness), *asphaleia* (certainty), *mythos* (story, fable)
 - **Supplement:** DTS *The Table*, "Reliability of the New Testament" (Darrell Bock with Dan Wallace) — [Listen to the episode](https://voice.dts.edu/tablepodcast/reliability-new-testament/). Alternative: selected lessons from DTS's free course [*Can You Trust the Bible?*](https://courses.dts.edu/courses/can-you-trust-the-bible)
 - **Questions:** What does Luke claim about his method? Why does John state his purpose so explicitly? How does Peter set eyewitness testimony against "cleverly devised myths"? What does manuscript evidence establish about the *wording* we have, and how is that a separate question from whether the *witnesses* are trustworthy?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
@@ -128,7 +128,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
   - **John 20–21.** Thomas asks for evidence and gets it. Jesus cooks breakfast on the beach. These physical details rule out a vision or a ghost.
   - **Acts 2:22–36.** Peter's first sermon, seven weeks later, in the city where it happened. He appeals to what his audience already knows.
   - **Acts 17:30–31.** In Athens Paul names the resurrection as God's proof to everyone. It ties the event to the call to repent.
-- **Words:** *egeirō* / *anastasis*, *ōphthē* ("He appeared"), *paradidōmi* (deliver, as tradition), *aparchē* (firstfruits)
+- **Words:** *egeirō* / *anastasis* (raise / resurrection), *ōphthē* ("He appeared"), *paradidōmi* (deliver, as tradition), *aparchē* (firstfruits)
 - **Supplement:** DTS *The Table*, "Investigating the Resurrection of Jesus" (Darrell Bock) — [Listen to the episode](https://voice.dts.edu/tablepodcast/investigating-resurrection-jesus/)
 - **Questions:** Outline Paul's argument in 15:1–11 and 15:12–19. Why does he list living witnesses? What is at stake "if Christ has not been raised"?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
@@ -142,7 +142,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
   - **Ps 73.** Why do the wicked do so well? The turn comes at verse 17, in the sanctuary. It's the honest version of the question.
   - **Rom 8:18–39.** Paul weighs present suffering against future glory and says nothing can separate you from God's love. It comes after the resurrection unit on purpose: the answer depends on Easter.
   - **Gen 50:20.** "You meant evil against me, but God meant it for good." One event, two intentions. The clearest case in Scripture.
-- **Words:** *tām* (blameless), *ʾĕmûnāh* (faithfulness, Hab 2:4), *dikaioō*
+- **Words:** *tām* (blameless), *ʾĕmûnāh* (faithfulness, Hab 2:4), *dikaioō* (justify, declare righteous)
 - **Supplement:** DTS BE547, Unit 4, Video 7: "The Undeserved Suffering of Job" (Larry Waters) — [Watch lecture](https://media.dts.edu/player/?course=BE547&unit=4&video=7) · [Read transcript](https://media.dts.edu/player/print-transcript.aspx?course=BE547&language=en-US&unit=4&video=7). Optional: Unit 8, Video 1, "Intro to the Problem of Evil and Suffering" (Doug Blount) — [Watch lecture](https://media.dts.edu/player/?course=BE547&unit=8&video=1) · [Read transcript](https://media.dts.edu/player/print-transcript.aspx?course=BE547&language=en-US&unit=8&video=1); DTS Voice, ["Why Does God Allow Suffering?"](https://voice.dts.edu/article/why-does-god-allow-suffering-dallas-theological-seminary/)
 - **Questions:** Why does God never tell Job about chapters 1–2? What changes in Habakkuk between 1:2 and 3:17–19? With Unit 7's case for the cross and the empty tomb in view, how do they reshape the question (Rom 8:18–39)?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
@@ -157,7 +157,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
   - **John 5:31–47.** Jesus calls his witnesses: John the Baptist, his works, the Father, and the Scriptures. Unit 6's testimony argument, from Jesus himself.
   - **John 8:12–59.** A long, sharp exchange that ends with "before Abraham was, I am." Jesus doesn't soften a claim to win the room.
   - **John 10:22–39.** Jesus argues from Ps 82 and from his works. A short example of reasoning from the other side's own Scripture.
-- **Words:** *peirazō* (test/tempt), *elenchō* (convict/expose), *hypokritēs*
+- **Words:** *peirazō* (test/tempt), *elenchō* (convict/expose), *hypokritēs* (hypocrite)
 - **Supplement:** Poythress, *Logic*, ch. 4 "Formal Logic" (pp. 45–50) and ch. 16 "Fallacies and God" (pp. 123–133) — [Read the free PDF](https://frame-poythress.org/wp-content/uploads/2013/07/BLogicFinal.pdf)
 - **Questions:** How does Jesus answer a question with a question (Matt 21:24–25)? In Matt 22:15–22, how does Jesus recognize the trap, reject its framing, and introduce a higher allegiance? What are the "four witnesses" of John 5?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
@@ -171,7 +171,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
   - **Acts 13:13–48.** Paul in a synagogue. Hold it next to Acts 17: same gospel, different starting point.
   - **Acts 17:1–4, 16–34.** Paul "reasoning from the Scriptures" in Thessalonica, then quoting Greek poets in Athens. The contrast between the two is the unit's main study.
   - **Acts 19:8–10.** Two years of daily discussion in a rented lecture hall. Apologetics as a long, steady practice.
-- **Words:** *dialegomai* (reason), *peithō* (persuade), *paratithēmi* (set before/demonstrate), *spermologos*
+- **Words:** *dialegomai* (reason), *peithō* (persuade), *paratithēmi* (set before/demonstrate), *spermologos* ("seed-picker"; babbler)
 - **Supplement:** Constable's *Notes on Acts* (DTS, free), the sections on Acts 13 and 17 — [Read the notes](https://soniclight.com/tcon/notes/html/acts/acts.htm). Optional: Bahnsen's analysis of Acts 17 in *Always Ready*
 - **Questions:** Compare Paul's starting points in the synagogue (Acts 13) and the Areopagus (Acts 17). What stays the same? Why does he quote Aratus? Where does the Areopagus speech end, and why?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
@@ -181,7 +181,7 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Read:** Acts 22–26
 - **Why these readings:**
   - **Acts 22–26.** Paul speaks in his own defense in five settings: the Jerusalem crowd, the council, Felix, Festus, and Agrippa. Read them in order. The central claims stay consistent while the details and approach change with each audience.
-- **Words:** *apologeomai*, *mainomai* ("you are mad," 26:24), *sōphrosynē* (sober truth)
+- **Words:** *apologeomai* (defend oneself), *mainomai* ("you are mad," 26:24), *sōphrosynē* (sober truth)
 - **Supplement:** Review your Unit 1 notes — [Revisit Unit 1](unit-01.html)
 - **Questions:** How does Paul's defense change across Jerusalem, Felix, Festus and Agrippa? What role does his personal testimony play? Why does he appeal to Agrippa's belief in the prophets?
 - **Posture:** How should these texts shape the apologist's tone and conduct?
