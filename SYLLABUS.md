@@ -3,7 +3,7 @@
 **Student:** Dr. Tom Hastings · **Format:** self-paced, about 1 unit per week · **Workload:** expect 6–10 hours in heavier units (Units 4, 8, 11, 12) · **Draft v2.2, 2026-11-03 (revised with Emerald)**
 
 ## Purpose
-This course studies how Scripture defends itself by showing how God, Jesus, and the apostles argued for the truth, and what those arguments mean for you. We take a fully Biblical approach. Scripture is our final authority, and all other readings support the text, just as Paul used a line from Aratus in Acts 17:28 to serve the gospel.
+This course looks at how Scripture argues for itself by looking at how God, Jesus and the apostles argued for the truth and what that means for you. It's a completely biblical approach: Scripture is the final authority, and all other reading simply supports the text. That's exactly what Paul did in Acts 17:28 where he quotes a line from Aratus to serve the gospel.
 
 ## Method (every unit)
 1. **Read** the primary passages in context. Read the whole chapter, not just the verses.
