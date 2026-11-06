@@ -8,6 +8,7 @@ import html
 import re
 from pathlib import Path
 from htmlfmt import pretty
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent
 SRC = (ROOT / "SYLLABUS.md").read_text(encoding="utf-8")
@@ -388,7 +389,7 @@ def page(title, body, depth=0, active="", path="", unit=0):
     <div class="footer-meta">
       <span><span class="ls-wm ls-wm-sm">Life<span>Spent</span></span> <em>Spend and be spent.</em> 2 Cor 12:15 · {SITE_TITLE}</span>
       <span class="footer-ack">Scripture quoted by permission. Quotations designated (NET) are from the NET Bible® copyright ©1996, 2019 by Biblical Studies Press, L.L.C. All rights reserved.</span>
-      <span><a href="{up}index.html#units">Units</a> · <a href="{up}method.html">Method</a> · <a href="{up}resources.html">Resources</a> · <a href="#" data-reset-progress title="Your progress is saved only in this browser">Reset my progress</a></span>
+      <span><a href="{up}index.html#units">Units</a> · <a href="{up}method.html">Method</a> · <a href="{up}resources.html">Resources</a> · <a href="#" data-reset-progress title="Your progress is saved only in this browser">Reset my progress</a> · <a href="https://validator.w3.org/nu/?doc={quote(SITE_URL + path, safe="")}" rel="noopener" title="Check this page with the W3C HTML validator">Valid HTML <i class="bi bi-patch-check"></i></a></span>
     </div>
   </div>
 </footer>
