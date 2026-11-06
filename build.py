@@ -7,6 +7,7 @@ SYLLABUS.md is the single source of truth; edit it, then rebuild.
 import html
 import re
 from pathlib import Path
+from htmlfmt import pretty
 
 ROOT = Path(__file__).resolve().parent
 SRC = (ROOT / "SYLLABUS.md").read_text(encoding="utf-8")
@@ -465,7 +466,7 @@ def build_index():
         </ul>
       </div>
       <div class="col-lg-6">
-        <div class="course-map" aria-label="Course map">
+        <div class="course-map" role="group" aria-label="Course map">
           <div class="map-grid">{tiles}</div>
           <div class="map-legend">{legend}</div>
         </div>
@@ -586,7 +587,7 @@ def build_unit(u):
     pager += (f'<a class="pager-link" href="unit-{prev_u["n"]:02d}.html"><span>← Unit {prev_u["n"]}</span>{html.escape(short_title(prev_u["title"]))}</a>' if prev_u else '<span></span>')
     pager += (f'<a class="pager-link text-end" href="unit-{next_u["n"]:02d}.html"><span>Unit {next_u["n"]} →</span>{html.escape(short_title(next_u["title"]))}</a>' if next_u else '<a class="pager-link text-end" href="../index.html#units"><span>Done →</span>All units</a>')
     pager += "</nav>"
-    segs = "".join(f'<a href="unit-{x["n"]:02d}.html" data-unit-link="{x["n"]}" class="seg p{part_of(x["n"])[0]}{" on" if x["n"] <= n else ""}{" cur" if x["n"] == n else ""}" title="Unit {x["n"]}: {html.escape(x["title"])}"></a>' for x in units)
+    segs = "".join(f'<a href="unit-{x["n"]:02d}.html" data-unit-link="{x["n"]}" class="seg p{part_of(x["n"])[0]}{" on" if x["n"] <= n else ""}{" cur" if x["n"] == n else ""}"{' aria-current="page"' if x["n"] == n else ""} title="Unit {x["n"]}: {html.escape(x["title"])}"></a>' for x in units)
 
     body = f"""
 <header class="u-hero p{pnum}">
@@ -597,7 +598,7 @@ def build_unit(u):
       <li class="breadcrumb-item active" aria-current="page">Unit {n}</li></ol></nav>
     <p class="kicker mb-2">Unit {n} of {len(units)}</p>
     <h1 class="u-h1">{html.escape(u['title'])}</h1>
-    <div class="u-steps" role="progressbar" aria-label="Course progress" aria-valuenow="{n}" aria-valuemin="0" aria-valuemax="{len(units)}">{segs}</div>
+    <nav class="u-steps" aria-label="All units">{segs}</nav>
   </div>
 </header>
 <div class="container-xl">
@@ -605,12 +606,12 @@ def build_unit(u):
     <aside class="col-lg-3 d-none d-lg-block">
       <div class="u-toc"><p class="part-kicker">On this page</p>{toc}</div>
     </aside>
-    <article class="col-lg-8 u-article">
+    <div class="col-lg-8 u-article">
       {video_feature(n)}
       {content}
       {tracker}
       {pager}
-    </article>
+    </div>
   </div>
 </div>"""
     return page(f"Unit {n}: {u['title']}", body, depth=1, active="units", path=f"units/unit-{n:02d}.html", unit=n)
@@ -657,11 +658,11 @@ def build_method():
 
 def main():
     (ROOT / "units").mkdir(exist_ok=True)
-    (ROOT / "index.html").write_text(build_index(), encoding="utf-8")
-    (ROOT / "resources.html").write_text(build_resources(), encoding="utf-8")
-    (ROOT / "method.html").write_text(build_method(), encoding="utf-8")
+    (ROOT / "index.html").write_text(pretty(build_index()), encoding="utf-8")
+    (ROOT / "resources.html").write_text(pretty(build_resources()), encoding="utf-8")
+    (ROOT / "method.html").write_text(pretty(build_method()), encoding="utf-8")
     for u in units:
-        (ROOT / "units" / f"unit-{u['n']:02d}.html").write_text(build_unit(u), encoding="utf-8")
+        (ROOT / "units" / f"unit-{u['n']:02d}.html").write_text(pretty(build_unit(u)), encoding="utf-8")
     print(f"built index, method, resources, {len(units)} units")
 
 
