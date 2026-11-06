@@ -54,9 +54,9 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 ## Unit 2: How We Know (Biblical Epistemology)
 - **Read:** Prov 1:1–7; 9:10; Col 2:1–10; 1 Cor 1:18–2:16; John 17:17
 - **Why these readings:**
-  - **Prov 1:1–7; 9:10.** Proverbs states its own starting point: the fear of the LORD is the beginning of knowledge. That claim has to be on the table before you ask how anyone knows anything.
-  - **Col 2:1–10.** All the treasures of wisdom and knowledge are hidden in Christ, and Paul warns against philosophy built on human tradition. It frames where reasoning starts.
-  - **1 Cor 1:18–2:16.** The hardest reading this week. Paul seems to reject human wisdom, yet he argues carefully the whole way through. Working out how both are true is the main job of the unit.
+  - **Prov 1:1–7; 9:10.** Proverbs states the fear of the LORD is the beginning of knowledge. This claim has to be the foundation before you ask how anyone knows anything.
+  - **Col 2:1–10.** All the treasures of wisdom and knowledge are hidden in Christ, and Paul warns against philosophy built on human tradition.
+  - **1 Cor 1:18–2:16.** This is the most challenging reading this week. Paul seems to reject human wisdom, yet he argues carefully the whole way through. Working out how both are true is the main point of the unit.
   - **John 17:17.** "Your word is truth." Jesus says where final authority sits. The rest of the unit leans on this verse.
 - **Words:** *yirʾat YHWH* (fear of the LORD), *daʿat* (knowledge), *sophia*, *gnōsis*, *alētheia*
 - **Supplement:** Poythress, *Logic*, chs. 3 "What Do We Trust?" and 7–10 ("Logic Revealing God," "Logic as Personal," "Logic within Language," "Suppressing the Truth") — [Read the free PDF](https://frame-poythress.org/wp-content/uploads/2013/07/BLogicFinal.pdf). Optional: Calvin, *Institutes* 1.1–1.2 — [Read on CCEL](https://www.ccel.org/ccel/calvin/institutes.html)
