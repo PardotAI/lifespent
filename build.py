@@ -520,6 +520,7 @@ def why_list(items):
 # Published media per unit. Players load only when clicked (nothing third-party loads before that).
 MEDIA = {
     1: {"video": ("vimeo", "1244297847", "4:14")},
+    2: {"video": ("vimeo", "1244298253", "4:38")},
     3: {"video": ("vimeo", "1244295652", "5:17")},
 }
 
