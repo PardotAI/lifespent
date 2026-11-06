@@ -455,7 +455,7 @@ def build_index():
       <div class="col-lg-6">
         <p class="kicker">{SITE_TAG}</p>
         <h1 class="hero-h1">Spend your life going deeper <span class="accent">in Scripture.</span></h1>
-        <p class="hero-sub">Scripture makes its own case. God makes arguments in it. So do Jesus and the apostles. You will read those arguments in context, one unit a week, and reflect on what they ask of you as a believer.</p>
+        <p class="hero-sub">Scripture speaks for itself. In it, God presents arguments, as do Jesus and the apostles. Each week, you’ll read these arguments in context and reflect on what they mean for you as a believer.</p>
         <div class="d-flex flex-wrap gap-3 align-items-center mt-4">
           <a class="btn btn-accent btn-lg" href="units/unit-01.html" data-resume-btn data-label-resume="Resume Unit {{n}}" data-label-done="Review the course"><span data-label>Begin Unit 1</span> <i class="bi bi-arrow-right"></i></a>
           <a class="btn btn-quiet btn-lg" href="method.html">How it works</a>
