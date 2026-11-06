@@ -550,9 +550,9 @@ def build_unit(u):
 
     secs = []  # (id, label, html)
     if "Read" in f:
-        secs.append(("read", "Read", f'<p class="note">Read each passage in context: the whole chapter, not just the verses. Links open the NET Bible in the Bible app (bible.com).</p><div class="passages">{passages(f["Read"][0])}</div>' + net_notes(f["Read"][0]) + why_list(u["why"])))
+        secs.append(("read", "Read", f'<p class="note">Read each passage in context: this means reading the entire chapter, while paying close attention to the highlighted verses. Links open the NET Bible in the Bible app (bible.com).</p><div class="passages">{passages(f["Read"][0])}</div>' + net_notes(f["Read"][0]) + why_list(u["why"])))
     if "Words" in f:
-        secs.append(("words", "Word study", f'<div class="words">{words(f["Words"][0])}</div><p class="note mt-3 mb-0">Say each word aloud and stress the <b class="say-b">bold</b> syllable. Greek follows the classroom (Erasmian) pronunciation most US seminaries teach; Hebrew follows standard academic pronunciation. Other accepted systems exist (e.g., modern Greek, reconstructed Koine), so you may hear these said differently. Context, not a word\'s possible range, decides its meaning. Use <a href="https://www.stepbible.org" target="_blank" rel="noopener">STEP Bible</a> and the NET notes.</p>'))
+        secs.append(("words", "Word study", f'<div class="words">{words(f["Words"][0])}</div><p class="note mt-3 mb-0">Say each word aloud and stress the <b class="say-b">bold</b> syllable. Greek follows the classroom (Erasmian) pronunciation most seminaries teach; Hebrew follows standard academic pronunciation. Other accepted systems exist (e.g., modern Greek, reconstructed Koine), so you may hear these said differently. The author\'s context decides the meaning.</p>'))
     if "Supplement" in f:
         secs.append(("supplement", "Supplement", f'<p class="mb-0">{inline(f["Supplement"][0])}</p>'))
     if "Questions" in f:
