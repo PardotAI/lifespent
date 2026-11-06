@@ -68,8 +68,8 @@ This course studies how Scripture defends itself: how God, Jesus, and the apostl
 - **Read:** Ps 19; Rom 1:18–2:16; Acts 14:8–18; Eccl 3:11
 - **Why these readings:**
   - **Ps 19.** Creation speaks in verses 1–6 and the law speaks in verses 7–14. One psalm shows you what nature reveals and what it can't.
-  - **Rom 1:18–2:16.** The central text on what everyone knows about God and suppresses. Keep reading into chapter 2, because the argument about conscience finishes at 2:16.
-  - **Acts 14:8–18.** Paul at Lystra, talking to pagans who have no Bible. He argues from rain, harvests, and food. It shows natural revelation in an actual missionary encounter.
+  - **Rom 1:18–2:16.** The main text on what everyone knows about God and suppresses. Continue reading further into chapter 2, because the argument about conscience concludes at 2:16.
+  - **Acts 14:8–18.** Paul at Lystra, talking to pagans who have no Bible. He argues from rain, harvests, and food. It shows natural revelation in a missionary encounter.
   - **Eccl 3:11.** God "has set eternity in the human heart." It explains why people keep asking questions they can't answer on their own.
 - **Words:** *phaneros* (evident), *katechō* (suppress), *syneidēsis* (conscience), *anapologētos* (without excuse)
 - **Supplement:** Calvin, *Institutes* 1.3–1.5 (*sensus divinitatis*) — [Read on CCEL](https://www.ccel.org/ccel/calvin/institutes.html)
