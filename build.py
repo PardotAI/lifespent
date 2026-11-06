@@ -489,7 +489,7 @@ def build_index():
 <section class="section">
   <div class="container-xl">
     <p class="kicker">Every week</p>
-    <h2 class="h2-big mb-5">Six steps. <span class="accent">Same rhythm</span> every unit.</h2>
+    <h2 class="h2-big mb-5">We follow the same <span class="accent">six steps</span> every week for each unit.</h2>
     <div class="row g-4">{steps}
     </div>
   </div>
