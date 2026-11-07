@@ -673,46 +673,34 @@ def build_resources():
 
 def build_method():
     meta = {  # icon, what you produce, where it lives on each unit page
-        "Read": ("bi-book", "Notes on the passages", "read"),
-        "Word study": ("bi-translate", "A short word list", "words"),
-        "Supplement": ("bi-journal-bookmark", "Notes from one reading", "supplement"),
-        "Questions": ("bi-chat-square-text", "Journal answers", "questions"),
-        "Paper": ("bi-pencil-square", "A 1–2 page paper", "write"),
-        "Reflection": ("bi-heart", "A 1-page reflection", "write"),
+        "Read": ("bi-book", "Notes on the passages", "read", "Day 1", "Start with the unit's video overview"),
+        "Word study": ("bi-translate", "A short word list", "words", "Day 2", ""),
+        "Supplement": ("bi-journal-bookmark", "Notes from one reading", "supplement", "Day 3", ""),
+        "Questions": ("bi-chat-square-text", "Journal answers", "questions", "Day 4", ""),
+        "Paper": ("bi-pencil-square", "A 1–2 page paper", "write", "Days 5–6", "Draft one day, finish the next"),
+        "Reflection": ("bi-heart", "A 1-page reflection", "write", "Day 7", ""),
     }
     items = ""
     for n, title, desc, sg in method_steps():
-        icon, out, sec = meta.get(title, ("bi-circle", "", "read"))
+        icon, out, sec, day, tip = meta.get(title, ("bi-circle", "", "read", "", ""))
         callout = sg.replace('<p class="note mt-2 mb-0">', '<div class="m-callout"><i class="bi bi-shield-check"></i><p class="mb-0">').replace("</p>", "</p></div>") if sg else ""
         items += (f'<li class="m-step"><span class="m-dot"><i class="bi {icon}"></i></span>'
-                  f'<div class="m-card"><p class="m-kicker">Step {n}</p><h3 class="m-title">{title}</h3><p class="m-desc">{desc}</p>{callout}'
+                  f'<div class="m-card"><div class="m-top"><p class="m-kicker">Step {n}</p><span class="m-day"><i class="bi bi-calendar3"></i> {day}</span></div>'
+                  f'<h3 class="m-title">{title}</h3><p class="m-desc">{desc}</p>' + (f'<p class="m-tip"><i class="bi bi-lightbulb"></i> {tip}</p>' if tip else "") + f'{callout}'
                   f'<p class="m-out"><span><i class="bi bi-box-arrow-down"></i> You produce: <b>{out}</b></span>'
                   f'<span class="m-where">On each unit page: “{ {"read": "Read", "words": "Word study", "supplement": "Supplement", "questions": "Questions", "write": "Write"}[sec] }”</span></p></div></li>')
-    week = "".join(f'<li><span class="w-day">{d}</span><span>{w}</span></li>' for d, w in [
-        ("Day 1", "Watch the video overview, then read the passages"),
-        ("Day 2", "Word study"),
-        ("Day 3", "Supplement reading"),
-        ("Day 4", "Answer the questions"),
-        ("Days 5–6", "Draft and finish the paper"),
-        ("Day 7", "Write the reflection"),
-    ])
     body = f"""
-<header class="m-hero"><div class="container-xl"><div class="row align-items-end g-4">
-<div class="col-lg-8"><p class="kicker mb-2">How to study</p><h1 class="hero-h1 mb-3">One rhythm, <span class="accent">every week.</span></h1>
+<header class="m-hero"><div class="container-xl"><div class="row justify-content-center g-4">
+<div class="col-lg-9"><p class="kicker mb-2">How to study</p><h1 class="hero-h1 mb-3">One rhythm, <span class="accent">every week.</span></h1>
 <p class="hero-sub mb-2">Every unit uses the same six steps, so your effort goes into the text instead of the format.</p>
 <p class="note mb-4"><i class="bi bi-clock"></i> Expect {inline(workload)}.</p>
 <div class="d-flex flex-wrap gap-2"><a class="btn btn-accent btn-lg" href="units/unit-01.html" data-resume-btn data-label-resume="Resume Unit {n}" data-label-done="Review the course"><span data-label>Begin Unit 1</span> <i class="bi bi-arrow-right"></i></a><a class="btn btn-quiet btn-lg" href="index.html#units">See all units</a></div></div>
 </div></div></header>
-<div class="container-xl"><div class="row g-5">
-<div class="col-lg-8"><h2 class="h2-big mb-4">The six steps</h2><ol class="m-timeline">{items}</ol></div>
-<aside class="col-lg-4"><div class="m-side">
-<div class="m-panel"><p class="part-kicker mb-3"><i class="bi bi-calendar-week"></i> One way to pace a week</p><ol class="m-week">{week}</ol><p class="note mb-0">A suggestion, not a rule. Heavier units may need extra time.</p></div>
-<div class="m-panel m-question p3"><p class="part-kicker mb-2"><i class="bi bi-arrow-repeat"></i> The recurring question</p><p class="m-q mb-0">How should these texts shape the apologist's tone and conduct?</p><p class="note mt-2 mb-0">Every unit asks it.</p></div>
-<div class="m-panel"><p class="part-kicker mb-2"><i class="bi bi-tools"></i> What you need</p><ul class="m-need"><li><a href="https://netbible.org" rel="noopener">NET Bible</a> (free), with its translator notes</li><li><a href="https://www.stepbible.org" rel="noopener">STEP Bible</a> for word studies</li><li>A notebook or study journal</li></ul></div>
-</div></aside>
+<div class="container-xl"><div class="row justify-content-center g-5">
+<div class="col-lg-9"><h2 class="h2-big mb-2">The six steps</h2><p class="note mb-4"><i class="bi bi-calendar-week"></i> Each step shows a suggested day. It's a pace, not a rule; heavier units may need extra time.</p><ol class="m-timeline">{items}</ol></div>
 </div></div>
-<section class="m-cta"><div class="container-xl"><div class="m-cta-box"><div><h2 class="h2-big mb-2">Ready to start?</h2><p class="mb-0">Your progress is saved in this browser, so you can pick up where you left off.</p></div>
-<a class="btn btn-accent btn-lg" href="units/unit-01.html" data-resume-btn data-label-resume="Resume Unit {n}" data-label-done="Review the course"><span data-label>Begin Unit 1</span> <i class="bi bi-arrow-right"></i></a></div></div></section>"""
+<section class="m-cta"><div class="container-xl"><div class="row justify-content-center"><div class="col-lg-9"><div class="m-cta-box"><div><h2 class="h2-big mb-2">Ready to start?</h2><p class="mb-0">Your progress is saved in this browser, so you can pick up where you left off.</p></div>
+<a class="btn btn-accent btn-lg" href="units/unit-01.html" data-resume-btn data-label-resume="Resume Unit {n}" data-label-done="Review the course"><span data-label>Begin Unit 1</span> <i class="bi bi-arrow-right"></i></a></div></div></div></div></section>"""
     return page("Method", body, active="method", path="method.html")
 
 
