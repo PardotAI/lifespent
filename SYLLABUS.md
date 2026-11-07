@@ -180,7 +180,7 @@ This course explores how beautifully Scripture is woven together and how its tru
 ## Unit 11: Paul's Defenses
 - **Read:** Acts 22–26
 - **Why these readings:**
-  - **Acts 22–26.** Paul speaks in his own defense in five settings: the Jerusalem crowd, the council, Felix, Festus, and Agrippa. Read them in order. The central claims stay consistent while the details and approach change with each audience.
+  - **Acts 22–26.** Paul speaks in his own defense in five settings: the Jerusalem crowd, the council, Felix, Festus, and Agrippa. Read them in order. You should notice that the central claims stay consistent while the details and approach change with each audience.
 - **Words:** *apologeomai* (defend oneself), *mainomai* ("you are mad," 26:24), *sōphrosynē* (sober truth)
 - **Supplement:** Review your Unit 1 notes — [Revisit Unit 1](unit-01.html)
 - **Questions:** How does Paul's defense change across Jerusalem, Felix, Festus and Agrippa? What role does his personal testimony play? Why does he appeal to Agrippa's belief in the prophets?
