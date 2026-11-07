@@ -387,10 +387,11 @@ def page(title, body, depth=0, active="", path="", unit=0):
 <nav class="navbar navbar-expand-md site-nav">
   <div class="container-xl">
     <a class="navbar-brand" href="{up}index.html" aria-label="LifeSpent: {SITE_TITLE}"><span class="ls-wm">Life<span>Spent</span></span><span class="brand-course">{SITE_TITLE}</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="nav-tools d-md-none"><button type="button" class="theme-toggle theme-toggle-m" data-theme-toggle aria-label="Switch to dark theme" title="Switch between light and dark"><i class="bi bi-moon"></i><i class="bi bi-sun"></i></button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button></div>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto align-items-md-center">{links}
-        <li class="nav-item ms-md-3"><button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Switch theme"><i class="bi bi-moon-stars"></i><i class="bi bi-sun"></i></button></li>
+        <li class="nav-item d-none d-md-block ms-md-1"><button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Switch between light and dark"><i class="bi bi-moon"></i><i class="bi bi-sun"></i></button></li>
         <li class="nav-item ms-md-3"><a class="btn btn-accent btn-sm-nav" href="{up}units/unit-01.html" data-resume-btn data-label-resume="Resume" data-label-done="Review"><span data-label>Begin</span></a></li>
       </ul>
     </div>

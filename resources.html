@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=Noto+Serif:wght@400&family=Noto+Serif+Hebrew:wght@400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="assets/site.css?v=713e4cef">
+    <link rel="stylesheet" href="assets/site.css?v=d32ecc25">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="apple-touch-icon" href="assets/icon-512.png">
     <meta property="og:type" content="website">
@@ -30,7 +30,8 @@
     <nav class="navbar navbar-expand-md site-nav">
       <div class="container-xl">
         <a class="navbar-brand" href="index.html" aria-label="LifeSpent: Biblical Apologetics"><span class="ls-wm">Life<span>Spent</span></span><span class="brand-course">Biblical Apologetics</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="nav-tools d-md-none"><button type="button" class="theme-toggle theme-toggle-m" data-theme-toggle aria-label="Switch to dark theme" title="Switch between light and dark"><i class="bi bi-moon"></i><i class="bi bi-sun"></i></button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button></div>
         <div class="collapse navbar-collapse" id="nav">
           <ul class="navbar-nav ms-auto align-items-md-center">
             <li class="nav-item dropdown">
@@ -75,7 +76,7 @@
             </li>
             <li class="nav-item"><a class="nav-link" href="method.html"><i class="bi bi-signpost-split"></i> Method</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="resources.html"><i class="bi bi-book"></i> Resources</a></li>
-            <li class="nav-item ms-md-3"><button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Switch theme"><i class="bi bi-moon-stars"></i><i class="bi bi-sun"></i></button></li>
+            <li class="nav-item d-none d-md-block ms-md-1"><button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Switch between light and dark"><i class="bi bi-moon"></i><i class="bi bi-sun"></i></button></li>
             <li class="nav-item ms-md-3"><a class="btn btn-accent btn-sm-nav" href="units/unit-01.html" data-resume-btn data-label-resume="Resume" data-label-done="Review"><span data-label>Begin</span></a></li>
           </ul>
         </div>
