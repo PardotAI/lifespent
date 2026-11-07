@@ -207,3 +207,11 @@ document.addEventListener("click", function (e) {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 })();
+
+// While the mobile menu is open, lock the page so scrolling moves the menu, not the page behind it.
+(function () {
+  var menu = document.getElementById("nav");
+  if (!menu) return;
+  menu.addEventListener("show.bs.collapse", function () { document.documentElement.classList.add("menu-open"); });
+  menu.addEventListener("hidden.bs.collapse", function () { document.documentElement.classList.remove("menu-open"); });
+})();

@@ -426,3 +426,8 @@ a.go:hover { background: var(--btn); color: #fff; }
 .m-top .m-title { display: flex; align-items: center; gap: .65rem; margin: 0; }
 .m-ic { display: inline-grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: .55rem; background: var(--tint-accent); color: var(--accent); font-size: 1.05rem; flex-shrink: 0; }
 @media (max-width: 575.98px) { .m-timeline::before { left: .55rem; } .m-dot { width: 1.15rem; height: 1.15rem; } }
+/* Mobile menu: scroll inside the menu, keep the page behind it still */
+@media (max-width: 767.98px) {
+  .site-nav .navbar-collapse { max-height: calc(100dvh - 4.5rem); overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+  html.menu-open, html.menu-open body { overflow: hidden; }
+}
