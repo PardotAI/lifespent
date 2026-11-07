@@ -178,3 +178,23 @@ document.addEventListener("click", function (e) {
   f.allowFullscreen = true;
   box.replaceChildren(f);
 });
+
+// Light/dark theme: the choice is saved in this browser (localStorage), like course progress.
+(function () {
+  var KEY = "lifespent.theme", root = document.documentElement;
+  function label() {
+    var dark = root.getAttribute("data-bs-theme") === "dark";
+    document.querySelectorAll("[data-theme-toggle]").forEach(function (b) {
+      b.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+      b.setAttribute("aria-pressed", dark ? "true" : "false");
+    });
+  }
+  document.addEventListener("click", function (e) {
+    if (!(e.target.closest && e.target.closest("[data-theme-toggle]"))) return;
+    var next = root.getAttribute("data-bs-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-bs-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (err) {}
+    label();
+  });
+  label();
+})();

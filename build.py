@@ -348,6 +348,8 @@ def page(title, body, depth=0, active="", path="", unit=0):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>try{{var t=localStorage.getItem("lifespent.theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-bs-theme",t)}}catch(e){{}}</script>
 <title>{html.escape(title)} · {SITE_TITLE} · LifeSpent</title>
 <meta name="description" content="{SITE_TITLE}: {SITE_TAG}. A Scripture-governed study of how God, Jesus and the apostles argued for the truth.">
 {FONTS}
@@ -374,6 +376,7 @@ def page(title, body, depth=0, active="", path="", unit=0):
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto align-items-md-center">{links}
+        <li class="nav-item ms-md-3"><button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Switch theme"><i class="bi bi-moon-stars"></i><i class="bi bi-sun"></i></button></li>
         <li class="nav-item ms-md-3"><a class="btn btn-accent btn-sm-nav" href="{up}units/unit-01.html" data-resume-btn data-label-resume="Resume" data-label-done="Review"><span data-label>Begin</span></a></li>
       </ul>
     </div>
