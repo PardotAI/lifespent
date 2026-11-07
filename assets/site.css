@@ -249,22 +249,22 @@ a.go:hover { background: var(--btn); color: #fff; }
   --line: #2d363e;
   --stone: #1b2228;
   --surface: #161c21;
-  --accent: #ec8a87;
-  --accent-dark: #f2a9a7;
-  --p1: #ec8a87;
+  --accent: #ff2d55;
+  --accent-dark: #ff6380;
+  --p1: #ff2d55;
   --p2: #e0b04f;
   --p3: #5fb7ae;
   --p4: #93a3e3;
-  --tint-accent: rgba(236,138,135,.14);
+  --tint-accent: rgba(255,45,85,.16);
   --night: #0c1013;
   --dash: #3d4850;
   --seg-off: rgba(255,255,255,.14);
-  --btn: #b13a38;
-  --btn-dark: #c64a47;
+  --btn: #e0153f;
+  --btn-dark: #ff2d55;
   --bs-body-color: var(--ink);
   --bs-body-bg: #11161a;
-  --bs-link-color-rgb: 236, 138, 135;
-  --bs-link-hover-color-rgb: 242, 169, 167;
+  --bs-link-color-rgb: 255, 45, 85;
+  --bs-link-hover-color-rgb: 255, 99, 128;
   color-scheme: dark;
 }
 [data-bs-theme="dark"] .p1, [data-bs-theme="dark"] .p2, [data-bs-theme="dark"] .p3, [data-bs-theme="dark"] .p4 { --pt: color-mix(in srgb, var(--pc) 13%, #11161a); }
@@ -273,3 +273,5 @@ a.go:hover { background: var(--btn); color: #fff; }
 [data-bs-theme="dark"] .site-footer { border-top: 1px solid var(--line); }
 [data-bs-theme="dark"] .map-tile:hover { box-shadow: 0 8px 20px -10px rgba(0,0,0,.7); }
 [data-bs-theme="dark"] .media-player { box-shadow: 0 10px 28px -8px rgba(0,0,0,.6); outline-color: rgba(255,255,255,.08); }
+[data-bs-theme="dark"] .site-footer .ls-wm > span, [data-bs-theme="dark"] .footer-ref { color: #ff2d55; }
+[data-bs-theme="dark"] .pickup a { color: #ff6380; }
