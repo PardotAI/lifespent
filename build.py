@@ -347,13 +347,13 @@ def page(title, body, depth=0, active="", path="", unit=0):
             + (' aria-current="page"' if u["n"] == unit else "") + '>'
             f'<span class="um-n">{u["n"]:02d}</span><span class="um-t">{html.escape(short_title(u["title"]))}</span></a></li>'
             for u in units if u["n"] in rng)
-        cols += f'<div class="um-part p{i}"><p class="um-head"><span class="dot"></span>Part {i} · {pname}</p><ul class="um-list">{items}</ul></div>'
+        cols += f'<div class="um-part p{i}"><p class="um-head"><span class="dot"></span>Module {i} · {pname}</p><ul class="um-list">{items}</ul></div>'
     units_menu = (
         f'<li class="nav-item dropdown"><a class="nav-link dropdown-toggle{cur("units")}" href="{up}index.html#units" role="button" '
         f'data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"><i class="bi bi-grid-3x3-gap"></i> Units</a>'
         f'<div class="dropdown-menu units-menu"><div class="um-grid">{cols}</div>'
         f'<div class="um-foot"><span class="note">✓ marks units you have finished in this browser.</span>'
-        f'<a href="{up}index.html#units">All units and parts <i class="bi bi-arrow-right"></i></a></div></div></li>')
+        f'<a href="{up}index.html#units">All units and modules <i class="bi bi-arrow-right"></i></a></div></div></li>')
     links = (units_menu
              + f'<li class="nav-item"><a class="nav-link{cur("method")}" href="{up}method.html"><i class="bi bi-signpost-split"></i> Method</a></li>'
              + f'<li class="nav-item"><a class="nav-link{cur("resources")}" href="{up}resources.html"><i class="bi bi-book"></i> Resources</a></li>')
@@ -454,7 +454,7 @@ def build_index():
       </a>""" for u in units if u["n"] in rng)
         parts_html.append(f"""
     <div class="part p{i}">
-      <div class="part-side"><span class="part-kicker"><span class="dot p{i}"></span>Part {i}</span><h3 class="part-name">{pname}</h3><p class="part-desc">{pdesc}</p></div>
+      <div class="part-side"><span class="part-kicker"><span class="dot p{i}"></span>Module {i}</span><h3 class="part-name">{pname}</h3><p class="part-desc">{pdesc}</p></div>
       <div class="part-rows">{rows}</div>
     </div>""")
 
@@ -490,7 +490,7 @@ def build_index():
           <a class="btn btn-quiet btn-lg" href="method.html">How it works</a>
         </div>
         <ul class="meta-row">
-          <li><strong>12</strong> units</li><li><strong>4</strong> parts</li><li><strong>~1</strong> per week</li><li><strong>Free</strong> resources</li><li data-progress-count hidden><strong>0/12</strong> completed</li>
+          <li><strong>12</strong> units</li><li><strong>4</strong> modules</li><li><strong>~1</strong> per week</li><li><strong>Free</strong> resources</li><li data-progress-count hidden><strong>0/12</strong> completed</li>
         </ul>
       </div>
       <div class="col-lg-6">
@@ -506,8 +506,7 @@ def build_index():
 
 <section class="section">
   <div class="container-xl">
-    <p class="kicker">Every week</p>
-    <h2 class="h2-big mb-5">The <span class="accent">Flow</span></h2>
+    <h2 class="kicker mb-4">The Flow</h2>
     <ol class="flow">{steps}</ol>
     <p class="mt-4 mb-0"><a class="flow-more" href="method.html">See how each step works <i class="bi bi-arrow-right"></i></a></p>
   </div>
@@ -516,7 +515,7 @@ def build_index():
 <section class="section section-alt" id="units">
   <div class="container-xl">
     <p class="kicker">The course</p>
-    <h2 class="h2-big mb-5">Twelve units in four parts.</h2>
+    <h2 class="h2-big mb-5">Twelve units in four modules.</h2>
     {''.join(parts_html)}
     <div class="capstone">
       <span class="part-kicker">Optional capstone</span>
@@ -615,7 +614,7 @@ def build_unit(u):
   <div class="container-xl">
     <nav aria-label="breadcrumb"><ol class="breadcrumb mb-3">
       <li class="breadcrumb-item"><a href="../index.html#units">Units</a></li>
-      <li class="breadcrumb-item"><a href="../index.html#units">Part {pnum}: {pname}</a></li>
+      <li class="breadcrumb-item"><a href="../index.html#units">Module {pnum}: {pname}</a></li>
       <li class="breadcrumb-item active" aria-current="page">Unit {n}</li></ol></nav>
     <p class="kicker mb-2">Unit {n} of {len(units)}</p>
     <h1 class="u-h1">{html.escape(u['title'])}</h1>
