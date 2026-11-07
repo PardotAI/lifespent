@@ -436,3 +436,8 @@ a.go:hover { background: var(--btn); color: #fff; }
   .site-nav .navbar-collapse { max-height: calc(100dvh - 4.5rem); overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
   html.menu-open, html.menu-open body { overflow: hidden; }
 }
+/* Header pinned to the top of the window at all times */
+.site-nav { position: fixed; top: 0; left: 0; right: 0; }
+.site-nav.is-scrolled { padding: .9rem 0; }
+body { padding-top: var(--nav-h, 4.6rem); }
+html { scroll-padding-top: calc(var(--nav-h, 4.6rem) + 1rem); }

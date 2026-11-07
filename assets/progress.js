@@ -204,6 +204,13 @@ document.addEventListener("click", function (e) {
   var nav = document.querySelector(".site-nav");
   if (!nav) return;
   function onScroll() { nav.classList.toggle("is-scrolled", window.scrollY > 8); }
+  function setHeight() {
+    var menu = document.getElementById("nav");
+    if (menu && menu.classList.contains("show")) return;  // measure the closed header only
+    document.documentElement.style.setProperty("--nav-h", nav.offsetHeight + "px");
+  }
+  setHeight();
+  window.addEventListener("resize", setHeight);
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 })();
