@@ -722,7 +722,7 @@ def build_resources():
 <p class="note mb-0"><i class="bi bi-gift"></i> Everything on this page is free unless it's marked as a purchase.</p>
 </div></div></div></header>
 <div class="container-xl"><div class="row justify-content-center"><div class="col-lg-9">
-<section class="r-sec"><h2 class="r-h2">Start here</h2><p class="note mb-3">You'll use these two every week.</p><div class="r-core-grid">{core}</div></section>
+<section class="r-sec"><h2 class="r-h2">Foundational</h2><p class="note mb-3">You'll use these two every week.</p><div class="r-core-grid">{core}</div></section>
 <section class="r-sec"><h2 class="r-h2">Go deeper</h2><p class="note mb-3">Each unit's supplement comes from one of these. The tags show where.</p><ul class="r-grid">{deeper}</ul></section>
 <div class="r-sec"><details class="r-buy"><summary><span class="r-h2 mb-0">Optional purchases</span><i class="bi bi-chevron-down"></i></summary><ul class="r-buy-list">{buy}</ul></details></div>
 </div></div></div>"""
