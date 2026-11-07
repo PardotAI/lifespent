@@ -698,11 +698,10 @@ def build_method():
     ])
     body = f"""
 <header class="m-hero"><div class="container-xl"><div class="row align-items-end g-4">
-<div class="col-lg-7"><p class="kicker mb-2">How to study</p><h1 class="hero-h1 mb-3">One rhythm, <span class="accent">every week.</span></h1>
-<p class="hero-sub mb-4">Every unit uses the same six steps, so your effort goes into the text instead of the format.</p>
+<div class="col-lg-8"><p class="kicker mb-2">How to study</p><h1 class="hero-h1 mb-3">One rhythm, <span class="accent">every week.</span></h1>
+<p class="hero-sub mb-2">Every unit uses the same six steps, so your effort goes into the text instead of the format.</p>
+<p class="note mb-4"><i class="bi bi-clock"></i> Expect {inline(workload)}.</p>
 <div class="d-flex flex-wrap gap-2"><a class="btn btn-accent btn-lg" href="units/unit-01.html" data-resume-btn data-label-resume="Resume Unit {n}" data-label-done="Review the course"><span data-label>Begin Unit 1</span> <i class="bi bi-arrow-right"></i></a><a class="btn btn-quiet btn-lg" href="index.html#units">See all units</a></div></div>
-<div class="col-lg-5"><ul class="m-stats"><li><b>6</b><span>steps per unit</span></li><li><b>1</b><span>unit per week</span></li><li><b>12</b><span>weeks</span></li></ul>
-<p class="note mt-3 mb-0"><i class="bi bi-clock"></i> Expect {inline(workload)}.</p></div>
 </div></div></header>
 <div class="container-xl"><div class="row g-5">
 <div class="col-lg-8"><h2 class="h2-big mb-4">The six steps</h2><ol class="m-timeline">{items}</ol></div>
