@@ -666,9 +666,67 @@ def simple_page(kicker, title, lead, inner, active):
     return page(re.sub("<[^>]+>", "", title), body, active=active, path=f"{active}.html")
 
 
+# Resources page data. Keep in step with "## Free resources" in SYLLABUS.md.
+RES_CORE = [
+    ("bi-book", "NET Bible", "Bible + translator notes", "https://netbible.org",
+     "The course translation. Read every passage here, and use the translator notes to see why a verse is rendered the way it is.", "Every unit: Read"),
+    ("bi-translate", "STEP Bible", "Greek and Hebrew tools", "https://www.stepbible.org",
+     "Look up the original word behind an English one, see where else it appears, and check its range of meaning.", "Every unit: Word study"),
+]
+RES_DEEPER = [
+    ("bi-headphones", "The Table podcast", "Podcast · DTS", "https://voice.dts.edu/tablepodcast/",
+     "Short conversations with Dallas Seminary scholars on faith questions.", [1, 6, 7]),
+    ("bi-file-earmark-text", "Poythress, Logic", "Book · free PDF", "https://frame-poythress.org/wp-content/uploads/2013/07/BLogicFinal.pdf",
+     "A God-centered approach to logic: why reasoning works and how arguments fail.", [2, 9]),
+    ("bi-bank", "CCEL library", "Classic texts · public domain", "https://www.ccel.org",
+     "Calvin's Institutes, Warfield, Machen and Pascal, free to read online.", [2, 3]),
+    ("bi-journal-text", "Frame and Poythress articles", "Articles", "https://frame-poythress.org",
+     "Free essays on apologetics and theology, including Frame on presuppositional apologetics.", [4]),
+    ("bi-camera-video", "DTS free courses", "Video lectures · DTS", "https://voice.dts.edu/free-courses/",
+     "Full graduate courses, including Bible introduction, the Gospels and Acts, and Greek and Hebrew basics.", [6, 8]),
+    ("bi-bookmark", "Constable's Expository Notes", "Commentary · DTS", "https://soniclight.com/constable-notes/",
+     "Verse-by-verse notes on every book of the Bible from Dr. Thomas Constable.", [10]),
+    ("bi-mortarboard", "Essentials of Christian Apologetics", "Course · BiblicalTraining.org", "https://www.biblicaltraining.org/learn/foundations/th201-essentials-of-christian-apologetics",
+     "Ronald Nash's survey course, a good overview if you want the wider field.", []),
+]
+RES_BUY = [
+    ("Geisler", "Baker Encyclopedia of Christian Apologetics", "A reference in the classical and evidential tradition."),
+    ("Bahnsen", "Always Ready", "A short presuppositional introduction; its Acts 17 chapter pairs with Unit 10."),
+    ("Frame", "Apologetics: A Justification of Christian Belief", "A fuller presuppositional treatment."),
+]
+
+
 def build_resources():
-    return simple_page("Library", "Resources", "Scripture is the final authority. Everything on this page is here to serve the text, not to replace it.",
-                       md_list(resources_raw), "resources")
+    def host(url):
+        return re.sub(r"^https?://(www\.)?", "", url).split("/")[0]
+    core = "".join(
+        f'<a class="r-core" href="{url}" rel="noopener"><span class="r-icon"><i class="bi {ic}"></i></span>'
+        f'<span class="r-body"><span class="r-type">{typ}</span><span class="r-name">{name}</span><span class="r-desc">{desc}</span>'
+        f'<span class="r-use"><i class="bi bi-check2-circle"></i> {use}</span></span>'
+        f'<span class="r-go">{host(url)} <i class="bi bi-box-arrow-up-right"></i></span></a>'
+        for ic, name, typ, url, desc, use in RES_CORE)
+    def tags(ns):
+        if not ns:
+            return '<span class="r-tag r-tag-plain">Optional overview</span>'
+        return "".join(f'<a class="r-tag p{part_of(n)[0]}" href="units/unit-{n:02d}.html">Unit {n}</a>' for n in ns)
+    deeper = "".join(
+        f'<li class="r-card"><span class="r-icon r-icon-sm"><i class="bi {ic}"></i></span><div class="r-body">'
+        f'<p class="r-type">{typ}</p><h3 class="r-name"><a href="{url}" rel="noopener" class="stretched-link">{name}</a></h3>'
+        f'<p class="r-desc">{desc}</p><div class="r-tags">{tags(ns)}</div></div></li>'
+        for ic, name, typ, url, desc, ns in RES_DEEPER)
+    buy = "".join(f'<li><b>{a}</b>, <em>{b}</em>. {c}</li>' for a, b, c in RES_BUY)
+    body = f"""
+<header class="m-hero"><div class="container-xl"><div class="row justify-content-center"><div class="col-lg-9">
+<p class="kicker mb-2">Library</p><h1 class="hero-h1 mb-3">Resources</h1>
+<p class="hero-sub mb-2">Scripture is the final authority. Everything here serves the text, not the other way around.</p>
+<p class="note mb-0"><i class="bi bi-gift"></i> Everything on this page is free unless it's marked as a purchase.</p>
+</div></div></div></header>
+<div class="container-xl"><div class="row justify-content-center"><div class="col-lg-9">
+<section class="r-sec"><h2 class="r-h2"><span>1</span> Start here</h2><p class="note mb-3">You'll use these two every week.</p><div class="r-core-grid">{core}</div></section>
+<section class="r-sec"><h2 class="r-h2"><span>2</span> Go deeper</h2><p class="note mb-3">Each unit's supplement comes from one of these. The tags show where.</p><ul class="r-grid">{deeper}</ul></section>
+<div class="r-sec"><details class="r-buy"><summary><span class="r-h2 mb-0"><span>3</span> Optional purchases</span><i class="bi bi-chevron-down"></i></summary><ul class="r-buy-list">{buy}</ul></details></div>
+</div></div></div>"""
+    return page("Resources", body, active="resources", path="resources.html")
 
 
 def build_method():
