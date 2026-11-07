@@ -3,7 +3,7 @@
 **Student:** Dr. Tom Hastings · **Format:** self-paced, about 1 unit per week · **Workload:** expect 6–10 hours in heavier units (Units 4, 8, 11, 12) · **Draft v2.2, 2026-11-03 (revised with Emerald)**
 
 ## Purpose
-This course looks at how beautifully Scripture is made and how the truths resound throughout. We look at how God, Jesus and the apostles shared the truth and how you can too.
+This course explores how beautifully Scripture is woven together and how its truths resound throughout. We study how God, Jesus, and the apostles presented the truth and **how you can share it too.**
 
 ## Method (every unit)
 1. **Read** the primary passages in context. Read the whole chapter, not just the verses.
