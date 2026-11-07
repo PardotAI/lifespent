@@ -191,10 +191,10 @@ This course explores how beautifully Scripture is woven together and how its tru
 - **Read:** 2 Tim 2:14–26; Col 4:2–6; 2 Cor 10:1–6; Eph 6:10–20; 1 Cor 13; Matt 5:43–48
 - **Why these readings:**
   - **2 Tim 2:14–26.** Skip the word-fights, handle the word accurately, and correct opponents gently in the hope God grants repentance. Paul states the goal of an argument plainly.
-  - **Col 4:2–6.** Prayer first, then wise conduct with outsiders, then gracious speech. The order is the lesson.
+  - **Col 4:2–6.** Prayer first, then wise conduct with outsiders, then gracious speech. Pay attention to this order because the order matters.
   - **2 Cor 10:1–6.** Paul tears down arguments and takes thoughts captive, and he appeals "by the meekness and gentleness of Christ" in the same paragraph.
   - **Eph 6:10–20.** The armor of God. The fight is spiritual, and Paul ends by asking for boldness to speak.
-  - **1 Cor 13.** Without love, the best argument is noise. You need this before you finish.
+  - **1 Cor 13.** Without love, the best argument is noise.
   - **Matt 5:43–48.** Love your enemies. The person across the table isn't your enemy, and if they were, this would still apply.
 - **Words:** *aichmalōtizō* (take captive), *ochyrōma* (stronghold), *epieikeia* (gentleness, 2 Cor 10:1), *ēpios* (gentle, 2 Tim 2:24), *halas* (salt)
 - **Supplement:** Reread 1 Pet 3:15–16 — [Read 1 Pet 3:15–16 (NET)](https://www.bible.com/bible/107/1PE.3.15-16.NET)
