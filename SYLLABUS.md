@@ -163,7 +163,7 @@ This course explores how beautifully Scripture is woven together and how its tru
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** Choose three argumentative moves Jesus uses. For each, explain the problem He faced, how His response works, when a Christian might use a similar move, and where Jesus' unique knowledge or authority limits imitation.
 
-## Unit 10: Acts as an Apologetics Handbook
+## Unit 10: Acts (An Apologetics Handbook)
 - **Read:** Acts 2:14–41; 7; 13:13–48; 17:1–4, 16–34; 19:8–10
 - **Why these readings:**
   - **Acts 2:14–41.** Peter to a Jewish crowd. He starts from Joel and the Psalms because his listeners already accept them.
