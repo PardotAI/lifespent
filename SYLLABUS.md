@@ -134,7 +134,7 @@ This course explores how beautifully Scripture is woven together and how its tru
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** Lay out 1 Corinthians 15:12–19 as a conditional or reductio argument. Identify each premise, each consequence Paul draws, and what the argument assumes versus what it attempts to establish.
 
-## Unit 8: Evil, Suffering, the Cross, and Hope
+## Unit 8: Evil and Suffering (The Cross and Hope)
 - **Read:** Job 1–2, 38–42; Habakkuk (all); Ps 73; Rom 8:18–39; Gen 50:20
 - **Why these readings:**
   - **Job 1–2, 38–42.** The setup and the answer. You see the heavenly scene Job never sees. Then God answers from the whirlwind without disclosing that scene or giving Job the explanation the reader has. The syllabus skips the speeches in between because the frame is the point.
