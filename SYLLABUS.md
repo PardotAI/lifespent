@@ -123,7 +123,7 @@ This course explores how beautifully Scripture is woven together and how its tru
 ## Unit 7: The Resurrection
 - **Read:** 1 Cor 15 (all); Matt 28; John 20–21; Acts 2:22–36; 17:30–31
 - **Why these readings:**
-  - **1 Cor 15.** The earliest written list of resurrection witnesses, followed by Paul's argument that everything depends on it. Read all of it. Verses 12–19 are your paper.
+  - **1 Cor 15.** The earliest written list of resurrection witnesses, followed by Paul's argument that everything depends on it.
   - **Matt 28.** The empty tomb, the guards' cover story, and the commission. Matthew answers an objection that was already going around (28:11–15).
   - **John 20–21.** Thomas asks for evidence and gets it. Jesus cooks breakfast on the beach. These physical details rule out a vision or a ghost.
   - **Acts 2:22–36.** Peter's first sermon, seven weeks later, in the city where it happened. He appeals to what his audience already knows.
