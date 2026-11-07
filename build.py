@@ -621,10 +621,11 @@ def build_unit(u):
     <nav class="u-steps" aria-label="All units">{segs}</nav>
   </div>
 </header>
+<div class="unit-bar p{pnum} d-lg-none" data-unit-bar aria-hidden="true"><div class="container-xl"><span class="unit-bar-n">Unit {n}</span><span class="unit-bar-t">{html.escape(short_title(u['title']))}</span><span class="unit-bar-s" data-unit-bar-section></span></div></div>
 <div class="container-xl">
   <div class="row g-5">
     <aside class="col-lg-3 d-none d-lg-block">
-      <div class="u-toc"><p class="part-kicker">On this page</p>{toc}</div>
+      <div class="u-toc"><a class="toc-unit p{pnum}" href="#main"><span class="toc-unit-n">Unit {n} · Module {pnum}</span><span class="toc-unit-t">{html.escape(short_title(u['title']))}</span></a><p class="part-kicker">On this page</p>{toc}</div>
     </aside>
     <div class="col-lg-8 u-article">
       {video_feature(n)}

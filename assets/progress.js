@@ -222,3 +222,33 @@ document.addEventListener("click", function (e) {
   menu.addEventListener("show.bs.collapse", function () { document.documentElement.classList.add("menu-open"); });
   menu.addEventListener("hidden.bs.collapse", function () { document.documentElement.classList.remove("menu-open"); });
 })();
+
+// Unit pages: highlight the current section in "On this page" and, on small screens,
+// show a slim bar with the unit name once the title has scrolled away.
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  var links = {};
+  document.querySelectorAll(".u-toc a[href^='#']").forEach(function (a) { links[a.getAttribute("href").slice(1)] = a; });
+  var bar = document.querySelector("[data-unit-bar]");
+  var barSec = document.querySelector("[data-unit-bar-section]");
+  var targets = document.querySelectorAll(".u-video[id], .u-sec[id]");
+  if (targets.length) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var id = en.target.id;
+        Object.keys(links).forEach(function (k) { links[k].classList.toggle("is-active", k === id); });
+        if (barSec && links[id]) barSec.textContent = links[id].textContent;
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    targets.forEach(function (t) { spy.observe(t); });
+  }
+  var title = document.querySelector(".u-h1");
+  if (bar && title) {
+    new IntersectionObserver(function (entries) {
+      var shown = !entries[0].isIntersecting && entries[0].boundingClientRect.top < 0;
+      bar.classList.toggle("is-shown", shown);
+      bar.setAttribute("aria-hidden", shown ? "false" : "true");
+    }).observe(title);
+  }
+})();
