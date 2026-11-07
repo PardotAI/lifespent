@@ -455,3 +455,7 @@ html { scroll-padding-top: calc(var(--nav-h, 4.6rem) + 1rem); }
 .unit-bar-t { font-family: var(--head); font-weight: 700; color: var(--ink); overflow: hidden; text-overflow: ellipsis; }
 .unit-bar-s { margin-left: auto; color: var(--ink-3); font-size: .82rem; }
 @media (prefers-reduced-motion: reduce) { .unit-bar { transition: none; } }
+/* the sidebar unit card appears only once the page title has scrolled away */
+.toc-unit { max-height: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; opacity: 0; overflow: hidden; transform: translateY(-6px); transition: max-height .25s, opacity .2s, transform .2s, padding .25s, margin .25s; }
+.toc-unit.is-shown { max-height: 8rem; margin-bottom: 1.25rem; padding-top: .85rem; padding-bottom: .85rem; opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .toc-unit { transition: none; } }

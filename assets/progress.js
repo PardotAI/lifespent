@@ -244,11 +244,15 @@ document.addEventListener("click", function (e) {
     targets.forEach(function (t) { spy.observe(t); });
   }
   var title = document.querySelector(".u-h1");
-  if (bar && title) {
+  var card = document.querySelector(".toc-unit");
+  if (title && (bar || card)) {
     new IntersectionObserver(function (entries) {
       var shown = !entries[0].isIntersecting && entries[0].boundingClientRect.top < 0;
-      bar.classList.toggle("is-shown", shown);
-      bar.setAttribute("aria-hidden", shown ? "false" : "true");
+      if (bar) {
+        bar.classList.toggle("is-shown", shown);
+        bar.setAttribute("aria-hidden", shown ? "false" : "true");
+      }
+      if (card) card.classList.toggle("is-shown", shown);
     }).observe(title);
   }
 })();
