@@ -506,7 +506,7 @@ def build_index():
 <section class="section">
   <div class="container-xl">
     <p class="kicker">Every week</p>
-    <h2 class="h2-big mb-5">The same <span class="accent">six steps</span> every week for each unit.</h2>
+    <h2 class="h2-big mb-5"><span class="accent">Six steps</span> every week for each unit.</h2>
     <ol class="flow">{steps}</ol>
     <p class="mt-4 mb-0"><a class="flow-more" href="method.html">See how each step works <i class="bi bi-arrow-right"></i></a></p>
   </div>
