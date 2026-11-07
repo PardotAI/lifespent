@@ -616,7 +616,6 @@ def build_unit(u):
       <li class="breadcrumb-item"><a href="../index.html#units">Units</a></li>
       <li class="breadcrumb-item"><a href="../index.html#units">Module {pnum}: {pname}</a></li>
       <li class="breadcrumb-item active" aria-current="page">Unit {n}</li></ol></nav>
-    <p class="kicker mb-2">Unit {n} of {len(units)}</p>
     <h1 class="u-h1">{html.escape(u['title'])}</h1>
     <nav class="u-steps" aria-label="All units">{segs}</nav>
   </div>
