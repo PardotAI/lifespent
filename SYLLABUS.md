@@ -169,7 +169,7 @@ This course explores how beautifully Scripture is woven together and how its tru
   - **Acts 2:14–41.** Peter to a Jewish crowd. He starts from Joel and the Psalms because his listeners already accept them.
   - **Acts 7.** Stephen retells history his accusers already accept and shows a pattern in it: Israel kept rejecting God's messengers. Agreed facts become the argument.
   - **Acts 13:13–48.** Paul in a synagogue. Hold it next to Acts 17: same gospel, different starting point.
-  - **Acts 17:1–4, 16–34.** Paul "reasoning from the Scriptures" in Thessalonica, then quoting Greek poets in Athens. The contrast between the two is the unit's main study.
+  - **Acts 17:1–4, 16–34.** Paul "reasoning from the Scriptures" in Thessalonica, then quoting Greek poets in Athens. Pay close attention to the contrast.
   - **Acts 19:8–10.** Two years of daily discussion in a rented lecture hall. Apologetics as a long, steady practice.
 - **Words:** *dialegomai* (reason), *peithō* (persuade), *paratithēmi* (set before/demonstrate), *spermologos* ("seed-picker"; babbler)
 - **Supplement:** Constable's *Notes on Acts* (DTS, free), the sections on Acts 13 and 17 — [Read the notes](https://soniclight.com/tcon/notes/html/acts/acts.htm). Optional: Bahnsen's analysis of Acts 17 in *Always Ready*
