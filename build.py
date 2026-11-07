@@ -507,7 +507,7 @@ def build_index():
 <section class="section">
   <div class="container-xl">
     <p class="kicker">Every week</p>
-    <h2 class="h2-big mb-5"><span class="accent">Six steps</span> every week for each unit.</h2>
+    <h2 class="h2-big mb-5">Your <span class="accent">weekly flow</span>.</h2>
     <ol class="flow">{steps}</ol>
     <p class="mt-4 mb-0"><a class="flow-more" href="method.html">See how each step works <i class="bi bi-arrow-right"></i></a></p>
   </div>
@@ -749,12 +749,12 @@ def build_method():
     body = f"""
 <header class="m-hero"><div class="container-xl"><div class="row justify-content-center g-4">
 <div class="col-lg-9"><p class="kicker mb-2">How to study</p><h1 class="hero-h1 mb-3">One rhythm, <span class="accent">every week.</span></h1>
-<p class="hero-sub mb-2">Every unit uses the same six steps, so your effort goes into the text instead of the format.</p>
+<p class="hero-sub mb-2">Every unit follows the same steps, so your effort goes into the text instead of the format.</p>
 <p class="note mb-4"><i class="bi bi-clock"></i> Expect {inline(workload)}.</p>
 <div class="d-flex flex-wrap gap-2"><a class="btn btn-accent btn-lg" href="units/unit-01.html" data-resume-btn data-label-resume="Resume Unit {n}" data-label-done="Review the course"><span data-label>Begin Unit 1</span> <i class="bi bi-arrow-right"></i></a><a class="btn btn-quiet btn-lg" href="index.html#units">See all units</a></div></div>
 </div></div></header>
 <div class="container-xl"><div class="row justify-content-center g-5">
-<div class="col-lg-9"><h2 class="h2-big mb-2">The six steps</h2><p class="note mb-4"><i class="bi bi-calendar-week"></i> Each step shows a suggested day. It's a pace, not a rule; heavier units may need extra time.</p><ol class="m-timeline">{items}</ol></div>
+<div class="col-lg-9"><h2 class="h2-big mb-2">Step by step</h2><p class="note mb-4"><i class="bi bi-calendar-week"></i> Each step shows a suggested day. It's a pace, not a rule; heavier units may need extra time.</p><ol class="m-timeline">{items}</ol></div>
 </div></div>
 <section class="m-cta"><div class="container-xl"><div class="row justify-content-center"><div class="col-lg-9"><div class="m-cta-box"><div><h2 class="h2-big mb-2">Ready to start?</h2><p class="mb-0">Your progress is saved in this browser, so you can pick up where you left off.</p></div>
 <a class="btn btn-accent btn-lg" href="units/unit-01.html" data-resume-btn data-label-resume="Resume Unit {n}" data-label-done="Review the course"><span data-label>Begin Unit 1</span> <i class="bi bi-arrow-right"></i></a></div></div></div></div></section>"""
