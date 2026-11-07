@@ -740,9 +740,9 @@ def build_method():
     for n, title, desc, sg in method_steps():
         icon, out, sec, day, tip = meta.get(title, ("bi-circle", "", "read", "", ""))
         callout = sg.replace('<p class="note mt-2 mb-0">', '<div class="m-callout"><i class="bi bi-shield-check"></i><p class="mb-0">').replace("</p>", "</p></div>") if sg else ""
-        items += (f'<li class="m-step"><span class="m-dot"><i class="bi {icon}"></i></span>'
-                  f'<div class="m-card"><div class="m-top"><p class="m-kicker">Step {n}</p><span class="m-day"><i class="bi bi-calendar3"></i> {day}</span></div>'
-                  f'<h3 class="m-title">{title}</h3><p class="m-desc">{desc}</p>' + (f'<p class="m-tip"><i class="bi bi-lightbulb"></i> {tip}</p>' if tip else "") + f'{callout}'
+        items += (f'<li class="m-step"><span class="m-dot"></span>'
+                  f'<div class="m-card"><div class="m-top"><h3 class="m-title"><span class="m-ic"><i class="bi {icon}"></i></span>{title}</h3><span class="m-day"><i class="bi bi-calendar3"></i> {day}</span></div>'
+                  f'<p class="m-desc">{desc}</p>' + (f'<p class="m-tip"><i class="bi bi-lightbulb"></i> {tip}</p>' if tip else "") + f'{callout}'
                   f'<p class="m-out"><span><i class="bi bi-check2-square"></i> Your homework: <b>{out}</b></span>'
                   f'<span class="m-where">On each unit page: “{ {"read": "Read", "words": "Word study", "supplement": "Supplement", "questions": "Questions", "write": "Write"}[sec] }”</span></p></div></li>')
     body = f"""

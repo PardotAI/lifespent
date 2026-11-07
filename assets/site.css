@@ -418,3 +418,11 @@ a.go:hover { background: var(--btn); color: #fff; }
   .flow { grid-template-columns: 1fr; gap: 2.5rem; }
   .flow-phase:not(:last-child)::after { content: "\F128"; top: auto; bottom: -2.15rem; right: 50%; transform: translateX(50%); }
 }
+/* Method steps: icon inline with the title; timeline uses plain dots */
+.m-timeline::before { left: .55rem; top: 2rem; bottom: 2rem; }
+.m-dot { width: 1.15rem; height: 1.15rem; margin-top: 1.55rem; border-width: 3px; background: var(--bs-body-bg); box-shadow: 0 0 0 5px var(--bs-body-bg); }
+.m-step:hover .m-dot { background: var(--accent); border-color: var(--accent); }
+.m-top { margin-bottom: .45rem; }
+.m-top .m-title { display: flex; align-items: center; gap: .65rem; margin: 0; }
+.m-ic { display: inline-grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: .55rem; background: var(--tint-accent); color: var(--accent); font-size: 1.05rem; flex-shrink: 0; }
+@media (max-width: 575.98px) { .m-timeline::before { left: .55rem; } .m-dot { width: 1.15rem; height: 1.15rem; } }
