@@ -148,7 +148,7 @@ This course explores how beautifully Scripture is woven together and how its tru
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** What answer does God give Job, what explanation does He withhold, and is His response enough? Defend your answer from Job 38–42.
 
-## Unit 9: Jesus' Argumentative Methods
+## Unit 9: How Jesus Argued (Argumentative Methods)
 - **Read:** Matt 12:22–37; 21:23–27; 22:15–46; John 5:31–47; 8:12–59; 10:22–39
 - **Why these readings:**
   - **Matt 12:22–37.** Accused of working by Satan's power, Jesus shows the charge undercuts itself: a divided kingdom can't stand. A clean reductio.
