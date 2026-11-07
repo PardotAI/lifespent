@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=Noto+Serif:wght@400&family=Noto+Serif+Hebrew:wght@400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../assets/site.css?v=59ded06a">
+    <link rel="stylesheet" href="../assets/site.css?v=75209625">
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="apple-touch-icon" href="../assets/icon-512.png">
     <meta property="og:type" content="website">
@@ -33,9 +33,48 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="nav">
           <ul class="navbar-nav ms-auto align-items-md-center">
-            <li class="nav-item"><a class="nav-link active" href="../index.html#units">Units</a></li>
-            <li class="nav-item"><a class="nav-link" href="../method.html">Method</a></li>
-            <li class="nav-item"><a class="nav-link" href="../resources.html">Resources</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" aria-current="page" href="../index.html#units" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"><i class="bi bi-grid-3x3-gap"></i> Units</a>
+              <div class="dropdown-menu units-menu">
+                <div class="um-grid">
+                  <div class="um-part p1">
+                    <p class="um-head"><span class="dot"></span>Part 1 · Foundations</p>
+                    <ul class="um-list">
+                      <li><a class="um-unit" href="../units/unit-01.html" data-unit-link="1"><span class="um-n">01</span><span class="um-t">The Mandate and the Posture</span></a></li>
+                      <li><a class="um-unit" href="../units/unit-02.html" data-unit-link="2"><span class="um-n">02</span><span class="um-t">How We Know</span></a></li>
+                      <li><a class="um-unit" href="../units/unit-03.html" data-unit-link="3"><span class="um-n">03</span><span class="um-t">What Everyone Knows</span></a></li>
+                      <li><a class="um-unit" href="../units/unit-04.html" data-unit-link="4"><span class="um-n">04</span><span class="um-t">God&#x27;s Case Against Idols</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="um-part p2">
+                    <p class="um-head"><span class="dot"></span>Part 2 · The Evidence</p>
+                    <ul class="um-list">
+                      <li><a class="um-unit" href="../units/unit-05.html" data-unit-link="5"><span class="um-n">05</span><span class="um-t">Prophecy and Fulfillment</span></a></li>
+                      <li><a class="um-unit" href="../units/unit-06.html" data-unit-link="6"><span class="um-n">06</span><span class="um-t">Eyewitness Testimony and Textual Reliability</span></a></li>
+                      <li><a class="um-unit" href="../units/unit-07.html" data-unit-link="7"><span class="um-n">07</span><span class="um-t">The Resurrection</span></a></li>
+                      <li><a class="um-unit" href="../units/unit-08.html" data-unit-link="8"><span class="um-n">08</span><span class="um-t">Evil, Suffering, the Cross, and Hope</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="um-part p3">
+                    <p class="um-head"><span class="dot"></span>Part 3 · The Methods</p>
+                    <ul class="um-list">
+                      <li><a class="um-unit" href="../units/unit-09.html" data-unit-link="9"><span class="um-n">09</span><span class="um-t">Jesus&#x27; Argumentative Methods</span></a></li>
+                      <li><a class="um-unit" href="../units/unit-10.html" data-unit-link="10" aria-current="page"><span class="um-n">10</span><span class="um-t">Acts as an Apologetics Handbook</span></a></li>
+                      <li><a class="um-unit" href="../units/unit-11.html" data-unit-link="11"><span class="um-n">11</span><span class="um-t">Paul&#x27;s Defenses</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="um-part p4">
+                    <p class="um-head"><span class="dot"></span>Part 4 · Synthesis</p>
+                    <ul class="um-list">
+                      <li><a class="um-unit" href="../units/unit-12.html" data-unit-link="12"><span class="um-n">12</span><span class="um-t">Synthesis and Posture</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="um-foot"><span class="note">✓ marks units you have finished in this browser.</span><a href="../index.html#units">All units and parts <i class="bi bi-arrow-right"></i></a></div>
+              </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="../method.html"><i class="bi bi-signpost-split"></i> Method</a></li>
+            <li class="nav-item"><a class="nav-link" href="../resources.html"><i class="bi bi-book"></i> Resources</a></li>
             <li class="nav-item ms-md-3"><button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Switch theme"><i class="bi bi-moon-stars"></i><i class="bi bi-sun"></i></button></li>
             <li class="nav-item ms-md-3"><a class="btn btn-accent btn-sm-nav" href="../units/unit-01.html" data-resume-btn data-label-resume="Resume" data-label-done="Review"><span data-label>Begin</span></a></li>
           </ul>
@@ -151,6 +190,6 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="../assets/progress.js?v=5b186bf7"></script>
+    <script src="../assets/progress.js?v=e4418bd3"></script>
   </body>
 </html>

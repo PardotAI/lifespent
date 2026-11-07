@@ -338,11 +338,25 @@ for m in re.finditer(r"^## Unit (\d+): (.+?)\n(.*?)(?=^## |^---|\Z)", SRC, re.S 
 # ---------- layout ----------
 def page(title, body, depth=0, active="", path="", unit=0):
     up = "../" * depth
-    nav = [("index.html#units", "Units", "units"), ("method.html", "Method", "method"),
-           ("resources.html", "Resources", "resources")]
-    links = "".join(
-        f'<li class="nav-item"><a class="nav-link{" active" if key == active else ""}" href="{up}{href}">{label}</a></li>'
-        for href, label, key in nav)
+    def cur(key):
+        return ' active" aria-current="page' if key == active else ""
+    cols = ""
+    for i, (pname, _, rng) in enumerate(PARTS, 1):
+        items = "".join(
+            f'<li><a class="um-unit" href="{up}units/unit-{u["n"]:02d}.html" data-unit-link="{u["n"]}"'
+            + (' aria-current="page"' if u["n"] == unit else "") + '>'
+            f'<span class="um-n">{u["n"]:02d}</span><span class="um-t">{html.escape(short_title(u["title"]))}</span></a></li>'
+            for u in units if u["n"] in rng)
+        cols += f'<div class="um-part p{i}"><p class="um-head"><span class="dot"></span>Part {i} · {pname}</p><ul class="um-list">{items}</ul></div>'
+    units_menu = (
+        f'<li class="nav-item dropdown"><a class="nav-link dropdown-toggle{cur("units")}" href="{up}index.html#units" role="button" '
+        f'data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"><i class="bi bi-grid-3x3-gap"></i> Units</a>'
+        f'<div class="dropdown-menu units-menu"><div class="um-grid">{cols}</div>'
+        f'<div class="um-foot"><span class="note">✓ marks units you have finished in this browser.</span>'
+        f'<a href="{up}index.html#units">All units and parts <i class="bi bi-arrow-right"></i></a></div></div></li>')
+    links = (units_menu
+             + f'<li class="nav-item"><a class="nav-link{cur("method")}" href="{up}method.html"><i class="bi bi-signpost-split"></i> Method</a></li>'
+             + f'<li class="nav-item"><a class="nav-link{cur("resources")}" href="{up}resources.html"><i class="bi bi-book"></i> Resources</a></li>')
     return f"""<!doctype html>
 <html lang="en">
 <head>

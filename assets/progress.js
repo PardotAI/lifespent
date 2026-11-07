@@ -198,3 +198,12 @@ document.addEventListener("click", function (e) {
   });
   label();
 })();
+
+// Sticky header gets a soft shadow once the page scrolls.
+(function () {
+  var nav = document.querySelector(".site-nav");
+  if (!nav) return;
+  function onScroll() { nav.classList.toggle("is-scrolled", window.scrollY > 8); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+})();
