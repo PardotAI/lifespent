@@ -397,3 +397,24 @@ a.go:hover { background: var(--btn); color: #fff; }
 @media (max-width: 767.98px) { .r-core-grid, .r-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .r-core { transition: none; } .r-core:hover { transform: none; } }
 .hero-sub strong { font-weight: 700; color: var(--accent); }
+
+/* Homepage weekly flow: three phases, no numbers */
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.75rem; }
+.flow-phase { position: relative; padding: 1.5rem 1.4rem 1.25rem; background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: .8rem; }
+.flow-phase:not(:last-child)::after { content: "\F138"; font-family: "bootstrap-icons"; position: absolute; top: 50%; right: -2.25rem; transform: translateY(-50%); display: grid; place-items: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; background: var(--tint-accent); color: var(--accent); font-size: 1rem; }
+.flow-head { display: flex; align-items: center; gap: .5rem; margin: 0 0 1rem; font-family: var(--head); font-weight: 800; font-size: 1.25rem; letter-spacing: -.02em; color: var(--ink); }
+.flow-head .bi { color: var(--accent); }
+.flow-steps { list-style: none; margin: 0; padding: 0; position: relative; }
+.flow-steps::before { content: ""; position: absolute; left: 1.05rem; top: 1.2rem; bottom: 1.2rem; width: 2px; background: var(--line); }
+.flow-steps li { position: relative; display: flex; gap: .85rem; align-items: flex-start; padding: .55rem 0; }
+.flow-steps li > span:last-child { display: flex; flex-direction: column; }
+.flow-steps b { font-family: var(--head); font-weight: 800; color: var(--ink); }
+.flow-steps li > span:last-child > span { font-size: .92rem; color: var(--ink-2); line-height: 1.45; }
+.flow-ic { position: relative; z-index: 1; flex-shrink: 0; display: grid; place-items: center; width: 2.15rem; height: 2.15rem; border-radius: 50%; background: var(--surface); border: 2px solid var(--line); color: var(--accent); font-size: .95rem; }
+.flow-steps li:hover .flow-ic { border-color: var(--accent); }
+.flow-steps .bi-play-circle-fill { font-size: 1.05rem; }
+.flow-more { font-family: var(--head); font-weight: 700; text-decoration: none; }
+@media (max-width: 991.98px) {
+  .flow { grid-template-columns: 1fr; gap: 2.5rem; }
+  .flow-phase:not(:last-child)::after { content: "\F128"; top: auto; bottom: -2.15rem; right: 50%; transform: translateX(50%); }
+}

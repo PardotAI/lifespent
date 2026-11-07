@@ -457,10 +457,19 @@ def build_index():
       <div class="part-rows">{rows}</div>
     </div>""")
 
-    steps = "".join(f"""
-      <div class="col-sm-6 col-lg-4"><div class="rhythm">
-        <span class="rhythm-num">{n}</span><h3 class="rhythm-title">{t}</h3><p class="mb-0">{d}</p>{sg}
-      </div></div>""" for n, t, d, sg in method_steps())
+    phases = [
+        ("Take it in", "bi-eye", [("bi-play-circle-fill", "Watch", "A short video overview sets the scene."),
+                                   ("bi-book", "Read", "The primary passages, whole chapter in context.")]),
+        ("Dig in", "bi-search", [("bi-translate", "Word study", "The key Greek and Hebrew terms."),
+                                  ("bi-journal-bookmark", "Supplement", "One focused secondary reading."),
+                                  ("bi-chat-square-text", "Questions", "Answered in your study journal.")]),
+        ("Respond", "bi-pencil", [("bi-pencil-square", "Paper", "1–2 pages defending a thesis from the text."),
+                                   ("bi-heart", "Reflection", "What did this show me about God?")]),
+    ]
+    steps = "".join(
+        f'<li class="flow-phase"><p class="flow-head"><i class="bi {pic}"></i> {pname}</p><ul class="flow-steps">'
+        + "".join(f'<li><span class="flow-ic"><i class="bi {ic}"></i></span><span><b>{st}</b><span>{d}</span></span></li>' for ic, st, d in items)
+        + '</ul></li>' for pname, pic, items in phases)
 
     tiles = "".join(
         f'<a class="map-tile p{part_of(u["n"])[0]}" href="units/unit-{u["n"]:02d}.html" data-unit-link="{u["n"]}"><span class="map-n">{u["n"]:02d}</span>'
@@ -498,8 +507,8 @@ def build_index():
   <div class="container-xl">
     <p class="kicker">Every week</p>
     <h2 class="h2-big mb-5">The same <span class="accent">six steps</span> every week for each unit.</h2>
-    <div class="row g-4">{steps}
-    </div>
+    <ol class="flow">{steps}</ol>
+    <p class="mt-4 mb-0"><a class="flow-more" href="method.html">See how each step works <i class="bi bi-arrow-right"></i></a></p>
   </div>
 </section>
 
