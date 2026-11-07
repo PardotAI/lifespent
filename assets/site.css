@@ -31,7 +31,7 @@
 .p3 { --pc: var(--p3); --pt: #e8f1f0; }
 .p4 { --pc: var(--p4); --pt: #eceef6; }
 
-html, body { overflow-x: clip; }
+main, .site-footer { overflow-x: clip; }  /* not on html/body: that can make WebKit treat body as the scroller */
 html { scroll-padding-top: 5.5rem; }
 body { font-size: 1.0625rem; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 a { text-decoration-thickness: 1px; text-underline-offset: .18em; }
@@ -56,7 +56,7 @@ h1, h2, h3, h4, .navbar-brand { font-family: var(--head); color: var(--ink); }
 .navbar-brand { font-weight: 800; letter-spacing: -.02em; display: flex; align-items: center; gap: .6rem; }
 .brand-mark { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--accent); color: #fff; font-size: 1rem; }
 /* nav links: pill hover, filled active state */
-.site-nav { position: sticky; top: 0; z-index: 1030; background: color-mix(in srgb, var(--surface) 86%, transparent); -webkit-backdrop-filter: saturate(160%) blur(12px); backdrop-filter: saturate(160%) blur(12px); transition: box-shadow .2s, padding .2s; }
+.site-nav { z-index: 1030; background: color-mix(in srgb, var(--surface) 86%, transparent); -webkit-backdrop-filter: saturate(160%) blur(12px); backdrop-filter: saturate(160%) blur(12px); transition: box-shadow .2s, padding .2s; }
 .site-nav.is-scrolled { box-shadow: 0 6px 20px -12px rgba(0,0,0,.35); padding: .55rem 0; }
 .site-nav .navbar-nav { gap: .25rem; }
 .site-nav .nav-link { display: inline-flex; align-items: center; gap: .45rem; padding: .5rem .9rem !important; border-radius: 999px; color: var(--ink-2); font-family: var(--head); font-weight: 600; font-size: 1rem; letter-spacing: -.01em; transition: background .15s, color .15s; }
@@ -437,7 +437,7 @@ a.go:hover { background: var(--btn); color: #fff; }
   html.menu-open, html.menu-open body { overflow: hidden; }
 }
 /* Header pinned to the top of the window at all times */
-.site-nav { position: fixed; top: 0; left: 0; right: 0; }
+.site-nav { position: fixed !important; top: 0; left: 0; right: 0; transform: translateZ(0); -webkit-transform: translateZ(0); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
 .site-nav.is-scrolled { padding: .9rem 0; }
 body { padding-top: var(--nav-h, 4.6rem); }
 html { scroll-padding-top: calc(var(--nav-h, 4.6rem) + 1rem); }
