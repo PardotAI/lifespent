@@ -687,7 +687,7 @@ def build_method():
         items += (f'<li class="m-step"><span class="m-dot"><i class="bi {icon}"></i></span>'
                   f'<div class="m-card"><div class="m-top"><p class="m-kicker">Step {n}</p><span class="m-day"><i class="bi bi-calendar3"></i> {day}</span></div>'
                   f'<h3 class="m-title">{title}</h3><p class="m-desc">{desc}</p>' + (f'<p class="m-tip"><i class="bi bi-lightbulb"></i> {tip}</p>' if tip else "") + f'{callout}'
-                  f'<p class="m-out"><span><i class="bi bi-box-arrow-down"></i> You produce: <b>{out}</b></span>'
+                  f'<p class="m-out"><span><i class="bi bi-check2-square"></i> Your homework: <b>{out}</b></span>'
                   f'<span class="m-where">On each unit page: “{ {"read": "Read", "words": "Word study", "supplement": "Supplement", "questions": "Questions", "write": "Write"}[sec] }”</span></p></div></li>')
     body = f"""
 <header class="m-hero"><div class="container-xl"><div class="row justify-content-center g-4">
