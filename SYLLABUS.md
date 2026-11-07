@@ -109,7 +109,7 @@ This course explores how beautifully Scripture is woven together and how its tru
 ## Unit 6: Eyewitness Testimony (Textual Reliability)
 - **Read:** Luke 1:1–4; John 19:35; 20:30–31; 21:24; 1 John 1:1–4; 2 Pet 1:16–21; Deut 19:15
 - **Why these readings:**
-  - **Luke 1:1–4.** The author, traditionally Luke, says he followed everything carefully and drew on what eyewitnesses handed down. It's a historian's statement of method from inside the NT.
+  - **Luke 1:1–4.** Luke says he followed everything carefully and drew on what eyewitnesses handed down. It's a historian's statement of method from inside the NT.
   - **John 19:35; 20:30–31; 21:24.** John keeps telling you who saw what and why he wrote it down. Three short passages, one claim: this is testimony, written so you will believe.
   - **1 John 1:1–4.** "What we have heard, what we have seen with our eyes, and our hands have touched." Witness of the physical, checkable kind.
   - **2 Pet 1:16–21.** Peter says they didn't follow clever myths; they were eyewitnesses. Then he grounds prophecy in God rather than human will. Both halves matter here.
