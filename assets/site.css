@@ -441,3 +441,4 @@ a.go:hover { background: var(--btn); color: #fff; }
 .site-nav.is-scrolled { padding: .9rem 0; }
 body { padding-top: var(--nav-h, 4.6rem); }
 html { scroll-padding-top: calc(var(--nav-h, 4.6rem) + 1rem); }
+.u-toc { top: calc(var(--nav-h, 4.6rem) + 1.5rem); }
