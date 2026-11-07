@@ -432,6 +432,17 @@ def method_steps():
     return steps
 
 
+def sub_title(t):
+    """The parenthetical part of a unit title, shown as a smaller subheading."""
+    m = re.search(r"\(([^)]*)\)$", t)
+    return m.group(1) if m else ""
+
+
+def sub_html(u):
+    s = sub_title(u["title"])
+    return f'<span class="toc-sub">{html.escape(s)}</span>' if s else ""
+
+
 def short_title(t):
     """Drop a parenthetical subtitle for compact labels, e.g. pager links."""
     return re.sub(r"\s*\(.*\)$", "", t)
@@ -448,7 +459,7 @@ def build_index():
         rows = "".join(f"""
       <a class="toc-row" href="units/unit-{u['n']:02d}.html" data-unit-link="{u['n']}">
         <span class="toc-num">{u['n']:02d}</span>
-        <span class="toc-body"><span class="toc-title">{html.escape(u['title'])}</span>
+        <span class="toc-body"><span class="toc-title">{html.escape(short_title(u['title']))}</span>{sub_html(u)}
         <span class="toc-read">{html.escape(short_read(u))}</span></span>
         <i class="bi bi-arrow-right toc-arrow"></i>
       </a>""" for u in units if u["n"] in rng)
@@ -607,7 +618,7 @@ def build_unit(u):
     pager += (f'<a class="pager-link" href="unit-{prev_u["n"]:02d}.html"><span>← Unit {prev_u["n"]}</span>{html.escape(short_title(prev_u["title"]))}</a>' if prev_u else '<span></span>')
     pager += (f'<a class="pager-link text-end" href="unit-{next_u["n"]:02d}.html"><span>Unit {next_u["n"]} →</span>{html.escape(short_title(next_u["title"]))}</a>' if next_u else '<a class="pager-link text-end" href="../index.html#units"><span>Done →</span>All units</a>')
     pager += "</nav>"
-    segs = "".join(f'<a href="unit-{x["n"]:02d}.html" data-unit-link="{x["n"]}" class="seg p{part_of(x["n"])[0]}{" on" if x["n"] <= n else ""}{" cur" if x["n"] == n else ""}"{' aria-current="page"' if x["n"] == n else ""} title="Unit {x["n"]}: {html.escape(x["title"])}"></a>' for x in units)
+    segs = "".join(f'<a href="unit-{x["n"]:02d}.html" data-unit-link="{x["n"]}" class="seg p{part_of(x["n"])[0]}{" on" if x["n"] <= n else ""}{" cur" if x["n"] == n else ""}"{' aria-current="page"' if x["n"] == n else ""} title="Unit {x["n"]}: {html.escape(short_title(x["title"]))}"></a>' for x in units)
 
     body = f"""
 <header class="u-hero p{pnum}">
@@ -616,7 +627,7 @@ def build_unit(u):
       <li class="breadcrumb-item"><a href="../index.html#units">Units</a></li>
       <li class="breadcrumb-item"><a href="../index.html#units">Module {pnum}: {pname}</a></li>
       <li class="breadcrumb-item active" aria-current="page">Unit {n}</li></ol></nav>
-    <h1 class="u-h1">{html.escape(u['title'])}</h1>
+    <h1 class="u-h1">{html.escape(short_title(u['title']))}{f'<span class="visually-hidden">: </span><span class="u-h1-sub">{html.escape(sub_title(u["title"]))}</span>' if sub_title(u["title"]) else ""}</h1>
     <nav class="u-steps" aria-label="All units">{segs}</nav>
   </div>
 </header>
@@ -634,7 +645,7 @@ def build_unit(u):
     </div>
   </div>
 </div>"""
-    return page(f"Unit {n}: {u['title']}", body, depth=1, active="units", path=f"units/unit-{n:02d}.html", unit=n)
+    return page(f"Unit {n}: {short_title(u['title'])}" + (f": {sub_title(u['title'])}" if sub_title(u["title"]) else ""), body, depth=1, active="units", path=f"units/unit-{n:02d}.html", unit=n)
 
 
 def md_list(raw):

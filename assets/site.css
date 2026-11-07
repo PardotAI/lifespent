@@ -459,3 +459,6 @@ html { scroll-padding-top: calc(var(--nav-h, 4.6rem) + 1rem); }
 .toc-unit { max-height: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; opacity: 0; overflow: hidden; transform: translateY(-6px); transition: max-height .25s, opacity .2s, transform .2s, padding .25s, margin .25s; }
 .toc-unit.is-shown { max-height: 8rem; margin-bottom: 1.25rem; padding-top: .85rem; padding-bottom: .85rem; opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .toc-unit { transition: none; } }
+/* parenthetical unit subtitles shown as a smaller line under the title */
+.u-h1-sub { display: block; margin-top: .4rem; font-size: .45em; font-weight: 700; letter-spacing: -.01em; color: var(--ink-2); }
+.toc-sub { display: block; font-family: var(--head); font-weight: 600; font-size: .92rem; color: var(--ink-2); margin-top: .05rem; }
