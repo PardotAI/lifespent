@@ -106,7 +106,7 @@ This course explores how beautifully Scripture is woven together and how its tru
 - **Posture:** How should these texts shape the apologist's tone and conduct?
 - **Paper:** Trace the Old Testament passages explicitly quoted or clearly invoked in Acts 8:32–35, Matthew 2:5–6, and the passion accounts' use of Psalm 22. Classify each use as direct prediction, typology, or broader promise–fulfillment, explaining any overlap. Then use Luke 24:44–47 to propose what Jesus may have covered, clearly labeling that portion as inference.
 
-## Unit 6: Eyewitness Testimony and Textual Reliability
+## Unit 6: Eyewitness Testimony (Textual Reliability)
 - **Read:** Luke 1:1–4; John 19:35; 20:30–31; 21:24; 1 John 1:1–4; 2 Pet 1:16–21; Deut 19:15
 - **Why these readings:**
   - **Luke 1:1–4.** The author, traditionally Luke, says he followed everything carefully and drew on what eyewitnesses handed down. It's a historian's statement of method from inside the NT.
