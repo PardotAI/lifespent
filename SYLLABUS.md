@@ -36,7 +36,7 @@ This course explores how beautifully Scripture is woven together and how its tru
 
 ---
 
-## Unit 1: The Mandate and the Posture
+## Unit 1: The Mandate & The Posture
 - **Read:** 1 Pet 3:8–17; Jude 3–4; Phil 1:7, 12–18; Acts 22:1; 25:16; 2 Tim 2:24–25; Col 4:6
 - **Why these readings:**
   - **1 Pet 3:8–17.** This is the anchor for our course. Peter tells you to be ready with a defense, but he sets it inside a passage about suffering and a good conscience.
