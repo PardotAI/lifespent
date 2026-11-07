@@ -137,11 +137,11 @@ This course explores how beautifully Scripture is woven together and how its tru
 ## Unit 8: Evil and Suffering (The Cross and Hope)
 - **Read:** Job 1–2, 38–42; Habakkuk (all); Ps 73; Rom 8:18–39; Gen 50:20
 - **Why these readings:**
-  - **Job 1–2, 38–42.** The setup and the answer. You see the heavenly scene Job never sees. Then God answers from the whirlwind without disclosing that scene or giving Job the explanation the reader has. The syllabus skips the speeches in between because the frame is the point.
-  - **Habakkuk.** Babylon is still coming, but Habakkuk moves from complaint toward waiting and worship (3:17–19). That movement is what this unit is after.
-  - **Ps 73.** Why do the wicked do so well? The turn comes at verse 17, in the sanctuary. It's the honest version of the question.
-  - **Rom 8:18–39.** Paul weighs present suffering against future glory and says nothing can separate you from God's love. It comes after the resurrection unit on purpose: the answer depends on Easter.
-  - **Gen 50:20.** "You meant evil against me, but God meant it for good." One event, two intentions. The clearest case in Scripture.
+  - **Job 1–2, 38–42.** The setup and the answer. You see the heavenly scene Job never sees. Then God answers from the whirlwind without disclosing that scene or giving Job the explanation the reader has.
+  - **Habakkuk.** Babylon is still coming, but Habakkuk moves from complaint toward waiting and worship (3:17–19).
+  - **Ps 73.** Why do the wicked do so well? Pay particular attention to verse 17, in the sanctuary.
+  - **Rom 8:18–39.** Paul weighs present suffering against future glory and says nothing can separate you from God's love.
+  - **Gen 50:20.** "You meant evil against me, but God meant it for good." One event, two intentions.
 - **Words:** *tām* (blameless), *ʾĕmûnāh* (faithfulness, Hab 2:4), *dikaioō* (justify, declare righteous)
 - **Supplement:** DTS BE547, Unit 4, Video 7: "The Undeserved Suffering of Job" (Larry Waters) — [Watch lecture](https://media.dts.edu/player/?course=BE547&unit=4&video=7) · [Read transcript](https://media.dts.edu/player/print-transcript.aspx?course=BE547&language=en-US&unit=4&video=7). Optional: Unit 8, Video 1, "Intro to the Problem of Evil and Suffering" (Doug Blount) — [Watch lecture](https://media.dts.edu/player/?course=BE547&unit=8&video=1) · [Read transcript](https://media.dts.edu/player/print-transcript.aspx?course=BE547&language=en-US&unit=8&video=1); DTS Voice, ["Why Does God Allow Suffering?"](https://voice.dts.edu/article/why-does-god-allow-suffering-dallas-theological-seminary/)
 - **Questions:** Why does God never tell Job about chapters 1–2? What changes in Habakkuk between 1:2 and 3:17–19? With Unit 7's case for the cross and the empty tomb in view, how do they reshape the question (Rom 8:18–39)?
