@@ -770,8 +770,11 @@ def build_method():
 <section class="m-ai" id="ai"><div class="container-xl"><div class="row justify-content-center"><div class="col-lg-9"><div class="m-ai-box">
 <h2 class="m-ai-h"><i class="bi bi-stars"></i> How these materials were made</h2>
 <p>The unit videos were created with Google NotebookLM, an AI tool powered by Gemini, and grounded in each unit’s NET Bible readings and course material. The narration and visuals are AI-generated.</p>
-<p>AI tools also helped build this site. Every unit was checked and verified by <a href="https://thomashastings.com" rel="noopener">Thomas Hastings, Ph.D.</a>: the content against the text, quotations against the NET, and readings that scholars debate labeled as debated.</p>
 <p class="mb-0"><strong>Scripture is the final authority.</strong> The videos are a starting point, not a substitute for reading the passages yourself. If a video and the text ever seem to disagree, go with the text.</p>
+</div>
+<div class="m-about" id="about"><h2 class="m-ai-h"><i class="bi bi-person"></i> About the author</h2>
+<p>Thomas Hastings, Ph.D., is a professor of computer science at the University of Colorado Colorado Springs, where he teaches software engineering. He lives in Colorado Springs, Colorado. Learn more at <a href="https://thomashastings.com" rel="noopener">thomashastings.com</a>.</p>
+<p class="mb-0">He built LifeSpent for people who want to grow deeper in their faith and learn to share it well. The course examines how God, Christ, and the apostles presented the truth to nonbelievers and to believers who had gone astray, with Scripture as the final authority throughout. He reviewed and verified every unit: the content against the text, quotations against the NET, and readings that scholars debate labeled as debated.</p>
 </div></div></div></div></section>
 <section class="m-cta"><div class="container-xl"><div class="row justify-content-center"><div class="col-lg-9"><div class="m-cta-box"><div><h2 class="h2-big mb-2">Ready to start?</h2><p class="mb-0">Your progress is saved in this browser, so you can pick up where you left off.</p></div>
 <a class="btn btn-accent btn-lg" href="units/unit-01.html" data-resume-btn data-label-resume="Resume Unit {n}" data-label-done="Review the course"><span data-label>Begin Unit 1</span> <i class="bi bi-arrow-right"></i></a></div></div></div></div></section>"""
