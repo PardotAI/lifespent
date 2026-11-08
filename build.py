@@ -774,7 +774,7 @@ def build_method():
 <p class="mb-0"><strong>Scripture is the final authority.</strong> The videos are a starting point, not a substitute for reading the passages yourself. If a video and the text ever seem to disagree, go with the text.</p>
 </div>
 <div class="m-about" id="about"><h2 class="m-ai-h"><i class="bi bi-person"></i> About the author</h2>
-<p>Thomas Hastings, Ph.D., is a professor of computer science at the University of Colorado Colorado Springs, where he teaches software engineering. He lives in Colorado Springs, Colorado.</p>
+<p>Thomas Hastings, Ph.D., is a professor of computer science at the University of Colorado Colorado Springs, where he teaches software engineering. He lives in Colorado Springs, Colorado. Learn more at <a href="https://thomashastings.com" rel="noopener">thomashastings.com</a>.</p>
 <p class="mb-0">He built LifeSpent for people who want to grow deeper in their faith and learn to share it well. The course examines how God, Christ, and the apostles presented the truth to nonbelievers and to believers who had gone astray, with Scripture as the final authority throughout.</p>
 </div></div></div></div></section>
 <section class="m-cta"><div class="container-xl"><div class="row justify-content-center"><div class="col-lg-9"><div class="m-cta-box"><div><h2 class="h2-big mb-2">Ready to start?</h2><p class="mb-0">Your progress is saved in this browser, so you can pick up where you left off.</p></div>
