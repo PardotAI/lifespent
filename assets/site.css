@@ -462,3 +462,9 @@ html { scroll-padding-top: calc(var(--nav-h, 4.6rem) + 1rem); }
 /* parenthetical unit subtitles shown as a smaller line under the title */
 .u-h1-sub { display: block; margin-top: .4rem; font-size: .45em; font-weight: 700; letter-spacing: -.01em; color: var(--ink-2); }
 .toc-sub { display: block; font-family: var(--head); font-weight: 600; font-size: .92rem; color: var(--ink-2); margin-top: .05rem; }
+/* Method page: AI disclosure */
+.m-ai { margin-top: 3rem; scroll-margin-top: calc(var(--nav-h, 4.6rem) + 1rem); }
+.m-ai-box { padding: 1.75rem 2rem; border-radius: .9rem; background: var(--stone); border: 1px solid var(--line); }
+.m-ai-h { display: flex; align-items: center; gap: .55rem; font-weight: 800; font-size: 1.35rem; letter-spacing: -.02em; margin-bottom: .9rem; }
+.m-ai-h .bi { color: var(--accent); }
+.m-ai-box p { color: var(--ink-2); }

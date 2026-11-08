@@ -569,7 +569,7 @@ def video_feature(n):
             f'<button type="button" class="media-play" aria-label="Play the Unit {n} video overview ({length})">'
             f'<img src="../assets/media/unit-{n:02d}.jpg" alt="" width="1280" height="720" loading="eager">'
             f'<span class="play-btn"><i class="bi bi-play-fill"></i></span><span class="dur">{length}</span></button></div>'
-            f'<figcaption class="note">Video overview · {length}. Start here, then work through the readings below.</figcaption></figure>')
+            f'<figcaption class="note">Video overview · {length}. Start here, then work through the readings below. <a href="../method.html#ai">AI-generated video: how we made it</a>.</figcaption></figure>')
 
 
 def media_section(n):
@@ -767,6 +767,12 @@ def build_method():
 <div class="container-xl"><div class="row justify-content-center g-5">
 <div class="col-lg-9"><h2 class="h2-big mb-2">Step by step</h2><p class="note mb-4"><i class="bi bi-calendar-week"></i> Each step shows a suggested day. It's a pace, not a rule; heavier units may need extra time.</p><ol class="m-timeline">{items}</ol></div>
 </div></div>
+<section class="m-ai" id="ai"><div class="container-xl"><div class="row justify-content-center"><div class="col-lg-9"><div class="m-ai-box">
+<h2 class="m-ai-h"><i class="bi bi-stars"></i> How these materials were made</h2>
+<p>The unit videos were generated with Google NotebookLM, an AI tool built on Gemini. For each unit we wrote a source packet from the NET Bible and the unit's readings, then had NotebookLM produce the narrated overview from that packet alone. The narration and visuals are AI-generated.</p>
+<p>AI tools also helped draft the source packets, lesson notes, and this site. Every packet was checked line by line against the text, quotations were matched to the NET, and debated readings are labeled as debated.</p>
+<p class="mb-0"><strong>Scripture is the final authority.</strong> The videos are a starting point, not a substitute for reading the passages yourself. If a video and the text ever seem to disagree, go with the text.</p>
+</div></div></div></div></section>
 <section class="m-cta"><div class="container-xl"><div class="row justify-content-center"><div class="col-lg-9"><div class="m-cta-box"><div><h2 class="h2-big mb-2">Ready to start?</h2><p class="mb-0">Your progress is saved in this browser, so you can pick up where you left off.</p></div>
 <a class="btn btn-accent btn-lg" href="units/unit-01.html" data-resume-btn data-label-resume="Resume Unit {n}" data-label-done="Review the course"><span data-label>Begin Unit 1</span> <i class="bi bi-arrow-right"></i></a></div></div></div></div></section>"""
     return page("Method", body, active="method", path="method.html")
