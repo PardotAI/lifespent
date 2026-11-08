@@ -377,7 +377,7 @@ def page(title, body, depth=0, active="", path="", unit=0):
 <meta property="og:title" content="{html.escape(title)} · {SITE_TITLE}">
 <meta property="og:description" content="Spend your life going deeper in Scripture. {SITE_TAG}.">
 <meta property="og:url" content="{SITE_URL}{path}">
-<meta property="og:image" content="{SITE_URL}assets/og.png">
+<meta property="og:image" content="{SITE_URL}assets/og.png?v=89b5886e">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
