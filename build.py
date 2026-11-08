@@ -374,7 +374,7 @@ def page(title, body, depth=0, active="", path="", unit=0):
 <link rel="apple-touch-icon" href="{up}assets/icon-512.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LifeSpent">
-<meta property="og:title" content="{html.escape(title)} · {SITE_TITLE}">
+<meta property="og:title" content="{"LifeSpent: " + SITE_TITLE if title == "Home" else html.escape(title) + " · " + SITE_TITLE}">
 <meta property="og:description" content="Spend your life going deeper in Scripture. {SITE_TAG}.">
 <meta property="og:url" content="{SITE_URL}{path}">
 <meta property="og:image" content="{SITE_URL}assets/og.png?v=89b5886e">
