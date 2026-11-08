@@ -468,3 +468,6 @@ html { scroll-padding-top: calc(var(--nav-h, 4.6rem) + 1rem); }
 .m-ai-h { display: flex; align-items: center; gap: .55rem; font-weight: 800; font-size: 1.35rem; letter-spacing: -.02em; margin-bottom: .9rem; }
 .m-ai-h .bi { color: var(--accent); }
 .m-ai-box p { color: var(--ink-2); }
+.m-about { margin-top: 1.25rem; padding: 1.75rem 2rem; border-radius: .9rem; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); }
+.m-about p { color: var(--ink-2); }
+.m-about .m-ai-h .bi { color: var(--accent); }
