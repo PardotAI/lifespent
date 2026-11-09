@@ -266,7 +266,8 @@ document.addEventListener("click", function (e) {
   var player = fig && fig.querySelector(".media-player");
   if (!player || !("IntersectionObserver" in window)) return;
   var wide = window.matchMedia("(min-width: 768px)");
-  var footer = document.querySelector(".site-footer");
+  var footer = document.querySelector(".pager") || document.querySelector(".site-footer");
+  var aside = document.querySelector(".u-toc") && document.querySelector(".u-toc").parentElement;
   var spacer = null, dismissed = false, outOfView = false;
   var bar = document.createElement("div");
   bar.className = "dock-bar";
@@ -274,8 +275,15 @@ document.addEventListener("click", function (e) {
                   '<button type="button" class="dock-btn dock-x" data-dock-close aria-label="Close the mini player and keep the video in its place on the page"><i class="bi bi-x-lg"></i></button>';
   function playing() { return !!player.querySelector("iframe"); }
   function lift() {
-    if (!player.classList.contains("is-docked") || !footer) return;
-    var overlap = window.innerHeight - footer.getBoundingClientRect().top;
+    if (!player.classList.contains("is-docked")) return;
+    // On wide screens, sit inside the left sidebar column so the reading column stays clear.
+    if (aside && aside.offsetWidth) {
+      var r = aside.getBoundingClientRect();
+      player.style.left = r.left + "px";
+      player.style.width = Math.min(360, r.width - 16) + "px";
+    } else { player.style.left = ""; player.style.width = ""; }
+    // Never cover the previous/next unit links or the footer.
+    var overlap = footer ? window.innerHeight - footer.getBoundingClientRect().top : 0;
     player.style.bottom = Math.max(20, overlap + 20) + "px";
   }
   function dock() {
@@ -290,7 +298,7 @@ document.addEventListener("click", function (e) {
   function undock() {
     if (!player.classList.contains("is-docked")) return;
     player.classList.remove("is-docked");
-    player.style.bottom = "";
+    player.style.bottom = ""; player.style.left = ""; player.style.width = "";
     if (spacer) { spacer.remove(); spacer = null; }
   }
   function update() { (wide.matches && outOfView && playing() && !dismissed) ? dock() : undock(); }
