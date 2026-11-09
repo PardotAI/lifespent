@@ -256,3 +256,38 @@ document.addEventListener("click", function (e) {
     }).observe(title);
   }
 })();
+
+// Mini player: after a unit video starts, keep it in a small window bottom-right while you scroll the unit.
+(function () {
+  var fig = document.querySelector(".u-video");
+  var player = fig && fig.querySelector(".media-player");
+  if (!player || !("IntersectionObserver" in window)) return;
+  var spacer = null, dismissed = false, outOfView = false;
+  var close = document.createElement("button");
+  close.type = "button";
+  close.className = "dock-close";
+  close.setAttribute("aria-label", "Close the mini player");
+  close.innerHTML = '<i class="bi bi-x-lg"></i>';
+  function playing() { return !!player.querySelector("iframe"); }
+  function dock() {
+    if (player.classList.contains("is-docked")) return;
+    spacer = document.createElement("div");
+    spacer.style.height = player.offsetHeight + "px";
+    player.parentNode.insertBefore(spacer, player);
+    if (!close.isConnected) player.appendChild(close);  // the click-to-play swap clears the box
+    player.classList.add("is-docked");
+  }
+  function undock() {
+    if (!player.classList.contains("is-docked")) return;
+    player.classList.remove("is-docked");
+    if (spacer) { spacer.remove(); spacer = null; }
+  }
+  function update() { (outOfView && playing() && !dismissed) ? dock() : undock(); }
+  new IntersectionObserver(function (entries) {
+    var e = entries[0];
+    outOfView = !e.isIntersecting && e.boundingClientRect.top < 0;
+    update();
+  }).observe(fig);
+  close.addEventListener("click", function () { dismissed = true; undock(); fig.scrollIntoView({ block: "center" }); });
+  player.addEventListener("click", function (e) { if (e.target.closest(".media-play")) { dismissed = false; } });
+})();
