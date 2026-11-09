@@ -332,3 +332,49 @@ document.addEventListener("click", function (e) {
     else if (e.target.closest("[data-dock-return]")) { fig.scrollIntoView({ block: "start" }); }
   });
 })();
+
+// Share: the phone's own share sheet where available, otherwise a small dialog with copy-link and share links.
+// Plain links only, so nothing from the social networks loads until someone chooses one.
+(function () {
+  var dlg = document.getElementById("share");
+  if (!dlg) return;
+  function pageUrl() { return location.origin + location.pathname; }
+  function pageName() { return document.title.replace(/ · Biblical Apologetics · LifeSpent$/, "") ; }
+  var blurb = "LifeSpent: a free 12-week study of how God, Jesus, and the apostles presented the truth.";
+  function fill() {
+    var u = pageUrl(), e = encodeURIComponent(u), t = encodeURIComponent(blurb);
+    dlg.querySelector("[data-share-url]").value = u;
+    dlg.querySelector("[data-share-name]").textContent = pageName();
+    var links = {
+      facebook: "https://www.facebook.com/sharer/sharer.php?u=" + e,
+      x: "https://twitter.com/intent/tweet?url=" + e + "&text=" + t,
+      linkedin: "https://www.linkedin.com/sharing/share-offsite/?url=" + e,
+      whatsapp: "https://wa.me/?text=" + t + "%20" + e,
+      email: "mailto:?subject=" + encodeURIComponent("LifeSpent: " + pageName()) + "&body=" + t + "%0A%0A" + e,
+      sms: "sms:?&body=" + t + "%20" + e
+    };
+    dlg.querySelectorAll("[data-share-net]").forEach(function (a) { a.href = links[a.getAttribute("data-share-net")]; });
+  }
+  document.addEventListener("click", function (ev) {
+    if (!(ev.target.closest && ev.target.closest("[data-share]"))) return;
+    var touch = window.matchMedia("(pointer: coarse)").matches;
+    if (touch && navigator.share) {
+      navigator.share({ title: document.title, text: blurb, url: pageUrl() }).catch(function () {});
+      return;
+    }
+    fill();
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+  });
+  dlg.addEventListener("click", function (ev) { if (ev.target === dlg) dlg.close(); });  // click outside closes
+  var copyBtn = dlg.querySelector("[data-share-copy]");
+  copyBtn.addEventListener("click", function () {
+    var input = dlg.querySelector("[data-share-url]");
+    function done() {
+      copyBtn.classList.add("is-copied");
+      copyBtn.querySelector("span").textContent = "Copied!";
+      setTimeout(function () { copyBtn.classList.remove("is-copied"); copyBtn.querySelector("span").textContent = "Copy link"; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(input.value).then(done, function () { input.select(); document.execCommand("copy"); done(); });
+    else { input.select(); document.execCommand("copy"); done(); }
+  });
+})();

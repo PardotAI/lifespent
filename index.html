@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=Noto+Serif:wght@400&family=Noto+Serif+Hebrew:wght@400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="assets/site.css?v=6adc53d9">
+    <link rel="stylesheet" href="assets/site.css?v=4166f7fe">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="apple-touch-icon" href="assets/icon-512.png">
     <meta property="og:type" content="website">
@@ -30,7 +30,7 @@
     <nav class="navbar navbar-expand-md site-nav">
       <div class="container-xl">
         <a class="navbar-brand" href="index.html" aria-label="LifeSpent: Biblical Apologetics"><span class="ls-wm">Life<span>Spent</span></span><span class="brand-course">Biblical Apologetics</span></a>
-        <div class="nav-tools d-md-none"><button type="button" class="theme-toggle theme-toggle-m" data-theme-toggle aria-label="Switch to dark theme" title="Switch between light and dark"><i class="bi bi-moon"></i><i class="bi bi-sun"></i></button>
+        <div class="nav-tools d-md-none"><button type="button" class="theme-toggle theme-toggle-m" data-share aria-label="Share this page" title="Share"><i class="bi bi-share"></i></button><button type="button" class="theme-toggle theme-toggle-m" data-theme-toggle aria-label="Switch to dark theme" title="Switch between light and dark"><i class="bi bi-moon"></i><i class="bi bi-sun"></i></button>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button></div>
         <div class="collapse navbar-collapse" id="nav">
           <ul class="navbar-nav ms-auto align-items-md-center">
@@ -76,7 +76,8 @@
             </li>
             <li class="nav-item"><a class="nav-link" href="method.html"><i class="bi bi-signpost-split"></i> Method</a></li>
             <li class="nav-item"><a class="nav-link" href="resources.html"><i class="bi bi-book"></i> Resources</a></li>
-            <li class="nav-item d-none d-md-block ms-md-1"><button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Switch between light and dark"><i class="bi bi-moon"></i><i class="bi bi-sun"></i></button></li>
+            <li class="nav-item d-none d-md-block ms-md-1"><button type="button" class="theme-toggle" data-share aria-label="Share this page" title="Share"><i class="bi bi-share"></i></button></li>
+            <li class="nav-item d-none d-md-block"><button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Switch between light and dark"><i class="bi bi-moon"></i><i class="bi bi-sun"></i></button></li>
             <li class="nav-item ms-md-3"><a class="btn btn-accent btn-sm-nav" href="units/unit-01.html" data-resume-btn data-label-resume="Resume" data-label-done="Review"><span data-label>Begin</span></a></li>
           </ul>
         </div>
@@ -260,7 +261,21 @@
           </div>
       </div>
     </footer>
+    <dialog class="share-dlg" id="share" aria-labelledby="share-title">
+      <form method="dialog" class="share-close-row"><button class="share-x" aria-label="Close"><i class="bi bi-x-lg"></i></button></form>
+      <h2 class="share-title" id="share-title">Share this page</h2>
+      <p class="share-sub" data-share-name></p>
+      <div class="share-copy"><input type="text" readonly data-share-url aria-label="Page link"><button type="button" class="btn btn-accent" data-share-copy><i class="bi bi-link-45deg"></i> <span>Copy link</span></button></div>
+      <div class="share-grid">
+        <a data-share-net="facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i>Facebook</a>
+        <a data-share-net="x" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i>X</a>
+        <a data-share-net="linkedin" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i>LinkedIn</a>
+        <a data-share-net="whatsapp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i>WhatsApp</a>
+        <a data-share-net="email"><i class="bi bi-envelope"></i>Email</a>
+        <a data-share-net="sms"><i class="bi bi-chat-dots"></i>Text</a>
+        </div>
+    </dialog>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="assets/progress.js?v=3c087289"></script>
+    <script src="assets/progress.js?v=84978983"></script>
   </body>
 </html>

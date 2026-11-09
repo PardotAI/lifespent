@@ -387,11 +387,12 @@ def page(title, body, depth=0, active="", path="", unit=0):
 <nav class="navbar navbar-expand-md site-nav">
   <div class="container-xl">
     <a class="navbar-brand" href="{up}index.html" aria-label="LifeSpent: {SITE_TITLE}"><span class="ls-wm">Life<span>Spent</span></span><span class="brand-course">{SITE_TITLE}</span></a>
-    <div class="nav-tools d-md-none"><button type="button" class="theme-toggle theme-toggle-m" data-theme-toggle aria-label="Switch to dark theme" title="Switch between light and dark"><i class="bi bi-moon"></i><i class="bi bi-sun"></i></button>
+    <div class="nav-tools d-md-none"><button type="button" class="theme-toggle theme-toggle-m" data-share aria-label="Share this page" title="Share"><i class="bi bi-share"></i></button><button type="button" class="theme-toggle theme-toggle-m" data-theme-toggle aria-label="Switch to dark theme" title="Switch between light and dark"><i class="bi bi-moon"></i><i class="bi bi-sun"></i></button>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button></div>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto align-items-md-center">{links}
-        <li class="nav-item d-none d-md-block ms-md-1"><button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Switch between light and dark"><i class="bi bi-moon"></i><i class="bi bi-sun"></i></button></li>
+        <li class="nav-item d-none d-md-block ms-md-1"><button type="button" class="theme-toggle" data-share aria-label="Share this page" title="Share"><i class="bi bi-share"></i></button></li>
+        <li class="nav-item d-none d-md-block"><button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Switch between light and dark"><i class="bi bi-moon"></i><i class="bi bi-sun"></i></button></li>
         <li class="nav-item ms-md-3"><a class="btn btn-accent btn-sm-nav" href="{up}units/unit-01.html" data-resume-btn data-label-resume="Resume" data-label-done="Review"><span data-label>Begin</span></a></li>
       </ul>
     </div>
@@ -411,6 +412,20 @@ def page(title, body, depth=0, active="", path="", unit=0):
     </div>
   </div>
 </footer>
+<dialog class="share-dlg" id="share" aria-labelledby="share-title">
+  <form method="dialog" class="share-close-row"><button class="share-x" aria-label="Close"><i class="bi bi-x-lg"></i></button></form>
+  <h2 class="share-title" id="share-title">Share this page</h2>
+  <p class="share-sub" data-share-name></p>
+  <div class="share-copy"><input type="text" readonly data-share-url aria-label="Page link"><button type="button" class="btn btn-accent" data-share-copy><i class="bi bi-link-45deg"></i> <span>Copy link</span></button></div>
+  <div class="share-grid">
+    <a data-share-net="facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i>Facebook</a>
+    <a data-share-net="x" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i>X</a>
+    <a data-share-net="linkedin" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i>LinkedIn</a>
+    <a data-share-net="whatsapp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i>WhatsApp</a>
+    <a data-share-net="email"><i class="bi bi-envelope"></i>Email</a>
+    <a data-share-net="sms"><i class="bi bi-chat-dots"></i>Text</a>
+  </div>
+</dialog>
 {BS_JS}
 <script src="{up}assets/progress.js?v={JS_VER}"></script>
 </body>
