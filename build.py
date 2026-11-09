@@ -357,6 +357,16 @@ def page(title, body, depth=0, active="", path="", unit=0):
     links = (units_menu
              + f'<li class="nav-item"><a class="nav-link{cur("method")}" href="{up}method.html"><i class="bi bi-signpost-split"></i> Method</a></li>'
              + f'<li class="nav-item"><a class="nav-link{cur("resources")}" href="{up}resources.html"><i class="bi bi-book"></i> Resources</a></li>')
+    su = quote(SITE_URL + path, safe="")
+    st = quote("LifeSpent: a free 12-week study of how God, Jesus, and the apostles presented the truth.", safe="")
+    share_links = {
+        "facebook": "https://www.facebook.com/sharer/sharer.php?u=" + su,
+        "x": "https://twitter.com/intent/tweet?url=" + su + "&amp;text=" + st,
+        "linkedin": "https://www.linkedin.com/sharing/share-offsite/?url=" + su,
+        "whatsapp": "https://wa.me/?text=" + st + "%20" + su,
+        "email": "mailto:?subject=" + quote("LifeSpent: " + title, safe="") + "&amp;body=" + st + "%0A%0A" + su,
+        "sms": "sms:?&amp;body=" + st + "%20" + su,
+    }
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -418,12 +428,12 @@ def page(title, body, depth=0, active="", path="", unit=0):
   <p class="share-sub" data-share-name></p>
   <div class="share-copy"><input type="text" readonly data-share-url aria-label="Page link"><button type="button" class="btn btn-accent" data-share-copy><i class="bi bi-link-45deg"></i> <span>Copy link</span></button></div>
   <div class="share-grid">
-    <a data-share-net="facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i>Facebook</a>
-    <a data-share-net="x" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i>X</a>
-    <a data-share-net="linkedin" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i>LinkedIn</a>
-    <a data-share-net="whatsapp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i>WhatsApp</a>
-    <a data-share-net="email"><i class="bi bi-envelope"></i>Email</a>
-    <a data-share-net="sms"><i class="bi bi-chat-dots"></i>Text</a>
+    <a href="{share_links["facebook"]}" data-share-net="facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i>Facebook</a>
+    <a href="{share_links["x"]}" data-share-net="x" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i>X</a>
+    <a href="{share_links["linkedin"]}" data-share-net="linkedin" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i>LinkedIn</a>
+    <a href="{share_links["whatsapp"]}" data-share-net="whatsapp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i>WhatsApp</a>
+    <a href="{share_links["email"]}" data-share-net="email"><i class="bi bi-envelope"></i>Email</a>
+    <a href="{share_links["sms"]}" data-share-net="sms"><i class="bi bi-chat-dots"></i>Text</a>
   </div>
 </dialog>
 {BS_JS}

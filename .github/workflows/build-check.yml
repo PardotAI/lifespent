@@ -20,3 +20,7 @@ jobs:
             echo "::error::Generated HTML is out of date. Run 'python3 build.py' and commit the result."
             exit 1
           fi
+      - name: Validate HTML (W3C Nu validator)
+        run: |
+          curl -sL -o /tmp/vnu.jar https://github.com/validator/validator/releases/download/latest/vnu.jar
+          java -jar /tmp/vnu.jar index.html method.html resources.html units/*.html
