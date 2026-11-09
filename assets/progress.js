@@ -313,6 +313,16 @@ document.addEventListener("click", function (e) {
   window.addEventListener("scroll", lift, { passive: true });
   window.addEventListener("resize", lift);
   player.addEventListener("click", function (e) { if (e.target.closest(".media-play")) setTimeout(update, 50); });
+  // Listen to the Vimeo player: pressing play again (after closing the mini player) re-enables docking.
+  window.addEventListener("message", function (e) {
+    if (e.origin !== "https://player.vimeo.com") return;
+    var ifr = player.querySelector("iframe");
+    if (!ifr || e.source !== ifr.contentWindow) return;
+    var d; try { d = typeof e.data === "string" ? JSON.parse(e.data) : e.data; } catch (err) { return; }
+    if (!d) return;
+    if (d.event === "ready") ifr.contentWindow.postMessage(JSON.stringify({ method: "addEventListener", value: "play" }), "https://player.vimeo.com");
+    if (d.event === "play" && dismissed) { dismissed = false; update(); }
+  });
   bar.addEventListener("click", function (e) {
     if (e.target.closest("[data-dock-close]")) {
       var ifr = player.querySelector("iframe");  // pause through Vimeo's postMessage API
