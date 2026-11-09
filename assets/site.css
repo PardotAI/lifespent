@@ -504,3 +504,5 @@ html { scroll-padding-top: calc(var(--nav-h, 4.6rem) + 1rem); }
 .share-grid a:hover, .share-grid a:focus-visible { border-color: var(--accent); background: var(--tint-accent); color: var(--ink); }
 .share-grid .bi { font-size: 1.35rem; color: var(--accent); }
 @media (prefers-reduced-motion: reduce) { .share-dlg[open] { animation: none; } }
+.video-share { display: inline-flex; align-items: center; gap: .35rem; margin-left: .25rem; padding: .2rem .7rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink-2); font-family: var(--head); font-weight: 700; font-size: .82rem; vertical-align: middle; }
+.video-share:hover, .video-share:focus-visible { border-color: var(--accent); color: var(--accent); }

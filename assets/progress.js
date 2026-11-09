@@ -338,8 +338,9 @@ document.addEventListener("click", function (e) {
 (function () {
   var dlg = document.getElementById("share");
   if (!dlg) return;
-  function pageUrl() { return location.origin + location.pathname; }
-  function pageName() { return document.title.replace(/ · Biblical Apologetics · LifeSpent$/, "") ; }
+  var path = "", label = "";
+  function pageUrl() { return location.origin + location.pathname + path; }
+  function pageName() { var n = document.title.replace(/ · Biblical Apologetics · LifeSpent$/, ""); return label ? label + ": " + n.replace(/^Unit \d+: /, "") : n; }
   var blurb = "LifeSpent: a free 12-week study of how God, Jesus, and the apostles presented the truth.";
   function fill() {
     var u = pageUrl(), e = encodeURIComponent(u), t = encodeURIComponent(blurb);
@@ -356,10 +357,14 @@ document.addEventListener("click", function (e) {
     dlg.querySelectorAll("[data-share-net]").forEach(function (a) { a.href = links[a.getAttribute("data-share-net")]; });
   }
   document.addEventListener("click", function (ev) {
-    if (!(ev.target.closest && ev.target.closest("[data-share]"))) return;
+    var btn = ev.target.closest && ev.target.closest("[data-share]");
+    if (!btn) return;
+    path = btn.getAttribute("data-share-path") || "";
+    label = btn.getAttribute("data-share-label") || "";
+    dlg.querySelector(".share-title").textContent = label ? "Share this video" : "Share this page";
     var touch = window.matchMedia("(pointer: coarse)").matches;
     if (touch && navigator.share) {
-      navigator.share({ title: document.title, text: blurb, url: pageUrl() }).catch(function () {});
+      navigator.share({ title: pageName(), text: blurb, url: pageUrl() }).catch(function () {});
       return;
     }
     fill();
