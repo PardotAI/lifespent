@@ -257,37 +257,50 @@ document.addEventListener("click", function (e) {
   }
 })();
 
-// Mini player: after a unit video starts, keep it in a small window bottom-right while you scroll the unit.
+// Mini player: after a unit video starts, keep it in a small window bottom-right while you read (tablet/desktop only).
 (function () {
   var fig = document.querySelector(".u-video");
   var player = fig && fig.querySelector(".media-player");
   if (!player || !("IntersectionObserver" in window)) return;
+  var wide = window.matchMedia("(min-width: 768px)");
+  var footer = document.querySelector(".site-footer");
   var spacer = null, dismissed = false, outOfView = false;
-  var close = document.createElement("button");
-  close.type = "button";
-  close.className = "dock-close";
-  close.setAttribute("aria-label", "Close the mini player");
-  close.innerHTML = '<i class="bi bi-x-lg"></i>';
+  var bar = document.createElement("div");
+  bar.className = "dock-bar";
+  bar.innerHTML = '<button type="button" class="dock-btn" data-dock-return aria-label="Return to the video at the top of this unit"><i class="bi bi-arrow-up"></i> Return to video</button>' +
+                  '<button type="button" class="dock-btn dock-x" data-dock-close aria-label="Close the mini player and keep the video in its place on the page"><i class="bi bi-x-lg"></i></button>';
   function playing() { return !!player.querySelector("iframe"); }
+  function lift() {
+    if (!player.classList.contains("is-docked") || !footer) return;
+    var overlap = window.innerHeight - footer.getBoundingClientRect().top;
+    player.style.bottom = Math.max(20, overlap + 20) + "px";
+  }
   function dock() {
     if (player.classList.contains("is-docked")) return;
     spacer = document.createElement("div");
     spacer.style.height = player.offsetHeight + "px";
     player.parentNode.insertBefore(spacer, player);
-    if (!close.isConnected) player.appendChild(close);  // the click-to-play swap clears the box
+    if (!bar.isConnected) player.appendChild(bar);  // the click-to-play swap clears the box
     player.classList.add("is-docked");
+    lift();
   }
   function undock() {
     if (!player.classList.contains("is-docked")) return;
     player.classList.remove("is-docked");
+    player.style.bottom = "";
     if (spacer) { spacer.remove(); spacer = null; }
   }
-  function update() { (outOfView && playing() && !dismissed) ? dock() : undock(); }
+  function update() { (wide.matches && outOfView && playing() && !dismissed) ? dock() : undock(); }
   new IntersectionObserver(function (entries) {
     var e = entries[0];
     outOfView = !e.isIntersecting && e.boundingClientRect.top < 0;
     update();
   }).observe(fig);
-  close.addEventListener("click", function () { dismissed = true; undock(); fig.scrollIntoView({ block: "center" }); });
-  player.addEventListener("click", function (e) { if (e.target.closest(".media-play")) { dismissed = false; } });
+  if (wide.addEventListener) wide.addEventListener("change", update);
+  window.addEventListener("scroll", lift, { passive: true });
+  window.addEventListener("resize", lift);
+  bar.addEventListener("click", function (e) {
+    if (e.target.closest("[data-dock-close]")) { dismissed = true; undock(); }
+    else if (e.target.closest("[data-dock-return]")) { fig.scrollIntoView({ block: "start" }); }
+  });
 })();
