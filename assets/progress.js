@@ -175,7 +175,7 @@ document.addEventListener("click", function (e) {
   // Phones and tablets only allow sound when the tap lands inside the player itself, so on touch
   // devices we load the player without autoplay and let the visitor press Vimeo's own play button.
   var touch = window.matchMedia && window.matchMedia("(hover: none), (pointer: coarse)").matches;
-  f.src = "https://player.vimeo.com/video/" + id + "?dnt=1&playsinline=1" + (touch ? "" : "&autoplay=1");
+  f.src = "https://player.vimeo.com/video/" + id + "?dnt=1&playsinline=1&api=1" + (touch ? "" : "&autoplay=1");
   f.title = box.getAttribute("data-title") || "Video";
   f.allow = "autoplay; fullscreen; picture-in-picture; encrypted-media";
   f.allowFullscreen = true;
@@ -272,7 +272,7 @@ document.addEventListener("click", function (e) {
   var bar = document.createElement("div");
   bar.className = "dock-bar";
   bar.innerHTML = '<button type="button" class="dock-btn" data-dock-return aria-label="Return to the video at the top of this unit"><i class="bi bi-arrow-up"></i> Return to video</button>' +
-                  '<button type="button" class="dock-btn dock-x" data-dock-close aria-label="Close the mini player and keep the video in its place on the page"><i class="bi bi-x-lg"></i></button>';
+                  '<button type="button" class="dock-btn dock-x" data-dock-close aria-label="Pause the video and close the mini player"><i class="bi bi-x-lg"></i></button>';
   function playing() { return !!player.querySelector("iframe"); }
   function lift() {
     if (!player.classList.contains("is-docked")) return;
@@ -314,7 +314,11 @@ document.addEventListener("click", function (e) {
   window.addEventListener("resize", lift);
   player.addEventListener("click", function (e) { if (e.target.closest(".media-play")) setTimeout(update, 50); });
   bar.addEventListener("click", function (e) {
-    if (e.target.closest("[data-dock-close]")) { dismissed = true; undock(); }
+    if (e.target.closest("[data-dock-close]")) {
+      var ifr = player.querySelector("iframe");  // pause through Vimeo's postMessage API
+      if (ifr && ifr.contentWindow) ifr.contentWindow.postMessage(JSON.stringify({ method: "pause" }), "https://player.vimeo.com");
+      dismissed = true; undock();
+    }
     else if (e.target.closest("[data-dock-return]")) { fig.scrollIntoView({ block: "start" }); }
   });
 })();
