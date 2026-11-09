@@ -299,6 +299,7 @@ document.addEventListener("click", function (e) {
   if (wide.addEventListener) wide.addEventListener("change", update);
   window.addEventListener("scroll", lift, { passive: true });
   window.addEventListener("resize", lift);
+  player.addEventListener("click", function (e) { if (e.target.closest(".media-play")) setTimeout(update, 50); });
   bar.addEventListener("click", function (e) {
     if (e.target.closest("[data-dock-close]")) { dismissed = true; undock(); }
     else if (e.target.closest("[data-dock-return]")) { fig.scrollIntoView({ block: "start" }); }
