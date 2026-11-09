@@ -172,9 +172,12 @@ document.addEventListener("click", function (e) {
   var box = btn.parentElement, id = box.getAttribute("data-vimeo");
   if (!id || !/^\d+$/.test(id)) return;
   var f = document.createElement("iframe");
-  f.src = "https://player.vimeo.com/video/" + id + "?dnt=1&autoplay=1";
+  // Phones and tablets only allow sound when the tap lands inside the player itself, so on touch
+  // devices we load the player without autoplay and let the visitor press Vimeo's own play button.
+  var touch = window.matchMedia && window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  f.src = "https://player.vimeo.com/video/" + id + "?dnt=1&playsinline=1" + (touch ? "" : "&autoplay=1");
   f.title = box.getAttribute("data-title") || "Video";
-  f.allow = "autoplay; fullscreen; picture-in-picture";
+  f.allow = "autoplay; fullscreen; picture-in-picture; encrypted-media";
   f.allowFullscreen = true;
   box.replaceChildren(f);
 });
