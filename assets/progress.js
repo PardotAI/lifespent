@@ -266,7 +266,7 @@ document.addEventListener("click", function (e) {
   var player = fig && fig.querySelector(".media-player");
   if (!player || !("IntersectionObserver" in window)) return;
   var wide = window.matchMedia("(min-width: 768px)");
-  var footer = document.querySelector(".pager") || document.querySelector(".site-footer");
+  var pager = document.querySelector(".pager"), footer = document.querySelector(".site-footer");
   var aside = document.querySelector(".u-toc") && document.querySelector(".u-toc").parentElement;
   var spacer = null, dismissed = false, outOfView = false;
   var bar = document.createElement("div");
@@ -283,7 +283,9 @@ document.addEventListener("click", function (e) {
       player.style.width = Math.min(360, r.width - 16) + "px";
     } else { player.style.left = ""; player.style.width = ""; }
     // Never cover the previous/next unit links or the footer.
-    var overlap = footer ? window.innerHeight - footer.getBoundingClientRect().top : 0;
+    // In the sidebar it already clears the reading column, so only the footer matters there.
+    var stop = (aside && aside.offsetWidth) ? footer : (pager || footer);
+    var overlap = stop ? window.innerHeight - stop.getBoundingClientRect().top : 0;
     player.style.bottom = Math.max(20, overlap + 20) + "px";
   }
   function dock() {
