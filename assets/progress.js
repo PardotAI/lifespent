@@ -338,8 +338,8 @@ document.addEventListener("click", function (e) {
 (function () {
   var dlg = document.getElementById("share");
   if (!dlg) return;
-  var path = "", label = "";
-  function pageUrl() { return location.origin + location.pathname + path; }
+  var path = "", label = "", href = "";
+  function pageUrl() { return href || (location.origin + location.pathname + path); }
   function pageName() { var n = document.title.replace(/ · Biblical Apologetics · LifeSpent$/, ""); return label ? label + ": " + n.replace(/^Unit \d+: /, "") : n; }
   var blurb = "LifeSpent: a free 12-week study of how God, Jesus, and the apostles presented the truth.";
   function fill() {
@@ -361,6 +361,7 @@ document.addEventListener("click", function (e) {
     if (!btn) return;
     path = btn.getAttribute("data-share-path") || "";
     label = btn.getAttribute("data-share-label") || "";
+    href = btn.getAttribute("data-share-href") || "";
     dlg.querySelector(".share-title").textContent = label ? "Share this video" : "Share this page";
     var touch = window.matchMedia("(pointer: coarse)").matches;
     if (touch && navigator.share) {

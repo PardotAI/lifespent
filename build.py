@@ -584,7 +584,7 @@ def video_feature(n):
             f'<button type="button" class="media-play" aria-label="Play the Unit {n} video overview ({length})">'
             f'<img src="../assets/media/unit-{n:02d}.jpg" alt="" width="1280" height="720" loading="eager">'
             f'<span class="play-btn"><i class="bi bi-play-fill"></i></span><span class="dur">{length}</span></button></div>'
-            f'<figcaption class="note">Video overview · {length}. Start here, then work through the readings below. <a href="../method.html#ai">AI-generated video: how we made it</a>. <button type="button" class="video-share" data-share data-share-path="#video" data-share-label="Unit {n} video"><i class="bi bi-share"></i> Share this video</button></figcaption></figure>')
+            f'<figcaption class="note">Video overview · {length}. Start here, then work through the readings below. <a href="../method.html#ai">AI-generated video: how we made it</a>. <button type="button" class="video-share" data-share data-share-href="https://vimeo.com/{vid}" data-share-label="Unit {n} video"><i class="bi bi-share"></i> Share this video</button></figcaption></figure>')
 
 
 def media_section(n):
